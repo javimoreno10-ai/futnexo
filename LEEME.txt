@@ -32,3 +32,7 @@ PENDIENTE ANTES DE VENDER
 - Confirmar inventario real y características antes de publicar productos como disponibles.
 
 Los textos sobre fotografías y disponibilidad son deliberadamente prudentes: las imágenes son ilustrativas, no prueban que exista stock ni autorización para vender prendas de marca.
+
+
+BORRADOR V2 (no publicado): incorpora cambios solicitados: logo negro/blanco/azul, colores de portada, contador de Halloween, guia de tallas original, precios superiores Fan y Retro, elimina numeracion de colecciones, secciones Encuentra tu camiseta y Mas FutNexo como en la antigua web.
+NOTA: las categorias todavia redirigen a Google Sites hasta su migracion. Validar tablas con el proveedor. Subir el contenido de la carpeta (no el ZIP) a la raiz del repo para activar, preferiblemente tras concluir la lista de cambios.

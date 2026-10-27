@@ -1,0 +1,34 @@
+FUTNEXO · WEB V1
+================
+
+Qué incluye:
+- Página principal profesional adaptable a móvil y ordenador.
+- Catálogo ilustrativo con filtros por Fan, Retro y Selecciones, buscador y enlaces a Instagram.
+- Precios: Fan 17,99 €, Retro 24,99 €, Player 24,99 €, Infantil 17,99 €.
+- Secciones de colecciones, precios y cómo comprar.
+- Sin checkout ni pagos reales: está preparada como escaparate hasta regularizar la actividad.
+
+EDITAR
+1. catalogo.js: edita nombres, categorías y precios de los ejemplos del catálogo.
+2. index.html: cambia títulos, textos y enlaces, así como los precios de las tarjetas fijas.
+3. styles.css: colores, tipografías y estilos.
+4. assets/: cambia fotos (actualiza las rutas si renombras archivos).
+
+PREVISUALIZAR
+Abre index.html en un navegador. No necesitas instalar nada.
+
+PUBLICAR GRATIS EN CLOUDFLARE PAGES
+1. Crea un repositorio de GitHub y sube el contenido de ESTA carpeta (index.html en la raíz).
+2. En Cloudflare, ve a Workers & Pages > Create > Pages > conectar GitHub.
+3. Selecciona el repositorio, framework: None, comando build vacío, directorio de salida: / o la raíz del proyecto (según interfaz).
+4. Publica. Cloudflare facilita una URL provisional de tipo pages.dev.
+5. Compra un dominio disponible y conéctalo en Custom domains cuando quieras.
+6. Los cambios futuros en el repositorio podrán desplegarse automáticamente.
+
+PENDIENTE ANTES DE VENDER
+- Asegurar procedencia y permisos comerciales de productos, así como información veraz de las fotos.
+- Alta fiscal/Seguridad Social según situación, política de privacidad, aviso legal, condiciones y devoluciones, IVA y aduanas.
+- Configurar pasarela de pago sólo cuando legalmente proceda.
+- Confirmar inventario real y características antes de publicar productos como disponibles.
+
+Los textos sobre fotografías y disponibilidad son deliberadamente prudentes: las imágenes son ilustrativas, no prueban que exista stock ni autorización para vender prendas de marca.

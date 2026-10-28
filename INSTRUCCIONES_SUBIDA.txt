@@ -1,0 +1,18 @@
+FUTNEXO V3.18 — ACTUALIZACIÓN SIMPLIFICADA
+
+CORRECCIÓN:
+1. El botón “Ver catálogo 26/27” de index.html ya abre clubes.html y no la página antigua de Google Sites.
+2. Se han insertado dentro de clubes.html las 77 fotos recibidas y asignadas en V3.17. Ya NO hay que subir las carpetas assets/clubes para ver esas 77 fotos.
+3. Se conservan los 129 equipos, 18 ilustraciones pendientes y las referencias previas.
+
+ACTUALIZAR EN GITHUB (rama main):
+1. Descarga este ZIP y DESCOMPRÍMELO en tu ordenador.
+2. En GitHub abre el repositorio FutNexo, rama main.
+3. Sube o reemplaza en la RAÍZ los DOS archivos: index.html y clubes.html.
+4. Confirma el commit. Si hay despliegue automático conectado, comprueba el estado del despliegue en Cloudflare.
+5. Abre la web, pulsa “Ver catálogo 26/27” y comprueba que el pie del catálogo pone “Catálogo FutNexo · V3.18”. Fuerza recarga o abre incógnito si ves contenido antiguo.
+
+NO subas el ZIP como archivo único al repositorio. Los 2 HTML han de sustituir a los originales en la raíz. NO hace falta borrar assets ni otros ficheros.
+
+LIMITACIONES:
+Las 77 fotos insertadas ya no dependen de directorios adicionales. Otras 14 fotos antiguas siguen siendo referencias desde sitios externos y pueden fallar si sus proveedores cambian. No se pudo comprobar la versión actualmente desplegada sin acceso a GitHub/Cloudflare. El control técnico comprueba la carga y asignación del catálogo preparado, no la licencia de uso comercial ni el despliegue remoto.

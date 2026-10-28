@@ -1,0 +1,30 @@
+FUTNEXO V3.12 — ACTUALIZACIÓN DE IMÁGENES
+
+QUÉ SE HA PREPARADO
+• 129 tarjetas conservadas y verificadas; diseño, logo FN, filtros y buscador mantenidos.
+• Seis fotografías aportadas por el usuario conservadas y correctamente asignadas.
+• Fotografías históricas de referencia existentes conservadas.
+• 95 ilustraciones de camiseta nuevas con presentación de catálogo, incrustadas en clubes.html.
+• Las fotos externas de LaLiga existentes siguen enlazadas, con ilustración local de respaldo si fallan.
+• Ningún recurso visual nuevo depende de carpetas adicionales; basta subir clubes.html.
+
+IMPORTANTE SOBRE FOTOGRAFÍAS COMERCIALES
+Las imágenes ilustrativas NO son fotografías reales ni tienen por qué reproducir el kit 26/27.
+El acceso a catálogos en Internet no autoriza a republicar fotografías ajenas comercialmente.
+No se han descargado fotos de terceros sin permiso para presentarlas como productos.
+Para sustituir las ilustraciones se requieren imágenes autorizadas (idealmente del proveedor).
+
+PUBLICACIÓN
+1. Extrae clubes.html de este ZIP.
+2. En GitHub del proyecto FutNexo, rama main, sustituye ÚNICAMENTE clubes.html.
+3. Confirma Commit changes y comprueba el nuevo despliegue en Cloudflare.
+4. Abre la página en una pestaña privada y prueba filtros e imágenes.
+5. Conserva el documento INVENTARIO_IMAGENES_FUTNEXO.csv como control de fotos pendientes.
+No cambia los precios ni los enlaces de contacto.
+
+FUENTES VISUALES DE REFERENCIA (NO LICENCIA COMERCIAL)
+LaLiga: https://www.footballkitarchive.com/la-liga-kits-2026-27-l150/
+Premier League: https://www.footballkitarchive.com/premier-league-kits-2026-27-l224/
+Serie A: https://www.footballkitarchive.com/serie-a-kits-2026-27-l258/
+Bundesliga: https://www.footballkitarchive.com/bundesliga-kits-2026-27-l34/
+Ligue 1: https://www.footballkitarchive.com/ligue-1-kits-2026-27-l177/

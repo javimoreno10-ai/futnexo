@@ -1,0 +1,28 @@
+FutNexo V3.11 — Fotografías de camisetas visibles SIN subir carpeta assets
+
+CORRECCIÓN PRINCIPAL:
+Las seis fotografías que enviaste están incrustadas dentro de clubes.html.
+No hace falta subir ni crear una carpeta assets/clubes para estas seis fotos.
+
+Asociaciones confirmadas por ti:
+- Levante UD: camiseta blaugrana
+- Sevilla FC: camiseta blanca
+- Celta de Vigo: camiseta azul celeste
+- Villarreal CF: camiseta amarilla
+- Elche CF: camiseta verdiblanca
+- Rayo Vallecano: camiseta blanca con franja roja
+
+LOGO: se conserva FN blanco y azul eléctrico en cabecera y pestaña.
+CATÁLOGO: se conservan los 129 clubes y filtros.
+
+ACTUALIZACIÓN RÁPIDA:
+1. Abre tu repositorio GitHub javimoreno10-ai/futnexo, rama main.
+2. Abre clubes.html > lápiz Edit this file, o Add file > Upload files.
+3. Sustituye el contenido por el nuevo clubes.html o sube el archivo nuevo y haz Commit changes.
+4. Comprueba Cloudflare > Deployments > último despliegue correcto.
+5. Abre /clubes.html?version=311 en pestaña privada para evitar caché.
+
+No hace falta subir la carpeta assets para estas seis fotos.
+Las otras fotografías de LaLiga que usan servidores externos aún pueden fallar: muestran ilustraciones alternativas.
+Si aún no ves cambios, comprueba que Github muestra el nuevo archivo y que Cloudflare desplegó el commit.
+No se ha publicado ninguna actualización automática desde aquí.

@@ -87,3 +87,10 @@ body{background:radial-gradient(ellipse 65% 25% at 74% 4%,rgba(34,112,235,.14),t
 @media(max-width:760px){.site-header{height:74px}.brand-shield{width:45px;height:45px}.brand-wordmark{font-size:29px}.product-photo{height:218px;padding:15px}.price-card{min-height:220px}}
 @media(max-width:480px){.brand-shield{width:40px;height:40px}.brand-wordmark{font-size:26px}.site-header{height:69px}.product-photo{height:184px;padding:10px}.product-detail{padding:13px}.product-detail h3{font-size:14px;min-height:39px;margin-bottom:11px}.product-bottom strong{font-size:22px}.product-bottom a{padding:11px 12px}.price-card{min-height:226px}.price-card .price{font-size:30px}.legacy-collection-image{aspect-ratio:1.48}.section-products{padding-top:60px}}
 @media(prefers-reduced-motion:reduce){.step:hover{transform:none}.product-card:hover .product-photo img{transform:none}}
+
+/* FUTNEXO V3.1 — marca tipográfica sin imagen ni dependencia de assets */
+.site-header .brand, .footer .brand{display:inline-flex;align-items:center;gap:0;min-width:0;flex-shrink:0;text-decoration:none}
+.site-header .brand-wordmark{font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif;font-size:35px;font-weight:900;letter-spacing:.045em;line-height:1;white-space:nowrap;display:inline-block}
+.footer .brand-wordmark{font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif;font-size:31px;font-weight:900;letter-spacing:.045em;line-height:1;white-space:nowrap;display:inline-block}
+@media(max-width:760px){.site-header .brand-wordmark{font-size:31px}}
+@media(max-width:480px){.site-header .brand-wordmark{font-size:28px}.footer .brand-wordmark{font-size:29px}}

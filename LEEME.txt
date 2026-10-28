@@ -46,3 +46,17 @@ FUTNEXO V3 — BORRADOR PARA REVISAR ANTES DE PUBLICAR
 - Escaparate: tarjetas más visuales, mejor botón Consultar, contador dinámico de resultados y búsqueda/filtros conservados.
 - La promoción del reto Halloween 1/20 en Google Sites NO se ha añadido a esta versión de Cloudflare.
 - Antes de publicar: comprobar visualmente en móvil y escritorio, además de revisar enlaces externos.
+
+V3.1 — SIN LOGO DE IMAGEN
+Se retiró la imagen del escudo del encabezado y del pie de página. Ahora se muestra FUTNEXO con letras blancas y azules. No requiere cargar ninguna imagen para mostrar la marca.
+La imagen anterior puede permanecer sin utilizar en el repositorio; no se muestra en la página.
+
+
+FUTNEXO V3.2 — CLUBES DENTRO DE FUTNEXO
+- La tarjeta «Clubes 26/27» de la portada abre clubes.html, dentro del mismo dominio y pestaña.
+- Nueva página con buscador de equipos, filtros España/Inglaterra/Europa y 12 imágenes de referencia procedentes de archivos de trabajo.
+- Personaliza el listado y los nombres de los equipos en clubes.js. Las fotografías están en assets/clubes/.
+- Personaliza apariencia en clubes.css y textos en clubes.html.
+- NO se han migrado todavía las secciones Selecciones, Retro o Más FutNexo; siguen enlazando a Google Sites.
+- Las fotos NO certifican la temporada 26/27, autenticidad ni stock real. Verifica procedencia y derechos comerciales antes de vender o publicitar prendas de marcas.
+- PARA PUBLICAR: subir index.html, clubes.html, clubes.css, clubes.js y la carpeta assets/clubes/ al repositorio, respetando rutas. No subir solo clubes.html.

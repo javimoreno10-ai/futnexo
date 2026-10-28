@@ -1,0 +1,17 @@
+FutNexo V3.10 — Corrección de las seis camisetas y logo FN
+
+Asignación confirmada por el usuario:
+- Blaugrana: Levante UD — image.png
+- Blanca: Sevilla FC — image_2.png
+- Azul celeste: Celta de Vigo — image_3.png
+- Amarilla: Villarreal CF — image_4.png
+- Verdiblanca: Elche CF — image_5.png
+- Blanca con franja roja: Rayo Vallecano — image_6.png
+
+Se han retirado las asignaciones equivocadas a Atlético de Madrid, Real Madrid, FC Barcelona y Real Betis, restaurando sus tarjetas anteriores.
+Se conserva el favicon FN blanco y azul eléctrico sobre fondo azul oscuro, y el logo FN visible en ambas cabeceras.
+Se mantienen los 129 clubes y los filtros.
+
+Actualización rápida desde V3.9: descomprimir el ZIP y subir a la raíz de GitHub TODOS los archivos y carpetas incluidos, especialmente clubes.html e imágenes en assets/clubes. index.html contiene las referencias del favicon renovadas. Si se dispone ya de los favicon anteriores correctos, el paquete conserva los mismos archivos.
+
+Nota: las fotos aportadas por el usuario deben tener autorización para uso comercial y corresponder al producto real ofrecido. Las tarjetas de los otros equipos conservan las referencias previas, que pueden depender de enlaces externos.

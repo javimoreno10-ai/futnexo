@@ -60,3 +60,12 @@ FUTNEXO V3.2 — CLUBES DENTRO DE FUTNEXO
 - NO se han migrado todavía las secciones Selecciones, Retro o Más FutNexo; siguen enlazando a Google Sites.
 - Las fotos NO certifican la temporada 26/27, autenticidad ni stock real. Verifica procedencia y derechos comerciales antes de vender o publicitar prendas de marcas.
 - PARA PUBLICAR: subir index.html, clubes.html, clubes.css, clubes.js y la carpeta assets/clubes/ al repositorio, respetando rutas. No subir solo clubes.html.
+
+
+FUTNEXO V3.3 — CLUBES AMPLIADOS + FOTOS INTEGRADAS
+- Se amplió el catálogo a 51 clubes (antes 12). Es una propuesta ampliada; no se ha logrado recuperar íntegramente el listado original de Google Sites.
+- 16 equipos incluyen fotos procedentes de imágenes locales; el resto llevan ilustraciones genéricas etiquetadas (no equipaciones oficiales ni stock).
+- La página clubes.html incluye su propio CSS, Javascript y fotos: se pueden publicar clubes.html e index.html sin subir assets/clubes. Se sigue usando styles.css global para la identidad de la marca.
+- Los enlaces de Selecciones, Retro y categorías adicionales no se han migrado y siguen apuntando a Google Sites.
+- Para igualar exactamente los equipos y las fotos del antiguo catálogo, necesitamos una lista/captura/archivos originales del propietario.
+- Para publicar: subir clubes.html a la raiz del repositorio. No hay que tocar otros archivos si ya está publicada la V3.2.

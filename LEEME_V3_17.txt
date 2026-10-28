@@ -1,0 +1,22 @@
+FUTNEXO V3.17 — WEB CON TODOS LOS LOTES DE FOTOS RECIBIDAS
+
+Se parte de V3.16, SIN reutilizar las versiones V3.13 o V3.14 que contenían asignaciones equivocadas.
+
+78 archivos recibidos en total: 77 fotografías incorporadas a su club; foto 34 no válida (cuadrado negro), conservada en FOTOS_NO_UTILIZABLES.
+
+Este paquete integra 38 fotografías nuevas: 20 del lote 3 y 18 del lote 4.
+129 clubes conservados. 18 continúan con una ilustración provisional: ver FOTOS_PENDIENTES_V3_17.txt.
+
+CONTENIDO:
+- clubes.html: listado actualizado y enlaces a las imágenes locales.
+- assets/clubes/26-27-revisadas: imágenes de los dos primeros lotes (V3.16).
+- assets/clubes/26-27-lotes-3-4: imágenes locales de los últimos 38 equipos.
+- AUDITORIA_78_FOTOS.csv: relación de todas las fotos recibidas con el club asignado.
+- FOTOS_PENDIENTES_V3_17.txt: los 18 equipos todavía sin foto nueva.
+
+SUBIDA A GITHUB/CLOUDFLARE:
+Para una actualización parcial subir clubes.html, TODAS las carpetas de imágenes de assets/clubes y conservar la estructura de carpetas. NO subir solo el HTML.
+Para evitar confusión es preferible sustituir la web con la estructura del ZIP completo, conservando tus ajustes externos si los hubiera.
+No se ha publicado nada en GitHub.
+
+AVISO: verificar licencia de las fotos y correspondencia exacta con la versión que vende el proveedor; el sistema comprueba enlaces, no derechos comerciales.

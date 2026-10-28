@@ -69,3 +69,14 @@ FUTNEXO V3.3 — CLUBES AMPLIADOS + FOTOS INTEGRADAS
 - Los enlaces de Selecciones, Retro y categorías adicionales no se han migrado y siguen apuntando a Google Sites.
 - Para igualar exactamente los equipos y las fotos del antiguo catálogo, necesitamos una lista/captura/archivos originales del propietario.
 - Para publicar: subir clubes.html a la raiz del repositorio. No hay que tocar otros archivos si ya está publicada la V3.2.
+
+
+FUTNEXO V3.4 — EQUIPOS COMPLETOS DE LAS CINCO GRANDES LIGAS 26/27
+- LaLiga: 20 equipos; Premier League: 20; Serie A: 20; Bundesliga: 18; Ligue 1: 18.
+- Otros clubes: 13 adicionales. TOTAL: 109 tarjetas de equipo, 96 de las cinco ligas.
+- Relación de participantes comprobada el 28-10-2026 en fuentes de clasificación/calendarios.
+- Las fotografías (16) de la V3.3 siguen integradas en clubes.html. El resto muestra ilustraciones genéricas no oficiales, para no inventar diseños reales.
+- No se muestran puntos ni posiciones que cambiarían durante la temporada.
+- El CSS y el JS de los filtros, búsqueda y fotos están dentro de clubes.html.
+- Si la V3.3 ya funciona en GitHub/Cloudflare, basta con sustituir clubes.html en la raíz del repositorio.
+- Los demás archivos se mantienen sin cambios. No supone publicación automática desde ChatGPT.

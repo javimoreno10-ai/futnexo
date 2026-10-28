@@ -1,0 +1,102 @@
+Equipos que siguen pendientes de foto real de producto 2026/27:
+
+[Premier League] (11)
+- Brentford
+- Leeds United
+- Hull City
+- Everton
+- Ipswich Town
+- AFC Bournemouth
+- Tottenham Hotspur
+- Fulham
+- Nottingham Forest
+- Coventry City
+- Sunderland
+
+[Serie A] (18)
+- Inter de Milán
+- Lazio
+- AS Roma
+- Como 1907
+- Frosinone
+- Torino
+- Cagliari
+- Napoli
+- Atalanta
+- Lecce
+- Bologna
+- Sassuolo
+- Monza
+- Genoa
+- Udinese
+- Fiorentina
+- Parma
+- Venezia
+
+[Bundesliga] (16)
+- SC Freiburg
+- Bayer Leverkusen
+- RB Leipzig
+- Werder Bremen
+- Mainz 05
+- SV Elversberg
+- FC Augsburg
+- TSG Hoffenheim
+- Hamburger SV
+- FC Köln
+- SC Paderborn 07
+- Eintracht Frankfurt
+- VfB Stuttgart
+- Schalke 04
+- Union Berlin
+- Borussia Mönchengladbach
+
+[Ligue 1] (17)
+- Stade Rennais
+- Lille OSC
+- AS Monaco
+- Olympique Lyonnais
+- Paris FC
+- RC Lens
+- Olympique de Marsella
+- FC Lorient
+- OGC Nice
+- Toulouse FC
+- AJ Auxerre
+- Stade Brestois
+- Angers SCO
+- Le Mans FC
+- RC Strasbourg
+- ESTAC Troyes
+- Le Havre AC
+
+[Resto del mundo] (29)
+- Benfica
+- FC Porto
+- Sporting CP
+- Ajax
+- PSV Eindhoven
+- Feyenoord
+- Celtic
+- Galatasaray
+- Fenerbahçe
+- Al Ahly SC
+- Corinthians
+- Al-Hilal
+- Persib Bandung
+- River Plate
+- Club América
+- Santos FC
+- Palmeiras
+- Beşiktaş
+- São Paulo FC
+- Chivas Guadalajara
+- Zamalek SC
+- Al-Ittihad
+- Simba SC
+- Vasco da Gama
+- Raja Casablanca
+- Persija Jakarta
+- Grêmio
+- Atlético Mineiro
+- Atlético Nacional

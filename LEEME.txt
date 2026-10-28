@@ -36,3 +36,13 @@ Los textos sobre fotografías y disponibilidad son deliberadamente prudentes: la
 
 BORRADOR V2 (no publicado): incorpora cambios solicitados: logo negro/blanco/azul, colores de portada, contador de Halloween, guia de tallas original, precios superiores Fan y Retro, elimina numeracion de colecciones, secciones Encuentra tu camiseta y Mas FutNexo como en la antigua web.
 NOTA: las categorias todavia redirigen a Google Sites hasta su migracion. Validar tablas con el proveedor. Subir el contenido de la carpeta (no el ZIP) a la raiz del repo para activar, preferiblemente tras concluir la lista de cambios.
+
+
+FUTNEXO V3 — BORRADOR PARA REVISAR ANTES DE PUBLICAR
+- Eliminados números decorativos 01–04 de «Elige tu versión».
+- Eliminados números 01–03 de «Tu próxima camiseta».
+- Logo: escudo + nombre tipográfico FutNexo, más legible en cabecera y pie.
+- Clubes 26/27: composición de dos diseños ilustrativos (no fotografías oficiales).
+- Escaparate: tarjetas más visuales, mejor botón Consultar, contador dinámico de resultados y búsqueda/filtros conservados.
+- La promoción del reto Halloween 1/20 en Google Sites NO se ha añadido a esta versión de Cloudflare.
+- Antes de publicar: comprobar visualmente en móvil y escritorio, además de revisar enlaces externos.

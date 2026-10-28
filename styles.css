@@ -37,3 +37,53 @@ body{background:radial-gradient(ellipse 65% 25% at 74% 4%,rgba(34,112,235,.14),t
 .size-note,.size-warning{font-size:11px;line-height:1.7;color:#a6b8ce;margin:13px 0 0}
 @media(max-width:760px){.hero{margin-top:7px;padding:28px 18px 26px}.brand-logo{height:45px;width:166px}.legacy-collection-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.legacy-collection-grid .legacy-collection:last-child{grid-column:span 2}.legacy-more-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:480px){.legacy-collection-grid{grid-template-columns:1fr}.legacy-collection-grid .legacy-collection:last-child{grid-column:span 1}.legacy-more-item{font-size:11px;padding:12px 10px}.legacy-collection-image{aspect-ratio:1.5}.halloween-clock{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.halloween-clock>div{min-width:0;padding:11px 2px}.halloween-clock strong{font-size:19px}.size-block{padding:15px}.brand-logo{height:41px;width:145px}}
+
+
+/* FUTNEXO V3 — diseño renovado; sin numeraciones decorativas */
+.brand{display:inline-flex;align-items:center;gap:11px;min-width:0;flex-shrink:0}
+.brand-shield{width:51px;height:51px;object-fit:cover;object-position:center;background:#070e17;border-radius:12px;border:1px solid #284468;box-shadow:0 2px 20px rgba(18,110,245,.17)}
+.brand-wordmark{display:block;font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:32px;font-weight:900;line-height:1;letter-spacing:.025em;color:#f7fbff}
+.brand-wordmark-blue{color:#56a2ff}
+.site-header{height:82px}.site-header .brand{padding-block:6px}.footer .brand-shield{width:48px;height:48px}.footer .brand-wordmark{font-size:29px}
+/* Eliminar espacios vacíos donde estaban 01 / 02 / 03 / 04 */
+.price-card{padding-top:29px;min-height:238px;display:flex;flex-direction:column;align-items:flex-start}
+.price-card:before{content:'';display:block;width:34px;height:3px;background:linear-gradient(90deg,#2b83f6,#8ec6ff);border-radius:8px;margin-bottom:21px}
+.price-card h3{font-size:13px;line-height:1.4;letter-spacing:.055em}
+.price-card p{line-height:1.5;margin:8px 0 0}
+.price-card .price{margin-top:auto;margin-bottom:12px;padding-top:16px}
+.price-card>a{width:100%}
+.price-card.featured:before{background:linear-gradient(90deg,#74b4ff,#edf6ff)}
+.steps{gap:16px}.step{position:relative;padding:31px 27px 29px;background:linear-gradient(145deg,#142034,#0f1825);transition:border-color .2s,transform .2s}
+.step:before{content:'';display:block;width:42px;height:4px;border-radius:5px;background:#4e9bff;box-shadow:0 0 16px rgba(50,135,255,.3);margin-bottom:24px}
+.step h3{margin:0 0 13px;font-family:'Barlow Condensed',sans-serif;font-size:23px;letter-spacing:.01em}
+.step:hover{border-color:#467eae;transform:translateY(-3px)}
+/* Clubes 26/27 con dos estilos de camisetas; siguen siendo imágenes ilustrativas */
+.legacy-collection:first-child{border-color:#39639a}
+.legacy-collection-image:has(.club-jersey-duo){background:radial-gradient(circle at 55% 38%,#244b82 0%,#11233c 48%,#0b1422 100%)}
+.club-jersey-duo{position:relative;width:100%;height:100%;isolation:isolate}
+.club-kit{position:absolute;top:5%;height:92%!important;width:65%!important;object-fit:contain!important;filter:drop-shadow(0 17px 19px #0008);transition:transform .3s ease}
+.club-kit-a{left:-2%;z-index:1;transform:rotate(-9deg)}
+.club-kit-b{right:-2%;z-index:2;transform:rotate(9deg)}
+.legacy-collection:hover .club-kit-a{transform:rotate(-13deg) translate(-5px,-4px)}
+.legacy-collection:hover .club-kit-b{transform:rotate(13deg) translate(5px,-4px)}
+/* Escaparate: más atractivo y mejor escaneable en móvil */
+.section-products{background:radial-gradient(ellipse 70% 15% at 50% 0%,rgba(45,115,216,.10),transparent),linear-gradient(180deg,#0e1725,#0a101a);padding-top:82px}
+.section-products .section-heading h2{max-width:800px}
+.shop-tools{margin-bottom:12px}
+.catalog-count{font-size:11px;color:#9fc5f8;margin:0 0 20px;letter-spacing:.025em;font-weight:700}
+.product-grid{gap:17px}
+.product-card{border:1px solid #2c4463;border-radius:15px;background:linear-gradient(170deg,#172334,#101925);overflow:hidden}
+.product-photo{height:277px;background:radial-gradient(circle at 50% 35%,#314c71,#151f30 74%);padding:21px}
+.product-photo img{object-fit:contain;filter:drop-shadow(0 12px 12px rgba(0,0,0,.22));transition:transform .3s ease}
+.product-card:hover .product-photo img{transform:scale(1.055) translateY(-4px)}
+.product-tag{border-radius:100px;background:rgba(10,31,58,.92);box-shadow:0 2px 14px #0004;padding:8px 12px}
+.product-detail{padding:20px}.product-detail h3{font-size:18px;min-height:42px;line-height:1.4}
+.product-bottom{gap:11px}.product-bottom strong{font-family:'Barlow Condensed',sans-serif;font-size:25px;color:#f8fbff}
+.product-bottom a{background:#1b65ba;color:white;border:1px solid #2b8dff;transition:background .2s,transform .2s;padding:12px 15px;border-radius:8px}
+.product-bottom a:hover{background:#3086ed;transform:translateY(-2px)}
+.legacy-collection{background:linear-gradient(155deg,#172438,#101a29);border-radius:17px}
+.legacy-collection-image{aspect-ratio:1.25}
+.legacy-collection-body{padding:18px}
+@media(max-width:760px){.site-header{height:74px}.brand-shield{width:45px;height:45px}.brand-wordmark{font-size:29px}.product-photo{height:218px;padding:15px}.price-card{min-height:220px}}
+@media(max-width:480px){.brand-shield{width:40px;height:40px}.brand-wordmark{font-size:26px}.site-header{height:69px}.product-photo{height:184px;padding:10px}.product-detail{padding:13px}.product-detail h3{font-size:14px;min-height:39px;margin-bottom:11px}.product-bottom strong{font-size:22px}.product-bottom a{padding:11px 12px}.price-card{min-height:226px}.price-card .price{font-size:30px}.legacy-collection-image{aspect-ratio:1.48}.section-products{padding-top:60px}}
+@media(prefers-reduced-motion:reduce){.step:hover{transform:none}.product-card:hover .product-photo img{transform:none}}

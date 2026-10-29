@@ -1,0 +1,16 @@
+FUTNEXO V3.30 — ETIQUETAS ELIMINADAS
+
+Se han quitado las tres etiquetas pequeñas superpuestas a las fotografías de la sección «Encuentra tu camiseta»:
+- Clubes: «TEMPORADA 26/27»
+- Selecciones: «SELECCIONES»
+- Retro: «CLÁSICOS»
+
+Se conservan las camisetas originales de España y Milan retro, las imágenes de Barcelona y Real Madrid, los títulos, precios, enlaces y el resto de la portada de FutNexo V3.29.
+
+PUBLICACIÓN EN GITHUB:
+1. Abre el repositorio de FutNexo.
+2. Sustituye el archivo index.html por el incluido en este ZIP.
+3. Confirma el cambio y comprueba el despliegue de Cloudflare.
+4. Actualiza la página sin caché si sigues viendo las etiquetas antiguas.
+
+No necesitas añadir imágenes ni cambiar clubes.html.

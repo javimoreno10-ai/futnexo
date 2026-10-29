@@ -1,0 +1,9 @@
+FUTNEXO V3.27 — CINCO FICHAS ELIMINADAS
+
+Eliminadas exclusivamente las fichas de Santos FC, Zamalek SC, Simba SC, Raja Casablanca y Persija Jakarta del apartado Clubes.
+Total de tarjetas: 124 (antes 129).
+Resto del mundo: 28 (antes 33).
+Conservadas el resto de las camisetas, las fotos aportadas y el diseño sin avisos de fotografía.
+
+ACTUALIZAR GITHUB: sustituir el archivo clubes.html por el que se encuentra en el ZIP de actualización y confirmar el cambio.
+Si los datos antiguos siguen visibles, esperar al despliegue de Cloudflare y recargar sin caché.

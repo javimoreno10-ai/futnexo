@@ -1,0 +1,9 @@
+FutNexo V3.25
+
+Cambios incluidos:
+- Se han integrado 11 nuevas camisetas enviadas por el usuario en el apartado Clubes.
+- Equipos añadidos/actualizados: Aston Villa, Crystal Palace, Sporting CP, Feyenoord, Benfica, FC Porto, Ajax, PSV Eindhoven, Celtic, Galatasaray y Fenerbahçe.
+- Se mantiene la limpieza visual del apartado Clubes sin rótulos de "fotografía aportada".
+- Brighton y Newcastle ya estaban integrados desde la versión previa.
+
+Para GitHub basta con sustituir clubes.html e index.html si procede.

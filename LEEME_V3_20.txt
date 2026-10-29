@@ -1,0 +1,15 @@
+FUTNEXO V3.20 — ACTUALIZACIÓN DEFINITIVA DE LOS LOTES CONFIRMADOS POR EL USUARIO
+
+78 archivos fotográficos revisados con el propietario, uno a uno.
+77 fotos incorporadas (76 equipos distintos), una descartada (foto 34).
+RC Strasbourg aparece en las fotografías 47 y 61: la 61 es principal y la 47 se puede ver abriendo «Ver otra foto de Strasbourg».
+Napoli foto 19: se usa solo la camiseta de la derecha, como pidió el propietario.
+129 clubes conservados; equipos con fotografías añadidas desde los lotes: 76.
+Fotografías mal asignadas en la versión anterior y revertidas a su imagen anterior: Stade Rennais, Boca Juniors, Flamengo.
+
+INSTALACIÓN: subir los archivos index.html y clubes.html en la raíz del repositorio GitHub y confirmar cambios en main.
+Las 77 fotos se encuentran insertadas dentro de clubes.html: no es necesario subir FOTOS_USUARIO_CONFIRMADAS ni assets para esta actualización.
+El ZIP de la web completa incluye los demás archivos por si se necesita una reinstalación.
+
+AUDITORIA_DEFINITIVA_78_FOTOS.csv vincula cada foto original a un equipo confirmado.
+La identificación del equipo proviene del usuario; verificar temporada exacta, autenticidad, licencias y producto del proveedor antes de comercializar.

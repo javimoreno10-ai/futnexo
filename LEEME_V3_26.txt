@@ -1,0 +1,7 @@
+FutNexo V3.26 — apartado Clubes sin aviso de fotografías aportadas
+
+Se ha comprobado que el párrafo que comienza «FOTOGRAFÍAS APORTADAS · Las 77 fotografías utilizables…» no aparece en clubes.html ni en index.html.
+Esta versión incluye un marcador V3.26 para facilitar la comprobación del archivo publicado.
+
+Para que se refleje en la web: sustituye el archivo clubes.html de la raíz de GitHub por el de este ZIP, confirma los cambios y espera al despliegue de Cloudflare. Actualiza la página en el navegador sin caché si seguía abierta.
+Las 11 fotos más recientes, las de Brighton y Newcastle y el resto de los 129 clubes se conservan.

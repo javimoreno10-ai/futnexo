@@ -1,0 +1,10 @@
+FUTNEXO V3.22 - Brighton y Newcastle añadidos
+
+Sube a GitHub (rama main) los 2 archivos: index.html y clubes.html.
+Las fotos están incrustadas en clubes.html.
+Cambios incluidos en esta versión:
+- Foto real añadida a Brighton & Hove Albion.
+- Foto real añadida a Newcastle United.
+- Se mantienen las correcciones previas de Stade Rennais / RC Strasbourg.
+- Se mantiene la eliminación del rótulo «Foto aportada».
+- LISTA_CAMBIOS_Y_FOTOS_PENDIENTES.txt actualizada: quedan 11 equipos pendientes de la lista que enviaste.

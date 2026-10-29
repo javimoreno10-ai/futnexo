@@ -1,0 +1,31 @@
+FUTNEXO V3.22 - LISTA DE CAMBIOS Y FOTOS PENDIENTES
+
+CAMBIOS REALIZADOS
+[X] Foto 47 retirada de RC Strasbourg y asignada a Stade Rennais.
+[X] RC Strasbourg conserva solo la foto 61.
+[X] Eliminado el texto "FOTO APORTADA" de las tarjetas del catálogo.
+[X] Añadida foto real de Brighton & Hove Albion.
+[X] Añadida foto real de Newcastle United.
+
+FOTOS PENDIENTES QUE HAS ENUMERADO
+
+Premier League
+[X] Brighton & Hove Albion
+[X] Newcastle United
+[ ] Aston Villa
+[ ] Crystal Palace
+
+Otros clubes
+[ ] Fenerbahçe
+[ ] Galatasaray
+[ ] Celtic
+[ ] Feyenoord
+[ ] PSV Eindhoven
+[ ] Ajax
+[ ] Sporting CP
+[ ] FC Porto
+[ ] Benfica
+
+TOTAL PENDIENTES DE ESTA LISTA: 11
+
+Nota: Brighton y Newcastle ya muestran fotografía real del usuario. Los otros 11 clubes de esta lista siguen con ilustraciones provisionales; no se han inventado fotografías ni cambiado otros equipos.

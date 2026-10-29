@@ -1,0 +1,33 @@
+FUTNEXO V3.31 · NUEVO CATÁLOGO DE SELECCIONES MUNDIAL 2026
+
+ARCHIVOS PARA ACTUALIZAR EN GITHUB (EN LA RAÍZ DEL REPOSITORIO)
+- index.html: sustituir el actual por el incluido en el ZIP.
+- selecciones.html: crear este nuevo archivo junto a index.html y clubes.html.
+
+No borrar clubes.html. Conserva los archivos actuales styles.css, script.js, catalogo.js y assets/.
+
+QUÉ CAMBIA
+- El botón «Selecciones 2026» de «Encuentra tu camiseta» abre selecciones.html sin salir de FutNexo.
+- Nueva página de 48 selecciones con la estética del catálogo de clubes.
+- Filtros por 12 grupos (A a L), búsqueda de países, fotos de referencia y enlace de consulta por Instagram.
+- Un enlace adicional a Selecciones desde el escaparate.
+- Se mantiene la foto original de España que aportaste.
+
+FOTOGRAFÍAS
+- España: imagen original que facilitó el propietario, integrada en selecciones.html.
+- Otras 47 selecciones: URLs de imágenes externas publicadas por Flashscore; NO se descargaron ni están incluidas como archivos.
+- Necesitan conexión a Internet y que el sitio de origen permita mostrar sus imágenes en terceros sitios. Se ofrece un enlace de fuente si no cargan.
+- IMPORTANTE: antes de usar las fotografías de terceros para venta comercial, verificar autorización/licencia. Este ZIP no concede derechos de imagen.
+
+FUENTE
+https://www.flashscore.com/news/soccer-world-championship-which-teams-have-already-released-their-kits-for-the-2026-world-cup/fakLHRrB/
+https://www.footballkitarchive.com/world-cup-kits-2026-l308/
+
+DESPLIEGUE
+1. Abre el repositorio de GitHub que utiliza Cloudflare.
+2. Sustituye index.html por el que contiene este ZIP.
+3. Sube selecciones.html a la misma ubicación que index.html y clubes.html.
+4. Confirma los cambios y revisa https://futnexo.futnexo.workers.dev/selecciones.html
+5. Si los cambios tardan en aparecer, recarga ignorando la caché.
+
+No se ha modificado la web en producción; este archivo prepara los cambios.

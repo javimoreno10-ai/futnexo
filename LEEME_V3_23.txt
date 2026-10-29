@@ -1,0 +1,16 @@
+FUTNEXO V3.23 — SIN RÓTULOS SOBRE LAS CAMISETAS
+
+Cambios respecto a V3.22:
+- Eliminadas las 51 etiquetas superpuestas sobre las imágenes (FOTO PENDIENTE,
+  FOTO DE REFERENCIA, 1ª EQUIPACIÓN y 1ª EQUIPACIÓN 26/27).
+- Conservadas intactas las imágenes, los 129 equipos, filtros y botones.
+- Se mantienen las fotos nuevas de Brighton y Newcastle y las correcciones anteriores.
+- Actualizado el pie de catálogo a V3.23.
+
+PARA GITHUB:
+1. Descomprime FUTNEXO_V3_23_ACTUALIZACION_GITHUB.zip.
+2. Sustituye clubes.html e index.html en la raíz de la rama main.
+3. Haz commit y verifica el despliegue de Cloudflare.
+4. No subas el ZIP cerrado: sube los HTML que contiene.
+
+Las fotos están integradas dentro de clubes.html: no hay que subir carpetas de fotos.

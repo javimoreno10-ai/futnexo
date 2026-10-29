@@ -1,0 +1,16 @@
+FUTNEXO V3.24 — APARTADO CLUBES LIMPIO
+
+Actualización desde V3.23:
+- Eliminado el bloque “FOTOGRAFÍAS APORTADAS” encima de los equipos.
+- Eliminados los seis avisos “Imagen aportada · verificar derechos de uso comercial” bajo camisetas.
+- Eliminada la explicación técnica de fotografías al final del catálogo.
+- Eliminada la línea del pie de página que indicaba versión y confirmación de fotografías.
+- Acortados los enlaces de atribución de fotos externas a «Fuente ↗», manteniendo los enlaces.
+- Evitado que el JavaScript vuelva a mostrar el rótulo «ILUSTRACIÓN · FOTO PENDIENTE» si falla una imagen.
+- Conservadas las 129 tarjetas, todas sus fotos, precios, nombres, filtros y buscador.
+
+Para actualizar GitHub / Cloudflare Pages:
+Subir clubes.html al directorio principal de la rama main y confirmar el cambio.
+index.html no ha cambiado, pero se incluye en el ZIP de actualización para facilitar la subida.
+
+No se ha desplegado automáticamente en GitHub.

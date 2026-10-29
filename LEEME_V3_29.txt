@@ -1,0 +1,15 @@
+FUTNEXO V3.29 — FOTOGRAFÍAS ORIGINALES EN «ENCUENTRA TU CAMISETA»
+
+CAMBIO RESPECTO A V3.28:
+- Selecciones: sustitución de la ilustración por la fotografía de la camiseta roja de España aportada.
+- Retro: sustitución de la ilustración por la fotografía de la camiseta retro del AC Milan con patrocinador bwin aportada.
+- Clubes: se conservan las imágenes de FC Barcelona y Real Madrid incorporadas en la V3.28.
+- Se mantienen los filtros, las categorías, los enlaces internos y el resto del diseño.
+
+INSTALACIÓN:
+1. En GitHub, sustituye el archivo index.html del repositorio por el index.html incluido en este ZIP.
+2. Confirma el commit y comprueba el nuevo despliegue de Cloudflare.
+3. Recarga la web sin caché para ver las fotografías actualizadas.
+
+Las cuatro imágenes están integradas en el HTML en formato WebP: NO necesitas subir archivos de imágenes adicionales.
+Las fotografías aportadas se han optimizado para visualización web; verifica los derechos de uso antes de publicarlas comercialmente.

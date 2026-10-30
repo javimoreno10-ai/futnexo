@@ -1,0 +1,25 @@
+FUTNEXO V3.38 — CINCO NUEVAS CATEGORÍAS (SIN IMÁGENES)
+
+CAMBIOS
+- Página principal: "Encuentra tu producto" tiene 9 categorías.
+- Se mantienen Clubes, Selecciones, Retro y Chándals con sus imágenes actuales.
+- Nuevas categorías sin imágenes ni subdivisiones: Pantalones, Entrenamiento, Tirantes, Fórmula 1 y NBA.
+- Pantalones, Entrenamiento y Tirantes: mismos 24 clubes europeos que Chándals.
+- Fórmula 1: las 11 escuderías de la temporada 2026, según Formula1.com.
+- NBA: los 30 equipos de la liga.
+- Las cinco nuevas páginas tienen buscador y enlace de consulta por Instagram.
+- Los enlaces antiguos de estas cinco categorías a Google Sites se retiran de "Más FutNexo".
+- No se inventan imágenes, modelos ni precios. Quedan pendientes los detalles de organización.
+
+INSTALACIÓN EN GITHUB / CLOUDFLARE
+1. DESCOMPRIME este ZIP. No subas el ZIP como si fuera una página.
+2. SUSTITUYE index.html en la raíz del repositorio por el de este ZIP.
+3. AÑADE en esa misma raíz: pantalones.html, entrenamiento.html, tirantes.html, formula1.html, nba.html.
+4. El ZIP también incluye chandals.html sin cambios para quien todavía no lo haya subido.
+5. Conserva los demás archivos: styles.css, script.js, catalogo.js, imágenes, clubes.html, selecciones.html y retro.html.
+6. Confirma los cambios en GitHub. Tras el despliegue de Cloudflare, recarga la web sin caché.
+
+IMPORTANTE
+- Las categorías nuevas muestran NOMBRES DE EQUIPOS, NO disponibilidad confirmada de productos.
+- En este ZIP NO van styles.css ni las otras páginas anteriores. Ya deben existir en el repositorio.
+- La estructura actual no divide por ligas/tipos: esa decisión se tomará en la siguiente fase.

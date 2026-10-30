@@ -1,0 +1,15 @@
+FUTNEXO V3.40 - NBA · CONFERENCIAS Y FOTOGRAFÍAS INTEGRADAS
+
+CORRECCIONES:
+1. Filtros: Todos (30), Conferencia Este (15) y Conferencia Oeste (15).
+2. La estructura visual, el encabezado con 5 enlaces, el menú móvil, el hero de tres camisetas y las tarjetas replican los de Clubes.
+3. Las 30 fotografías están INTEGRADAS en nba.html. No se necesitan archivos en assets/nba ni re-subir las imágenes.
+4. Se mantiene el buscador y el enlace de consulta por Instagram.
+
+INSTALACIÓN EN GITHUB:
+- Sustituir ÚNICAMENTE el archivo nba.html de la raíz del repositorio por el adjunto.
+- No modificar index.html, clubes.html ni la carpeta assets.
+- Hacer commit y comprobar que Cloudflare publique el nuevo despliegue.
+- Si la página sigue igual, recargar sin caché (Ctrl+F5) y confirmar que la URL abre nba.html.
+
+Nota: No hay confirmación de disponibilidad o autenticidad de las camisetas.

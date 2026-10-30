@@ -1,0 +1,35 @@
+FUTNEXO — V3.41 · ACTUALIZACIÓN DE PRECIOS
+
+INSTALACIÓN EN GITHUB
+1. Descomprimir el ZIP.
+2. Sustituir los siguientes archivos HTML en la raíz del repositorio:
+   index.html
+   clubes.html
+   selecciones.html
+   retro.html
+   chandals.html
+   pantalones.html
+   entrenamiento.html
+   tirantes.html
+   formula1.html
+   nba.html
+3. No borrar styles.css, script.js, catalogo.js ni la carpeta assets.
+4. Confirmar el cambio y verificar el despliegue en Cloudflare.
+
+PRECIOS
+Fan: 19,99 €
+Player: 26,99 €
+Retro: 26,99 €
+Conjunto infantil: 19,99 €
+Pantalones: 19,99 €
+Conjunto entrenamiento: 34,99 €
+Chándal: 44,99 €
+NBA: 28,99 €
+Fórmula 1: 29,99 €
+Tirantes: 29,99 €
+
+Personalización: nombre/número y parches siguen en +1,50 € por opción, sin cambios.
+Gastos de envío y disponibilidad se confirman con el cliente antes del pedido.
+
+LA WEB NO SE PUBLICA AUTOMÁTICAMENTE: los archivos deben subirse al repositorio.
+Se ha preservado la portada, los catálogos, las fotos insertadas y los filtros existentes.

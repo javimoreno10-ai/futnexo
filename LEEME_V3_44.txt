@@ -1,0 +1,15 @@
+FUTNEXO V3.44 · CHÁNDALS – MEDIA CREMALLERA
+
+1. Abre tu repositorio de GitHub.
+2. Sustituye SOLO el archivo chandals.html de la raíz por este archivo.
+3. Guarda los cambios y espera al despliegue de Cloudflare.
+4. Recarga la web evitando caché (Ctrl+F5).
+
+DETALLES
+- 20 conjuntos de media cremallera ordenados por equipo (16 clubes, 4 selecciones).
+- Fotografías originales del usuario integradas dentro de chandals.html; no hacen falta archivos adicionales.
+- Filtros Todos / Clubes / Selecciones y buscador por equipo o color.
+- Se conserva el catálogo general de 24 equipos debajo de esta nueva colección.
+- Precio 44,99 €, consultas por Instagram.
+- El diseño y el menú mantienen la distribución anterior.
+- Fotografías y disponibilidad son orientativas: verificar procedencia y existencias antes de vender.

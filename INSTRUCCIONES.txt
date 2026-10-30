@@ -1,0 +1,10 @@
+FutNexo V3.43 — ENTRENAMIENTO CON FOTOS INTEGRADAS
+
+Para publicar:
+1. Abre tu repositorio en GitHub.
+2. Sustituye UNICAMENTE el archivo entrenamiento.html situado en la raiz del repositorio.
+3. Confirma los cambios y comprueba la web publicada.
+
+Las doce fotografias se encuentran dentro del propio HTML. NO hace falta subir ninguna carpeta assets/entrenamiento.
+
+No se ha modificado la portada ni el resto de los catalogos.

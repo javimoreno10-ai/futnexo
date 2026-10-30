@@ -1,0 +1,21 @@
+FUTNEXO V3.37 — ENCUENTRA TU PRODUCTO + CHÁNDALS
+
+NOVEDADES
+- El título "Encuentra tu camiseta" cambia a "Encuentra tu producto".
+- Se incluye Chándals como cuarta tarjeta principal junto a Clubes, Selecciones y Retro.
+- Se muestra un chándal del Real Madrid como foto de referencia, con segunda URL alternativa.
+- El diseño es adaptable: cuatro tarjetas en escritorio, dos en tableta y una en móvil.
+- La cuarta tarjeta abre chandals.html en la misma web.
+- Se ha eliminado el enlace secundario duplicado de Chándals en «Más FutNexo».
+- No se han alterado los otros catálogos ni las guías de tallas.
+
+CÓMO PUBLICAR EN GITHUB + CLOUDFLARE
+1. Sustituye el index.html de la raíz del repositorio por este nuevo index.html.
+2. Comprueba que chandals.html también esté en la raíz del mismo repositorio; si no está, súbelo.
+3. Confirma los cambios (Commit changes) y espera al despliegue de Cloudflare.
+4. Abre la portada y recarga sin caché (Ctrl+F5) si ves la versión anterior.
+
+AVISO FOTOGRAFÍAS
+La fotografía del chándal se carga desde una URL externa, y su disponibilidad no está
+asegurada. El catálogo general de Chándals también usa fotografías externas.
+Verificar autenticidad, licencias, proveedor, disponibilidad y precio antes de vender.

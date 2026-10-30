@@ -1,0 +1,22 @@
+FUTNEXO V3.35 — ELIMINAR «EL ESCAPARATE FUTNEXO» DE LA PORTADA
+
+CAMBIOS
+1. Eliminada por completo la sección «El escaparate FutNexo» del inicio, incluyendo los nueve diseños de muestra, sus filtros, buscador y botones inferiores.
+2. Eliminado el enlace «Catálogo» de la navegación de escritorio y móvil, porque apuntaba a la sección eliminada.
+3. El botón principal de la portada ahora dice «Explorar camisetas» y lleva a «Encuentra tu camiseta» (#colecciones).
+4. Retirado el pequeño script que intentaba filtrar el escaparate eliminado.
+
+SE CONSERVA
+- Las tres colecciones Clubes, Selecciones y Retro.
+- Las fotos de España, FC Barcelona y Real Madrid de la portada.
+- La guía de tallas infantiles y de adultos.
+- Precios, Halloween, otras categorías y todos los demás contenidos.
+- Los archivos de los tres catálogos incluidos en el ZIP no cambian respecto a V3.34.
+
+CÓMO PUBLICAR
+En GitHub, sustituye únicamente index.html por el del ZIP y confirma los cambios.
+No es necesario actualizar clubes.html, selecciones.html o retro.html si ya están publicados.
+Cloudflare desplegará los cambios después de la confirmación.
+
+NOTA TÉCNICA
+Se mantienen las referencias a catalogo.js y script.js para no alterar posibles dependencias de la navegación u otras funcionalidades del sitio.

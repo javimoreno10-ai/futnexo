@@ -1,0 +1,31 @@
+FUTNEXO V3.32 · CATÁLOGO DE SELECCIONES POR CONTINENTES
+
+ARCHIVOS PARA ACTUALIZAR EN GITHUB
+- selecciones.html: reemplazar el archivo existente por este nuevo.
+- index.html: incluido sin cambios desde V3.31 por comodidad si aún no has publicado esa versión.
+- Mantén clubes.html, styles.css, script.js, catalogo.js y la carpeta assets/.
+
+CAMBIOS V3.32
+- Filtros geográficos: Todas (48), Europa (16), África (10), Asia (8), Norteamérica (6), Sudamérica (6), Oceanía (2).
+- Norteamérica comprende Estados Unidos, México, Canadá, Panamá, Haití y Curazao.
+- Oceanía incluye Australia y Nueva Zelanda. Los filtros son geográficos y NO de confederaciones FIFA.
+- Las 48 tarjetas se ordenan por continente y, dentro de este, alfabéticamente.
+- Se eliminan las banderas del nombre para que nunca aparezcan códigos como MX/ES.
+- Las imágenes dejan de ser enlaces; pulsarlas no abre fotografías grandes.
+- Fotografía en recuadro blanco cuadrado con object-fit:contain y sin zoom.
+- España conserva la fotografía original aportada; también se utiliza en la cabecera.
+
+LÍMITE DE LAS IMÁGENES
+- Las 47 imágenes de otros países siguen cargándose desde los enlaces externos de la V3.31.
+- CSS da fondo blanco y encuadre cuadrado, pero NO puede borrar un fondo ya presente dentro de la fotografía original.
+- Algunas referencias podrían incluir personas/fondos y no quedar aisladas como la imagen de España.
+- Para conseguir 48 fotos de producto idénticas (solo camiseta sobre blanco), hay que reemplazar las fuentes de esas fotos por fotografías de producto con el fondo adecuado, verificando uso autorizado.
+- Comprueba que los enlaces externos cargan en Cloudflare: podrían bloquear la inserción desde terceros.
+
+PUBLICACIÓN
+1. Abre el repositorio de GitHub vinculado a Cloudflare.
+2. Sustituye selecciones.html con el archivo de este ZIP.
+3. Si no has subido V3.31, sustituye también index.html.
+4. Confirma los cambios. Visita /selecciones.html, comprueba el filtro y haz recarga forzada.
+
+Este ZIP no realiza cambios en la web publicada.

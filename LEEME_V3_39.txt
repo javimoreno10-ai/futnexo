@@ -1,0 +1,21 @@
+FUTNEXO V3.39 — NBA: 30 CAMISETAS CON FONDO BLANCO
+
+CAMBIOS
+- La página nba.html incluye las 30 camisetas originales enviadas por el usuario.
+- Todas las fotografías son webp de 900x900, centradas sobre un fondo blanco.
+- Las cuatro fotografías con fondo gris se han aislado y colocado sobre blanco.
+- Se mantiene el orden de los 30 equipos proporcionado por el usuario.
+- Mantiene buscador, botones de consulta por Instagram y diseño responsive.
+- Para Toronto y New Orleans se conservan las dos vistas que aparecían en sus imágenes originales.
+- Las imágenes NO acreditan disponibilidad, autenticidad, precios ni licencia comercial.
+
+PUBLICACIÓN EN GITHUB / CLOUDFLARE
+1. Descomprime el ZIP.
+2. Sustituye nba.html en la raíz de tu repositorio por el nuevo.
+3. Sube la carpeta assets/nba/ completa a la raíz del repositorio, respetando la estructura.
+4. No hace falta modificar index.html ni otros catálogos.
+5. Confirma los cambios y espera a que Cloudflare despliegue. Recarga la web sin caché.
+
+OBSERVACIÓN
+- Las fotos de Houston, Charlotte, Memphis y Minnesota se procesaron a partir de
+  las originales. Comprueba que los bordes y detalles respondan a tus expectativas.

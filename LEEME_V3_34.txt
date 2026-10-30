@@ -1,0 +1,17 @@
+FUTNEXO V3.34 — GUÍA DE TALLAS INFANTILES Y PORTADA
+
+CAMBIOS
+1. En index.html, portada: primera camiseta visible = España; detrás = FC Barcelona y Real Madrid.
+   Se usan las fotografías ya integradas en FutNexo, no imágenes externas ni adicionales.
+2. Guía de tallas: nuevo enlace «Tallas de niño» y tabla infantil siguiendo las mismas clases de estilo del resto.
+   XXS (16) a XXL (28). Incluye pecho, largo camiseta, largo pantalón, edad y altura.
+3. Se mantienen el resto del diseño, todos los catálogos y los enlaces existentes.
+
+CÓMO PUBLICAR EN GITHUB / CLOUDFLARE
+- Sustituye SOLO index.html por el incluido en este ZIP (o sube los cuatro HTML, si quieres mantener la copia completa).
+- No es necesario tocar styles.css, catalogo.js ni script.js.
+- No necesitas subir imágenes aparte: las 3 fotos de la portada están integradas en index.html.
+- Espera a que finalice el despliegue de Cloudflare y recarga la página sin caché.
+
+El ZIP también incorpora clubes.html, selecciones.html y retro.html de la versión V3.33, sin cambios.
+Medidas infantiles transcritas de la imagen proporcionada por el usuario.

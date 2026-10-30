@@ -1,0 +1,28 @@
+FUTNEXO V3.33 — CATÁLOGO RETRO
+
+NOVEDADES
+- Nueva página retro.html, con 20 camisetas históricas de referencia.
+- Filtros: Todas, Clubes, Selecciones, Años 80, Años 90, Años 2000, Años 2010.
+- Buscador de nombre de club, país, temporada o jugador.
+- Fotos centradas, cuadradas y con fondo blanco; no se abren en grande.
+- Incluida la foto original del AC Milan 2006/07 que compartiste en el proyecto.
+- index.html: la colección Retro y «Ver más retro» van a retro.html, no al antiguo Google Sites.
+- Navegación entre Clubes, Selecciones y Retro desde las páginas del catálogo.
+- Se conservan el diseño, los precios orientativos (retro 24,99 €), la consulta por Instagram y los 124 clubes y 48 selecciones anteriores.
+
+PARA PUBLICAR EN GITHUB / CLOUDFLARE
+1) Descomprime este ZIP.
+2) En el repositorio de FutNexo, sustituye index.html, clubes.html y selecciones.html por los incluidos.
+3) Añade retro.html en la misma carpeta principal.
+4) Mantén styles.css, catalogo.js, script.js y assets/ que ya estaban; NO LOS BORRES.
+5) Confirma los cambios y prueba Inicio > Retro, filtros y buscador.
+
+IMPORTANTE SOBRE FOTOGRAFÍAS
+- El AC Milan se incluye en el propio HTML con la foto que aportaste.
+- Las otras 19 fotos son referencias externas y no están descargadas en el ZIP. Su carga depende de los servidores de origen.
+- La cuadrícula tiene fondo blanco, pero no altera el fondo que esté incorporado en la propia fotografía.
+- La selección de modelos no confirma stock, autorización comercial ni autenticidad.
+- Antes de usar fotos de otros comercios en una tienda real, consigue autorización o utiliza fotografías propias/del proveedor.
+
+ARCHIVOS
+index.html, clubes.html, selecciones.html, retro.html, LEEME_V3_33.txt

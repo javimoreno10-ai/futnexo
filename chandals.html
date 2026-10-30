@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#060911" name="theme-color"/>
+<meta content="Explora chándales de clubes europeos en FutNexo. Busca tu equipo por país y consulta modelos, tallas y disponibilidad por Instagram." name="description"/>
+<meta content="3.36" name="futnexo-version"/>
+<title>Chándals de equipos | FutNexo</title>
+<link href="styles.css" rel="stylesheet"/>
+<link href="favicon.svg?v=310" rel="icon" type="image/svg+xml"/>
+<style id="clubes-css-integrado">
+/* FutNexo V3.2: página interna de Clubes 26/27 */
+.nav a[aria-current=page],.mobile-nav a[aria-current=page]{color:#77b5ff}
+.club-hero-wrap{overflow:hidden;border-top:1px solid #14233a;background:radial-gradient(ellipse at 82% 45%,rgba(42,113,211,.27),transparent 49%),linear-gradient(115deg,#0b1425,#060b15 73%)}
+.club-hero{display:grid;grid-template-columns:1.03fr .97fr;min-height:495px;gap:24px;align-items:center;padding-top:25px;padding-bottom:35px}
+.breadcrumbs{display:flex;gap:10px;font-size:11px;color:#8a9fba;margin:10px 0 48px;align-items:center}.breadcrumbs a:hover{color:white}
+.club-kicker{color:#83b7ff;font-size:11px;font-weight:900;letter-spacing:.18em}
+.club-hero-copy h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(60px,7vw,103px);letter-spacing:.006em;line-height:.88;font-weight:900;margin:20px 0 22px}.club-hero-copy h1 span{color:#58a2ff}
+.club-hero-copy>p{color:#b5c6dc;line-height:1.8;font-size:14px;max-width:490px}
+.club-hero-buttons{display:flex;flex-wrap:wrap;gap:10px;margin-top:27px}.club-hero-buttons .btn{padding:15px 19px}
+.club-hero-facts{margin-top:34px;color:#a6bbd3;display:flex;gap:16px;align-items:center;font-size:12px}.club-hero-facts strong{color:#fff}.club-hero-facts i{display:block;width:1px;height:19px;background:#36506e}
+.club-hero-art{height:415px;position:relative;display:flex;justify-content:center;align-items:center}
+.club-halo{position:absolute;width:380px;height:360px;max-width:95%;background:radial-gradient(circle,#3677e75b,transparent 69%);filter:blur(19px)}
+.club-hero-jersey{position:absolute;width:46%;max-width:235px;padding:10px;background:linear-gradient(150deg,#263b57,#101a2a);border:1px solid #4c719b;border-radius:17px;box-shadow:0 20px 60px #0009;overflow:hidden}
+.club-hero-jersey img{width:100%;aspect-ratio:.88;object-fit:contain;border-radius:10px;background:#fafcff}
+.club-hero-jersey.jersey-left{transform:rotate(-13deg) translate(-104px,25px);z-index:1;opacity:.89}
+.club-hero-jersey.jersey-right{transform:rotate(13deg) translate(106px,25px);z-index:2;opacity:.91}
+.club-hero-jersey.jersey-main{transform:translateY(-5px);z-index:3;border-color:#76b7ff;box-shadow:0 0 65px #2476dc69,0 25px 65px #000c}
+.club-art-caption{position:absolute;bottom:7px;z-index:4;padding:11px 14px;border:1px solid #3f628c;border-radius:99px;background:#111e32d9;color:#d7eaff;font-size:10px;letter-spacing:.15em;font-weight:900}
+.club-benefits{border-block:1px solid #1b2d47;background:#0b1628}.club-benefits-inner{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding-block:21px;color:#acc8eb;font-size:11px;font-weight:700}
+.club-shop{padding-top:83px;padding-bottom:90px}.club-section-head{display:flex;justify-content:space-between;gap:12px;align-items:end}.club-section-head h2{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(43px,5vw,68px);letter-spacing:.01em;line-height:1;margin:10px 0}.club-section-head p{color:#9dadc5;font-size:13px;line-height:1.6}.club-back{color:#9ec5ff;font-size:12px;font-weight:800;padding-bottom:13px;white-space:nowrap}
+.club-tools{margin-top:30px;display:flex;justify-content:space-between;gap:16px;align-items:center}.club-filters{display:flex;gap:8px;flex-wrap:wrap}.club-filter{background:#111c2a;border:1px solid #2a405b;color:#b2c4d9;font-size:12px;font-weight:800;padding:12px 19px;border-radius:9px;transition:background .2s}.club-filter:hover,.club-filter.active{background:#2b80ed;color:white;border-color:#4a99ff}
+.club-search{display:flex;gap:8px;align-items:center;border:1px solid #2c425f;border-radius:9px;background:#111e2e;padding:0 13px;min-width:225px}.club-search span{font-size:23px;color:#82b8ff}.club-search input{background:none;border:none;color:white;padding:12px 0;outline:0;width:100%;font-size:12px}.club-search input::placeholder{color:#8195b0}
+.club-count{color:#92b7e6;font-size:11px;font-weight:700;margin:16px 0 23px}
+.club-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}
+.club-card{min-width:0;background:linear-gradient(150deg,#152337,#101824);border:1px solid #2b405d;border-radius:15px;overflow:hidden;transition:border-color .2s,transform .2s}.club-card:hover{border-color:#4996f5;transform:translateY(-4px)}
+.club-photo{position:relative;aspect-ratio:1/.96;padding:16px 23px;background:radial-gradient(circle at 50% 35%,#284669,#111d2c 72%);display:flex;align-items:center;justify-content:center}.club-photo img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 10px #0005)}.club-photo-tag{position:absolute;left:12px;top:12px;border-radius:30px;padding:6px 10px;background:#0a1b30ec;border:1px solid #3b6899;color:#c6ddff;font-size:9px;font-weight:800;letter-spacing:.06em}
+.club-card-body{padding:17px}.club-card-body h3{font-family:'Barlow Condensed',sans-serif;font-size:23px;line-height:1.04;min-height:48px;font-weight:800;margin:0 0 7px}.club-card-body p{font-size:11px;color:#9fb2cc;margin:0 0 16px}.club-bottom{border-top:1px solid #304057;padding-top:13px;display:flex;align-items:center;gap:10px;justify-content:space-between}.club-bottom strong{font-size:11px;color:#c9dfff;white-space:nowrap}.club-bottom a{font-size:11px;font-weight:900;background:#2679e4;color:#fff;padding:10px 12px;border-radius:8px;text-align:center}.club-bottom a:hover{background:#4a98ff}
+.club-disclaimer{font-size:11px;color:#8f9fb7;line-height:1.7;margin:24px 0 0}.club-none{grid-column:1/-1;text-align:center;color:#abc2e0;border:1px dashed #3b5373;border-radius:12px;padding:48px 12px}
+.club-request{display:flex;align-items:center;justify-content:space-between;gap:30px;margin-bottom:85px;padding-top:32px;padding-bottom:32px;background:linear-gradient(130deg,#143258,#0d1c32);border:1px solid #346397;border-radius:18px}.club-request h2{font-family:'Barlow Condensed',sans-serif;font-size:40px;font-weight:800;line-height:1;margin:11px 0}.club-request p{color:#b4c9e4;font-size:12px;line-height:1.65;max-width:540px;margin:0}.club-request .btn{white-space:nowrap}
+@media(max-width:1020px){.club-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.club-hero-copy h1{font-size:76px}}
+@media(max-width:760px){.club-hero{grid-template-columns:1fr;padding-top:20px;gap:4px}.breadcrumbs{margin-bottom:34px}.club-hero-copy h1{font-size:clamp(56px,11vw,76px)}.club-hero-art{height:290px}.club-hero-jersey{max-width:167px}.club-hero-jersey.jersey-left{transform:rotate(-12deg) translate(-77px,14px)}.club-hero-jersey.jersey-right{transform:rotate(12deg) translate(77px,14px)}.club-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.club-section-head{align-items:start;flex-direction:column}.club-tools{align-items:stretch;flex-direction:column}.club-search{width:100%}.club-request{flex-direction:column;align-items:start}.club-benefits-inner{justify-content:center}.club-art-caption{bottom:0}}
+@media(max-width:480px){.club-hero-copy h1{font-size:59px}.club-hero-copy>p{font-size:13px}.club-hero-facts{flex-wrap:wrap}.club-hero-art{height:240px}.club-hero-jersey{max-width:132px;padding:6px}.club-hero-jersey.jersey-left{transform:rotate(-12deg) translate(-58px,15px)}.club-hero-jersey.jersey-right{transform:rotate(12deg) translate(58px,15px)}.club-shop{padding-top:58px}.club-grid{gap:10px}.club-photo{padding:13px 8px;aspect-ratio:1/1.06}.club-card-body{padding:12px}.club-card-body h3{font-size:20px;min-height:42px}.club-bottom{flex-direction:column;align-items:stretch}.club-bottom a{width:100%}.club-request h2{font-size:33px}.club-filter{font-size:11px;padding:10px 12px}}
+@media(prefers-reduced-motion:reduce){.club-card:hover{transform:none}}
+
+
+/* V3.3: más filtros, tarjetas robustas, todas las fotos integradas en HTML */
+.club-filters{max-width:100%;gap:7px}
+.club-filter{padding:11px 13px}
+.club-photo{background:linear-gradient(150deg,#172942,#0f192b)}
+.club-photo img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px}
+.club-photo-tag{z-index:1}
+.club-photo-tag.illustrated{color:#d8e4f8;background:#14233bec;border-color:#476080}
+.club-photo-tag.real-photo{color:#e7f2ff;background:#143355ec;border-color:#5388ba}
+.club-card-body h3{min-height:48px}
+.club-shop .club-guide{font-size:12px;line-height:1.75;color:#b6c6db;margin:12px 0 10px}
+.club-count strong{font-weight:900;color:#b5d6ff}
+@media(max-width:760px){.club-filters{display:flex;flex-wrap:nowrap;max-width:100%;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}.club-filter{flex-shrink:0}}
+
+.club-card[hidden], .club-none[hidden]{display:none!important;}
+
+.club-card-body h3{min-height:48px}.club-filter{white-space:nowrap}.club-filters{scrollbar-width:thin}
+
+/* FutNexo V3.10: fotos locales correctamente asignadas */
+.club-photo img.uploaded-kit-photo{background:#f7f8fa;border-radius:10px;padding:8px;filter:none;object-fit:contain}
+</style>
+<style id="futnexo-fn-logo-v39">
+.site-header .brand-fn-icon{display:inline-flex;align-items:center;justify-content:center;flex:0 0 34px;width:34px;height:34px;border:1px solid #2f486c;border-radius:9px;background:#0b1425;color:white;font-family:Arial,sans-serif;font-size:17px;line-height:1;font-weight:900;letter-spacing:-1.5px;box-shadow:0 3px 12px #050b1580}
+.site-header .brand-fn-icon span{color:#398cff}
+@media(max-width:450px){.site-header .brand-fn-icon{width:29px;height:29px;flex-basis:29px;font-size:15px}.site-header .brand{gap:8px}}
+</style>
+<style id="retro-estilos-de-imagen-v333">
+/* FutNexo V3.31: Selecciones, alineado con diseño de Clubes */
+.selection-kicker{color:#83b7ff;font-size:11px;font-weight:900;letter-spacing:.18em}
+.selection-photo{padding:14px!important;aspect-ratio:1/1.03;background:linear-gradient(145deg,#132a44,#101927)!important}
+.selection-image-link{width:100%;height:100%;display:flex;align-items:center;justify-content:center;border-radius:10px;background:#f8fafc;overflow:hidden;position:relative}
+.selection-image-link img{display:block;object-fit:contain;max-width:100%;max-height:100%;width:100%;height:100%;background:#f8fafc;border-radius:8px;filter:none}
+.selection-image-link img[hidden]{display:none!important}
+.selection-image-link .selection-photo-fallback{display:none;flex-direction:column;align-items:center;gap:13px;text-align:center;color:#19304b;font-size:13px;font-weight:800}
+.selection-image-link .selection-photo-fallback span{font-size:56px}
+.selection-image-link.photo-unavailable .selection-photo-fallback{display:flex}
+.selection-image-link:hover{outline:2px solid #529dff;outline-offset:-3px}
+.club-card-body h3{min-height:50px}
+.selection-source{display:inline-block;font-size:10px;color:#a6c8f8;text-decoration:underline;text-underline-offset:3px;margin-top:13px}
+.selection-source:hover{color:white}
+.selection-flag-banner{font-size:22px;letter-spacing:.06em;margin-top:28px;color:#a4ccff}
+.selection-disclaimer{margin:30px 0 0;color:#a0b4ce;font-size:11px;line-height:1.75}
+.selection-disclaimer a{color:#9ac4ff;text-decoration:underline}
+.selection-info{background:#0e1b2d;border:1px solid #28415f;padding:14px 18px;border-radius:11px;margin-top:16px;color:#b6cce6;font-size:12px;line-height:1.7}
+@media(max-width:480px){.selection-photo{padding:7px!important}.selection-image-link .selection-photo-fallback span{font-size:35px}.club-card-body h3{font-size:19px;min-height:45px}}
+</style>
+<style id="retro-fotos-cuadradas-v333">
+/* FutNexo V3.32 — ficha de camiseta, blanca y no interactiva */
+.selection-photo{
+  padding:0!important;
+  aspect-ratio:1 / 1!important;
+  background:#fff!important;
+  display:flex!important;align-items:stretch;justify-content:stretch;
+  overflow:hidden;
+}
+.selection-image-frame{
+  width:100%;height:100%;min-width:0;min-height:0;
+  position:relative;display:flex;align-items:center;justify-content:center;
+  background:#fff;border:0;border-radius:0;
+  padding:9px;box-sizing:border-box;
+  cursor:default;overflow:hidden;
+}
+.selection-image-frame img{
+  display:block!important;box-sizing:border-box;
+  width:100%!important;height:100%!important;
+  max-width:100%!important;max-height:100%!important;
+  object-fit:contain!important;object-position:center center;
+  border:0!important;border-radius:0!important;
+  padding:0!important;margin:0!important;
+  background:#fff!important;filter:none!important;
+  transform:none!important;transition:none!important;
+}
+.selection-image-frame img[hidden]{display:none!important}
+.selection-image-frame:focus,.selection-image-frame:hover{outline:none!important}
+.selection-image-frame .selection-photo-fallback{
+  display:none;flex-direction:column;align-items:center;justify-content:center;
+  background:#fff;color:#57677b;text-align:center;gap:10px;
+}
+.selection-image-frame.photo-unavailable .selection-photo-fallback{display:flex}
+.selection-placeholder-symbol{font-size:44px!important;color:#c5cfdd}
+.selection-image-frame .selection-photo-fallback small{font-size:11px;line-height:1.4}
+.club-card .club-card-body h3{word-break:normal;overflow-wrap:break-word}
+@media(max-width:480px){.selection-image-frame{padding:7px}.selection-placeholder-symbol{font-size:34px!important}}
+</style><style id="futnexo-retro-v333">/* FutNexo V3.33 Retro. Compatible con estilos.css actual */
+.club-photo.selection-photo{background:#fff!important}
+.club-card-body h3{min-height:30px!important}
+.club-card-body>p{min-height:27px}
+.club-photo-tag{display:none!important}
+.club-filter{white-space:nowrap}
+.club-count{margin-top:19px}
+.selection-disclaimer{margin-bottom:10px}
+@media(max-width:760px){.club-filters{display:flex;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:thin;max-width:100%;gap:7px}.club-filter{flex-shrink:0}}
+@media(prefers-reduced-motion:reduce){.club-card:hover{transform:none}}
+</style><style id="futnexo-chandals-v336">
+/* FutNexo V3.36: Chándals. Fotografías cuadradas con fondo blanco, no ampliables. */
+.club-hero-art .club-hero-jersey img{aspect-ratio:1/1!important;object-fit:contain!important;background:#fff!important;filter:none!important}
+.club-photo.selection-photo{padding:0!important;aspect-ratio:1/1!important;background:white!important;overflow:hidden}
+.selection-image-frame{width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:10px;box-sizing:border-box;background:white!important;position:relative;overflow:hidden;border:0;border-radius:0;cursor:default}
+.selection-image-frame img{width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;background:white!important;padding:0!important;margin:0!important;border-radius:0!important;filter:none!important;transform:none!important;transition:none!important}
+.selection-image-frame img[hidden]{display:none!important}
+.selection-photo-fallback{display:none;flex-direction:column;align-items:center;justify-content:center;color:#66798a;font-size:12px;text-align:center;line-height:1.6}
+.selection-image-frame.photo-unavailable .selection-photo-fallback{display:flex}
+.selection-placeholder-symbol{font-size:42px;color:#9dacc0}
+.club-card .club-card-body h3{min-height:30px!important;overflow-wrap:break-word}
+.club-card-body>p{min-height:25px}
+.club-card .club-bottom{gap:6px}
+.club-card .club-bottom strong{white-space:normal}
+.club-card[hidden],.club-none[hidden]{display:none!important}
+.club-filters{gap:7px}.club-filter{white-space:nowrap}
+.selection-source{display:inline-block;font-size:10px;color:#9fc3f5;text-decoration:underline;text-underline-offset:3px;margin-top:13px}
+.selection-source:hover{color:#fff}
+.selection-disclaimer{font-size:11px;line-height:1.75;color:#a0b4ce;margin:27px 0 0}
+@media(max-width:760px){.club-filters{display:flex;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:thin;max-width:100%;padding-bottom:5px}.club-filter{flex-shrink:0}}
+@media(max-width:480px){.selection-image-frame{padding:7px}.club-card-body h3{font-size:19px}}
+@media(prefers-reduced-motion:reduce){.club-card:hover{transform:none}}
+</style></head><body>
+<div class="announcement"><span class="dot"></span> FUTNEXO · CAMISETAS DE FÚTBOL <span class="announcement-right">Tu fútbol, tu camiseta</span></div>
+<header class="site-header">
+<a aria-label="FutNexo, volver al inicio" class="brand" href="index.html#inicio"><span aria-hidden="true" class="brand-fn-icon">F<span>N</span></span><span aria-hidden="true" class="brand-wordmark">FUT<span class="brand-wordmark-blue">NEXO</span></span></a>
+<nav aria-label="Navegación principal" class="nav"><a href="index.html#inicio">Inicio</a><a href="clubes.html">Clubes</a><a href="selecciones.html">Selecciones</a><a href="retro.html">Retro</a><a aria-current="page" href="chandals.html">Chándals</a><a href="index.html#colecciones">Colecciones</a><a href="index.html#precios">Precios</a><a href="index.html#guia-tallas">Guía de tallas</a></nav>
+<a class="nav-cta" href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">Hablar por Instagram <span>↗</span></a>
+<button aria-controls="mobile-nav" aria-expanded="false" aria-label="Abrir menú" class="menu-toggle" id="menu-toggle" type="button">☰</button>
+</header>
+<nav aria-label="Menú móvil" class="mobile-nav" id="mobile-nav"><a href="index.html#inicio">Inicio</a><a href="clubes.html">Clubes</a><a href="selecciones.html">Selecciones</a><a href="retro.html">Retro</a><a aria-current="page" href="chandals.html">Chándals</a><a href="index.html#colecciones">Colecciones</a><a href="index.html#precios">Precios</a><a href="index.html#guia-tallas">Guía de tallas</a><a href="https://www.instagram.com/fut_nexo_/">Instagram ↗</a></nav>
+<main>
+<section class="club-hero-wrap"><div class="container club-hero">
+<div class="club-hero-copy"><div class="breadcrumbs"><a href="index.html#inicio">Inicio</a><span>›</span><span>Chándals</span></div>
+<span class="club-kicker">TU EQUIPO, TAMBIÉN FUERA DEL CAMPO.</span><h1>CHÁNDALS<br/><span>DE EQUIPOS.</span></h1>
+<p>Descubre estilos de entrenamiento y paseo de los clubes europeos más conocidos. Elige tu equipo y consúltanos el modelo exacto, la talla y su disponibilidad.</p>
+<div class="club-hero-buttons"><a class="btn btn-primary" href="#equipos">VER EQUIPOS ↘</a><a class="btn btn-outline" href="index.html#guia-tallas">GUÍA DE TALLAS ↗</a></div>
+<div class="club-hero-facts"><span><strong>24 equipos</strong> de Europa</span><i></i><span><strong>Precio y talla</strong> a consultar</span></div>
+</div><div class="club-hero-art"><div class="club-halo"></div><div class="club-hero-jersey jersey-left"><img alt="Chándal de referencia de FC Barcelona" onerror="this.style.visibility='hidden'" referrerpolicy="no-referrer" src="https://planetafutbolmx.com/cdn/shop/files/81488AE5-CD96-4E54-A043-AB21C30B76CF.jpg?v=1775139403"/></div><div class="club-hero-jersey jersey-main"><img alt="Chándal de referencia de Real Madrid" onerror="this.style.visibility='hidden'" referrerpolicy="no-referrer" src="https://static.futbolfactory.es/products/260119_1.jpg"/></div><div class="club-hero-jersey jersey-right"><img alt="Chándal de referencia de Bayern de Múnich" onerror="this.style.visibility='hidden'" referrerpolicy="no-referrer" src="https://cdn.sportshop.com/catalog/product/1500/1500/3/9/397176_5.jpg"/></div><span class="club-art-caption">FUTNEXO · CHÁNDALS DE EQUIPOS</span></div>
+</div></section>
+<section class="club-benefits"><div class="container club-benefits-inner"><span>✦ Grandes equipos europeos</span><span>✦ Chándales de entrenamiento y paseo</span><span>✦ Adulto y niño: consultar</span><span>✦ Atención por Instagram</span></div></section>
+<section class="container club-shop" id="equipos"><div class="club-section-head"><div><span class="kicker">ELIGE TU EQUIPO</span><h2>¿QUÉ CHÁNDAL BUSCAS?</h2>
+<p>Explora 24 clubes de siete países. Filtra por liga o encuentra tu equipo con el buscador.</p></div><a class="club-back" href="index.html#mas-futnexo">← Volver a categorías</a></div>
+<div class="club-tools"><div aria-label="Filtrar chándales por país" class="club-filters" role="group"><button aria-pressed="true" class="club-filter active" data-region-filter="todos" type="button">Todos (24)</button><button aria-pressed="false" class="club-filter" data-region-filter="espana" type="button">España (4)</button><button aria-pressed="false" class="club-filter" data-region-filter="inglaterra" type="button">Inglaterra (7)</button><button aria-pressed="false" class="club-filter" data-region-filter="italia" type="button">Italia (5)</button><button aria-pressed="false" class="club-filter" data-region-filter="alemania" type="button">Alemania (3)</button><button aria-pressed="false" class="club-filter" data-region-filter="francia" type="button">Francia (2)</button><button aria-pressed="false" class="club-filter" data-region-filter="portugal" type="button">Portugal (2)</button><button aria-pressed="false" class="club-filter" data-region-filter="paises-bajos" type="button">Países Bajos (1)</button></div>
+<label class="club-search"><span aria-hidden="true">⌕</span><input aria-label="Buscar equipo" autocomplete="off" id="club-search" placeholder="Buscar equipo..." type="search"/></label></div>
+<p aria-live="polite" class="club-count" id="club-count" role="status">24 equipos para explorar</p>
+<div class="club-grid" id="club-grid"><article class="club-card" data-region="espana" data-search="Real Madrid LaLiga">
+<div class="club-photo selection-photo"><div class="selection-image-frame">
+<img alt="Fotografía de referencia de chándal de Real Madrid" decoding="async" loading="lazy" onerror="this.hidden=true;this.parentElement.classList.add('photo-unavailable')" referrerpolicy="no-referrer" src="https://static.futbolfactory.es/products/260119_1.jpg"/>
+<div class="selection-photo-fallback"><span aria-hidden="true" class="selection-placeholder-symbol">♧</span><small>Fotografía no disponible<br/>Consulta el modelo</small></div>
+</div></div>
+<div class="club-card-body"><h3>Real Madrid</h3><p>LaLiga · Chándal de referencia</p>
+<div class="club-bottom"><strong>Precio a consultar</strong><a aria-label="Consultar chándal de Real Madrid por Instagram" href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">Consultar ↗</a></div>
+<a aria-label="Ver procedencia de la fotografía de chándal de Real Madrid" class="selection-source" href="https://www.futbolfactory.es/comprar-chaqueta-de-entrenamiento-real-madrid-20262027-tr-hombre-adidas-verde-260119" rel="noopener noreferrer" target="_blank">Fuente de la fotografía ↗</a>
+</div></article><article class="club-card" data-region="espana" data-search="FC Barcelona LaLiga">
+<div class="club-photo selection-photo"><div class="selection-image-frame">
+<img alt="Fotografía de referencia de chándal de FC Barcelona" decoding="async" loading="lazy" onerror="this.hidden=true;this.parentElement.classList.add('photo-unavailable')" referrerpolicy="no-referrer" src="https://planetafutbolmx.com/cdn/shop/files/81488AE5-CD96-4E54-A043-AB21C30B76CF.jpg?v=1775139403"/>
+<div class="selection-photo-fallback"><span aria-hidden="true" class="selection-placeholder-symbol">♧</span><small>Fotografía no disponible<br/>Consulta el modelo</small></div>
+</div></div>
+<div class="club-card-body"><h3>FC Barcelona</h3><p>LaLiga · Chándal de referencia</p>
+<div class="club-bottom"><strong>Precio a consultar</strong><a aria-label="Consultar chándal de FC Barcelona por Instagram" href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">Consultar ↗</a></div>
+<a aria-label="Ver procedencia de la fotografía de chándal de FC Barcelona" class="selection-source" href="https://planetafutbolmx.com/products/chandal-fc-barcelona-26-27" rel="noopener noreferrer" target="_blank">Fuente de la fotografía ↗</a>
+</div></article><article class="club-card" data-region="espana" data-search="Atlético de Madrid LaLiga">
+<div class="club-photo selection-photo"><div class="selection-image-frame">
+<img alt="Fotografía de referencia de chándal de Atlético de Madrid" decoding="async" loading="lazy" onerror="this.hidden=true;this.parentElement.classList.add('photo-unavailable')" referrerpolicy="no-referrer" src="https://camisetasfutbolbaloncesto.com/cdn/shop/files/b3dd5031.jpg?v=1778491341"/>
+<div class="selection-photo-fallback"><span aria-hidden="true" class="selection-placeholder-symbol">♧</span><small>Fotografía no disponible<br/>Consulta el modelo</small></div>
+</div></div>
+<div class="club-card-body"><h3>Atlético de Madrid</h3><p>LaLiga · Chándal de referencia</p>
+<div class="club-bottom"><strong>Precio a consultar</strong><a aria-label="Consultar chándal de Atlético de Madrid por Instagram" href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">Consultar ↗</a></div>
+<a aria-label="Ver procedencia de la fotografía de chándal de Atlético de Madrid" class="selection-source" href="https://camisetasfutbolbaloncesto.com/products/chandal-atletico-de-madrid-2026-2027-cremallera" rel="noopener noreferrer" target="_blank">Fuente de la fotografía ↗</a>
+</div></article><article class="club-card" data-region="espana" data-search="Sevilla FC LaLiga">
+<div class="club-photo selection-photo"><div class="selection-image-frame">
+<img alt="Fotografía de referencia de chándal de Sevilla FC" decoding="async" loading="lazy" onerror="this.hidden=true;this.parentElement.classList.add('photo-unavailable')" referrerpolicy="no-referrer" src="https://shop.sevillafc.es/cdn/shop/files/JX5519-3.jpg?v=1759841740"/>
+<div class="selection-photo-fallback"><span aria-hidden="true" class="selection-placeholder-symbol">♧</span><small>Fotografía no disponible<br/>Consulta el modelo</small></div>
+</div></div>
+<div class="club-card-body"><h3>Sevilla FC</h3><p>LaLiga · Chándal de referencia</p>
+<div class="club-bottom"><strong>Precio a consultar</strong><a aria-label="Consultar chándal de Sevilla FC por Instagram" href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">Consultar ↗</a></div>
+<a aria-label="Ver procedencia de la fotografía de chándal de Sevilla FC" class="selection-source" href="https://shop.sevillafc.es/en/products/chandal-entrenamiento-beige-adulto-25-26" rel="noopener noreferrer" target="_blank">Fuente de la fotografía ↗</a>
+</div></article><article class="club-card" data-region="inglaterra" data-search="Liverpool FC Premier League">
+<div class="club-photo selection-photo"><div class="selection-image-frame">
+<img alt="Fotografía de referencia de chándal de Liverpool FC" decoding="async" loading="lazy" onerror="this.hidden=true;this.parentElement.classList.add('photo-unavailable')" referrerpolicy="no-referrer" src="https://www.tiendasociodelclub.com/cdn/shop/files/Capturadetela2026-03-18155558.jpg?v=1774361135&amp;width=1024"/>
+<div class="selection-photo-fallback"><span aria-hidden="true" class="selection-placeholder-symbol">♧</span><small>Fotografía no disponible<br/>Consulta el modelo</small></div>
+</div></div>
+<div class="club-card-body"><h3>Liverpool FC</h3><p>Premier League · Chándal de referencia</p>
+<div class="club-bottom"><strong>Precio a consultar</strong><a aria-label="Consultar chándal de Liverpool FC por Instagram" href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">Consultar ↗</a></div>
+<a aria-label="Ver procedencia de la fotografía de chándal de Liverpool FC" class="selection-source" href="https://www.tiendasociodelclub.com/products/chandal-liverpool-2026-27" rel="noopener noreferrer" target="_blank">Fuente de la fotografía ↗</a>
+</div></article><article class="club-card" data-region="inglaterra" data-search="Manchester United Premier League">
+<div class="club-photo selection-photo"><div class="selection-image-frame">
+<img alt="Fotografía de referencia de chándal de Manchester United" decoding="async" loading="lazy" onerror="this.hidden=true;this.parentElement.classList.add('photo-unavailable')" referrerpolicy="no-referrer" src="https://mufc-live.cdn.scayle.cloud/images/2c9a74de6b508eb29d4ae73a5f2d666f.jpg?bg=ffffff&amp;brightness=1&amp;height=1230&amp;quality=70&amp;width=922"/>
+<div class="selection-photo-fallback"><span aria-hidden="true" class="selection-placeholder-symbol">♧</span><small>Fotografía no disponible<br/>Consulta el modelo</small></div>
+</div></div>
+<div class="club-card-body"><h3>Manchester United</h3><p>Premier League · Chándal de referencia</p>
+<div class="club-bottom"><strong>Precio a consultar</strong><a aria-label="Consultar chándal de Manchester United por Instagram" href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">Consultar ↗</a></div>
+<a aria-label="Ver procedencia de la fotografía de chándal de Manchester United" class="selection-source" href="https://store.manutd.com/en-gb/p/manchester-united-2627-training-tiro-presentation-jacket-black-sponsored-6408" rel="noopener noreferrer" target="_blank">Fuente de la fotografía ↗</a>
+</div></article><article class="club-card" data-region="inglaterra" data-search="Manchester City Premier League">
+<div class="club-photo selection-photo"><div class="selection-image-frame">
+<img alt="Fotografía de referencia de chándal de Manchester City" decoding="async" loading="lazy" onerror="this.hidden=true;this.parentElement.classList.add('photo-unavailable')" referrerpolicy="no-referrer" src="https://dimension-foot.com/33249-large_default/survetement-manchester-city-15-cm.jpg"/>
+<div class="selection-photo-fallback"><span aria-hidden="true" class="selection-placeholder-symbol">♧</span><small>Fotografía no disponible<br/>Consulta el modelo</small></div>
+</div></div>
+<div class="club-card-body"><h3>Manchester City</h3><p>Premier League · Chándal de referencia</p>
+<div class="club-bottom"><strong>Precio a consultar</strong><a aria-label="Consultar chándal de Manchester City por Instagram" href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">Consultar ↗</a></div>
+<a aria-label="Ver procedencia de la fotografía de chándal de Manchester City" class="selection-source" href="https://dimension-foot.com/manchester-city" rel="noopener noreferrer" target="_blank">Fuente de la fotografía ↗</a>
+</div></article><article class="club-card" data-region="inglaterra" data-search="Arsenal Premier League">
+<div class="club-photo selection-photo"><div class="selection-image-frame">
+<img alt="Fotografía de referencia de chándal de Arsenal" decoding="async" loading="lazy" onerror="this.hidden=true;this.parentElement.classList.add('photo-unavailable')" referrerpolicy="no-referrer" src="https://ssl.images-ssl-mars.com/62309/2025/11/07/0/6/06e28148ea88ff40.jpeg"/>
+<div class="selection-photo-fallback"><span aria-hidden="true" class="selection-placeholder-symbol">♧</span><small>Fotografía no disponible<br/>Consulta el modelo</small></div>
+</div></div>
+<div class="club-card-body"><h3>Arsenal</h3><p>Premier League · Chándal de referencia</p>
+<div class="club-bottom"><strong>Precio a consultar</strong><a aria-label="Consultar chándal de Arsenal por Instagram" href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">Consultar ↗</a></div>
+<a aria-label="Ver procedencia de la fotografía de chándal de Arsenal" class="selection-source" href="https://www.yyjersey.com/2026-ARS-White-Jacket-Tracksuit-p4640970.html" rel="noopener noreferrer" target="_blank">Fuente de la fotografía ↗</a>
+</div></article><article class="club-card" data-region="inglaterra" data-search="Chelsea Premier League">
+<div class="club-photo selection-photo"><div class="selection-image-frame">
+<img alt="Fotografía de referencia de chándal de Chelsea" decoding="async" loading="lazy" onerror="this.hidden=true;this.parentElement.classList.add('photo-unavailable')" referrerpolicy="no-referrer" src="https://camisetasfutbolbaloncesto.com/cdn/shop/files/83c6cdb4.jpg?v=1781342480&amp;width=1445"/>
+<div class="selection-photo-fallback"><span aria-hidden="true" class="selection-placeholder-symbol">♧</span><small>Fotografía no disponible<br/>Consulta el modelo</small></div>
+</div></div>
+<div class="club-card-body"><h3>Chelsea</h3><p>Premier League · Chándal de referencia</p>
+<div class="club-bottom"><strong>Precio a consultar</strong><a aria-label="Consultar chándal de Chelsea por Instagram" href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">Consultar ↗</a></div>
+<a aria-label="Ver procedencia de la fotografía de chándal de Chelsea" class="selection-source" href="https://camisetasfutbolbaloncesto.com/products/chandal-chelsea-2026-2027-visitante-entrenamiento" rel="noopener noreferrer" target="_blank">Fuente de la fotografía ↗</a>
+</div></article><article class="club-card" data-region="inglaterra" data-search="Tottenham Hotspur Premier League">
+<div class="club-photo selection-photo"><div class="selection-image-frame">
+<img alt="Fotografía de referencia de chándal de Tottenham Hotspur" decoding="async" loading="lazy" onerror="this.hidden=true;this.parentElement.classList.add('photo-unavailable')" referrerpolicy="no-referrer" src="https://ssl.images-ssl-mars.com/31229/2025/12/23/4/f/4ffa4d4c44680817.jpg"/>
+<div class="selection-photo-fallback"><span aria-hidden="true" class="selection-placeholder-symbol">♧</span><small>Fotografía no disponible<br/>Consulta el modelo</small></div>
+</div></div>
+<div class="club-card-body"><h3>Tottenham Hotspur</h3><p>Premier League · Chándal de referencia</p>
+<div class="club-bottom"><strong>Precio a consultar</strong><a aria-label="Consultar chándal de Tottenham Hotspur por Instagram" href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">Consultar ↗</a></div>
+<a aria-label="Ver procedencia de la fotografía de chándal de Tottenham Hotspur" class="selection-source" href="https://www.kitjj2.com/2026-27-TH-FC-Baby-Blue-Grey-Jacket-Tracksuit-p2108192.html" rel="noopener noreferrer" target="_blank">Fuente de la fotografía ↗</a>
+</div></article><article class="club-card" data-region="inglaterra" data-search="Newcastle United Premier League">
+<div class="club-photo selection-photo"><div class="selection-image-frame">
+<img alt="Fotografía de referencia de chándal de Newcastle United" decoding="async" loading="lazy" onerror="this.hidden=true;this.parentElement.classList.add('photo-unavailable')" referrerpolicy="no-referrer" src="https://shop.newcastleunited.com/cdn/shop/files/JC7008_MOD_2.webp?v=1749553046&amp;width=2048"/>
+<div class="selection-photo-fallback"><span aria-hidden="true" class="selection-placeholder-symbol">♧</span><small>Fotografía no disponible<br/>Consulta el modelo</small></div>
+</div></div>
+<div class="club-card-body"><h3>Newcastle United</h3><p>Premier League · Chándal de referencia</p>
+<div class="club-bottom"><strong>Precio a consultar</strong><a aria-label="Consultar chándal de Newcastle United por Instagram" href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">Consultar ↗</a></div>
+<a aria-label="Ver procedencia de la fotografía de chándal de Newcastle United" class="selection-source" href="https://shop.newcastleunited.com/collections/mens-25-26-home-kit" rel="noopener noreferrer" target="_blank">Fuente de la fotografía ↗</a>
+</div></article><article class="club-card" data-region="italia" data-search="AC Milan Serie A">
+<div class="club-photo selection-photo"><div class="selection-image-frame">
+<img alt="Fotografía de referencia de chándal de AC Milan" decoding="async" loading="lazy" onerror="this.hidden=true;this.parentElement.classList.add('photo-unavailable')" referrerpolicy="no-referrer" src="https://www.futbolemotion.com/imagesarticulos/333252/540/chandal-puma-ac-milan-fanswear-2026-2027-black-for-all-time-red-0.jpg"/>
+<div class="selection-photo-fallback"><span aria-hidden="true" class="selection-placeholder-symbol">♧</span><small>Fotografía no disponible<br/>Consulta el modelo</small></div>
+</div></div>
+<div class="club-card-body"><h3>AC Milan</h3><p>Serie A · Chándal de referencia</p>
+<div class="club-bottom"><strong>Precio a consultar</strong><a aria-label="Consultar chándal de AC Milan por Instagram" href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">Consultar ↗</a></div>
+<a aria-label="Ver procedencia de la fotografía de chándal de AC Milan" class="selection-source" href="https://www.futbolemotion.com/es/comprar/chandal/puma/ac-milan-fanswear-2026-2027-black-for-all-time-red-0" rel="noopener noreferrer" target="_blank">Fuente de la fotografía ↗</a>
+</div></article><article class="club-card" data-region="italia" data-search="Inter de Milán Serie A">
+<div class="club-photo selection-photo"><div class="selection-image-frame">
+<img alt="Fotografía de referencia de chándal de Inter de Milán" decoding="async" loading="lazy" onerror="this.hidden=true;this.parentElement.classList.add('photo-unavailable')" referrerpolicy="no-referrer" src="https://store.inter.it/images/inter/products/small/IN26B81.webp"/>
+<div class="selection-photo-fallback"><span aria-hidden="true" class="selection-placeholder-symbol">♧</span><small>Fotografía no disponible<br/>Consulta el modelo</small></div>
+</div></div>
+<div class="club-card-body"><h3>Inter de Milán</h3><p>Serie A · Chándal de referencia</p>
+<div class="club-bottom"><strong>Precio a consultar</strong><a aria-label="Consultar chándal de Inter de Milán por Instagram" href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">Consultar ↗</a></div>
+<a aria-label="Ver procedencia de la fotografía de chándal de Inter de Milán" class="selection-source" href="https://store.inter.it/it/inter-tuta-allenamento-strike-blu-26-27" rel="noopener noreferrer" target="_blank">Fuente de la fotografía ↗</a>
+</div></article><article class="club-card" data-region="italia" data-search="Juventus Serie A">
+<div class="club-photo selection-photo"><div class="selection-image-frame">
+<img alt="Fotografía de referencia de chándal de Juventus" decoding="async" loading="lazy" onerror="this.hidden=true;this.parentElement.classList.add('photo-unavailable')" referrerpolicy="no-referrer" src="https://www.soccertracksuits.com/cdn/shop/files/juventus-fc-juve-adidas-2026-2027-training-presentation-bench-soccer-tracksuit-players-set-suit-blue-white-jacket-pants-tuta-rappresentanza-blu_720x.png?v=1779906955"/>
+<div class="selection-photo-fallback"><span aria-hidden="true" class="selection-placeholder-symbol">♧</span><small>Fotografía no disponible<br/>Consulta el modelo</small></div>
+</div></div>
+<div class="club-card-body"><h3>Juventus</h3><p>Serie A · Chándal de referencia</p>
+<div class="club-bottom"><strong>Precio a consultar</strong><a aria-label="Consultar chándal de Juventus por Instagram" href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">Consultar ↗</a></div>
+<a aria-label="Ver procedencia de la fotografía de chándal de Juventus" class="selection-source" href="https://www.soccertracksuits.com/products/juventus-blue-training-presentation-bench-tracksuit-2026-27-adidas" rel="noopener noreferrer" target="_blank">Fuente de la fotografía ↗</a>
+</div></article><article class="club-card" data-region="italia" data-search="Nápoles Serie A">
+<div class="club-photo selection-photo"><div class="selection-image-frame">
+<img alt="Fotografía de referencia de chándal de Nápoles" decoding="async" loading="lazy" onerror="this.hidden=true;this.parentElement.classList.add('photo-unavailable')" referrerpolicy="no-referrer" src="https://official.dimension-foot.com/2336-large_default/tuta-napoli-27-bn.jpg"/>
+<div class="selection-photo-fallback"><span aria-hidden="true" class="selection-placeholder-symbol">♧</span><small>Fotografía no disponible<br/>Consulta el modelo</small></div>
+</div></div>
+<div class="club-card-body"><h3>Nápoles</h3><p>Serie A · Chándal de referencia</p>
+<div class="club-bottom"><strong>Precio a consultar</strong><a aria-label="Consultar chándal de Nápoles por Instagram" href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">Consultar ↗</a></div>
+<a aria-label="Ver procedencia de la fotografía de chándal de Nápoles" class="selection-source" href="https://official.dimension-foot.com/it/tuta-napoli" rel="noopener noreferrer" target="_blank">Fuente de la fotografía ↗</a>
+</div></article><article class="club-card" data-region="italia" data-search="AS Roma Serie A">
+<div class="club-photo selection-photo"><div class="selection-image-frame">
+<img alt="Fotografía de referencia de chándal de AS Roma" decoding="async" loading="lazy" onerror="this.hidden=true;this.parentElement.classList.add('photo-unavailable')" referrerpolicy="no-referrer" src="https://outletdelcalcio.eu/cdn/shop/files/Progettosenzatitolo_fd7c9093-3574-4d21-979b-29723e40c8fa.png?v=1790334637&amp;width=1445"/>
+<div class="selection-photo-fallback"><span aria-hidden="true" class="selection-placeholder-symbol">♧</span><small>Fotografía no disponible<br/>Consulta el modelo</small></div>
+</div></div>
+<div class="club-card-body"><h3>AS Roma</h3><p>Serie A · Chándal de referencia</p>
+<div class="club-bottom"><strong>Precio a consultar</strong><a aria-label="Consultar chándal de AS Roma por Instagram" href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">Consultar ↗</a></div>
+<a aria-label="Ver procedencia de la fotografía de chándal de AS Roma" class="selection-source" href="https://outletdelcalcio.eu/products/kit-roma-2026-27" rel="noopener noreferrer" target="_blank">Fuente de la fotografía ↗</a>
+</div></article><article class="club-card" data-region="alemania" data-search="Bayern de Múnich Bundesliga">
+<div class="club-photo selection-photo"><div class="selection-image-frame">
+<img alt="Fotografía de referencia de chándal de Bayern de Múnich" decoding="async" loading="lazy" onerror="this.hidden=true;this.parentElement.classList.add('photo-unavailable')" referrerpolicy="no-referrer" src="https://cdn.sportshop.com/catalog/product/1500/1500/3/9/397176_5.jpg"/>
+<div class="selection-photo-fallback"><span aria-hidden="true" class="selection-placeholder-symbol">♧</span><small>Fotografía no disponible<br/>Consulta el modelo</small></div>
+</div></div>
+<div class="club-card-body"><h3>Bayern de Múnich</h3><p>Bundesliga · Chándal de referencia</p>
+<div class="club-bottom"><strong>Precio a consultar</strong><a aria-label="Consultar chándal de Bayern de Múnich por Instagram" href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">Consultar ↗</a></div>
+<a aria-label="Ver procedencia de la fotografía de chándal de Bayern de Múnich" class="selection-source" href="https://www.passasports.nl/bundel-adidas-bayern-munchen-trainingspak-26-1" rel="noopener noreferrer" target="_blank">Fuente de la fotografía ↗</a>
+</div></article><article class="club-card" data-region="alemania" data-search="Borussia Dortmund Bundesliga">
+<div class="club-photo selection-photo"><div class="selection-image-frame">
+<img alt="Fotografía de referencia de chándal de Borussia Dortmund" decoding="async" loading="lazy" onerror="this.hidden=true;this.parentElement.classList.add('photo-unavailable')" referrerpolicy="no-referrer" src="https://www.voetbalshop.nl/media/catalog/product/cache/d81c8dc66c69ceb69419c2e7e72e896d/3/2/325782_puma-borussia-dortmund-pumatech-trainingspak-woven-hooded-full-zip-2025-2026-zi.jpg"/>
+<div class="selection-photo-fallback"><span aria-hidden="true" class="selection-placeholder-symbol">♧</span><small>Fotografía no disponible<br/>Consulta el modelo</small></div>
+</div></div>
+<div class="club-card-body"><h3>Borussia Dortmund</h3><p>Bundesliga · Chándal de referencia</p>
+<div class="club-bottom"><strong>Precio a consultar</strong><a aria-label="Consultar chándal de Borussia Dortmund por Instagram" href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">Consultar ↗</a></div>
+<a aria-label="Ver procedencia de la fotografía de chándal de Borussia Dortmund" class="selection-source" href="https://www.voetbalshop.nl/en/puma-borussia-dortmund-pumatech-woven-tracksuit-hooded-full-zip-2025-2026-silver-yellow.html" rel="noopener noreferrer" target="_blank">Fuente de la fotografía ↗</a>
+</div></article><article class="club-card" data-region="alemania" data-search="Bayer Leverkusen Bundesliga">
+<div class="club-photo selection-photo"><div class="selection-image-frame">
+<img alt="Fotografía de referencia de chándal de Bayer Leverkusen" decoding="async" loading="lazy" onerror="this.hidden=true;this.parentElement.classList.add('photo-unavailable')" referrerpolicy="no-referrer" src="https://cdn.sportshop.com/catalog/product/1500/1500/b/u/bundel-new-bayer-leverkusen-trainingspak-25-3_1.jpg"/>
+<div class="selection-photo-fallback"><span aria-hidden="true" class="selection-placeholder-symbol">♧</span><small>Fotografía no disponible<br/>Consulta el modelo</small></div>
+</div></div>
+<div class="club-card-body"><h3>Bayer Leverkusen</h3><p>Bundesliga · Chándal de referencia</p>
+<div class="club-bottom"><strong>Precio a consultar</strong><a aria-label="Consultar chándal de Bayer Leverkusen por Instagram" href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">Consultar ↗</a></div>
+<a aria-label="Ver procedencia de la fotografía de chándal de Bayer Leverkusen" class="selection-source" href="https://www.voetbaldirect.nl/bundel-new-bayer-leverkusen-trainingspak-25-3" rel="noopener noreferrer" target="_blank">Fuente de la fotografía ↗</a>
+</div></article><article class="club-card" data-region="francia" data-search="Paris Saint-Germain Ligue 1">
+<div class="club-photo selection-photo"><div class="selection-image-frame">
+<img alt="Fotografía de referencia de chándal de Paris Saint-Germain" decoding="async" loading="lazy" onerror="this.hidden=true;this.parentElement.classList.add('photo-unavailable')" referrerpolicy="no-referrer" src="https://img.favjersey.com/goods-img/Paris-D14-212868489-001-1.jpg"/>
+<div class="selection-photo-fallback"><span aria-hidden="true" class="selection-placeholder-symbol">♧</span><small>Fotografía no disponible<br/>Consulta el modelo</small></div>
+</div></div>
+<div class="club-card-body"><h3>Paris Saint-Germain</h3><p>Ligue 1 · Chándal de referencia</p>
+<div class="club-bottom"><strong>Precio a consultar</strong><a aria-label="Consultar chándal de Paris Saint-Germain por Instagram" href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">Consultar ↗</a></div>
+<a aria-label="Ver procedencia de la fotografía de chándal de Paris Saint-Germain" class="selection-source" href="https://www.favjersey.com/product/psg-2026-27-windbreaker-training-suit-blue/" rel="noopener noreferrer" target="_blank">Fuente de la fotografía ↗</a>
+</div></article><article class="club-card" data-region="francia" data-search="Olympique de Marsella Ligue 1">
+<div class="club-photo selection-photo"><div class="selection-image-frame">
+<img alt="Fotografía de referencia de chándal de Olympique de Marsella" decoding="async" loading="lazy" onerror="this.hidden=true;this.parentElement.classList.add('photo-unavailable')" referrerpolicy="no-referrer" src="https://dimension-foot.com/32877-large_default/survetement-om-16-b.jpg"/>
+<div class="selection-photo-fallback"><span aria-hidden="true" class="selection-placeholder-symbol">♧</span><small>Fotografía no disponible<br/>Consulta el modelo</small></div>
+</div></div>
+<div class="club-card-body"><h3>Olympique de Marsella</h3><p>Ligue 1 · Chándal de referencia</p>
+<div class="club-bottom"><strong>Precio a consultar</strong><a aria-label="Consultar chándal de Olympique de Marsella por Instagram" href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">Consultar ↗</a></div>
+<a aria-label="Ver procedencia de la fotografía de chándal de Olympique de Marsella" class="selection-source" href="https://dimension-foot.com/marseille" rel="noopener noreferrer" target="_blank">Fuente de la fotografía ↗</a>
+</div></article><article class="club-card" data-region="portugal" data-search="Benfica Liga Portugal">
+<div class="club-photo selection-photo"><div class="selection-image-frame">
+<img alt="Fotografía de referencia de chándal de Benfica" decoding="async" loading="lazy" onerror="this.hidden=true;this.parentElement.classList.add('photo-unavailable')" referrerpolicy="no-referrer" src="https://www.gkimports.store/cdn/shop/files/68F8A0EF-2288-4933-9084-5DAF23AB77D7.jpg?v=1745930325&amp;width=1946"/>
+<div class="selection-photo-fallback"><span aria-hidden="true" class="selection-placeholder-symbol">♧</span><small>Fotografía no disponible<br/>Consulta el modelo</small></div>
+</div></div>
+<div class="club-card-body"><h3>Benfica</h3><p>Liga Portugal · Chándal de referencia</p>
+<div class="club-bottom"><strong>Precio a consultar</strong><a aria-label="Consultar chándal de Benfica por Instagram" href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">Consultar ↗</a></div>
+<a aria-label="Ver procedencia de la fotografía de chándal de Benfica" class="selection-source" href="https://www.gkimports.store/products/fato-de-treino-vermelho-e-laranja-2025-26-fecho-completo" rel="noopener noreferrer" target="_blank">Fuente de la fotografía ↗</a>
+</div></article><article class="club-card" data-region="portugal" data-search="FC Porto Liga Portugal">
+<div class="club-photo selection-photo"><div class="selection-image-frame">
+<img alt="Fotografía de referencia de chándal de FC Porto" decoding="async" loading="lazy" onerror="this.hidden=true;this.parentElement.classList.add('photo-unavailable')" referrerpolicy="no-referrer" src="https://official.dimension-foot.com/2026-large_default/survetement-porto-15-b.jpg"/>
+<div class="selection-photo-fallback"><span aria-hidden="true" class="selection-placeholder-symbol">♧</span><small>Fotografía no disponible<br/>Consulta el modelo</small></div>
+</div></div>
+<div class="club-card-body"><h3>FC Porto</h3><p>Liga Portugal · Chándal de referencia</p>
+<div class="club-bottom"><strong>Precio a consultar</strong><a aria-label="Consultar chándal de FC Porto por Instagram" href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">Consultar ↗</a></div>
+<a aria-label="Ver procedencia de la fotografía de chándal de FC Porto" class="selection-source" href="https://official.dimension-foot.com/fr/fc-porto" rel="noopener noreferrer" target="_blank">Fuente de la fotografía ↗</a>
+</div></article><article class="club-card" data-region="paises-bajos" data-search="Ajax Eredivisie">
+<div class="club-photo selection-photo"><div class="selection-image-frame">
+<img alt="Fotografía de referencia de chándal de Ajax" decoding="async" loading="lazy" onerror="this.hidden=true;this.parentElement.classList.add('photo-unavailable')" referrerpolicy="no-referrer" src="https://www.ajax.nl/shop/_next/image?q=75&amp;url=https%3A%2F%2Fassets.tqtypmfe.on-eva.io%2Fimage%2F1000%2F1000%2F5b19caa0-7815-261d-5ffa-aee4c1020581.png&amp;w=2048"/>
+<div class="selection-photo-fallback"><span aria-hidden="true" class="selection-placeholder-symbol">♧</span><small>Fotografía no disponible<br/>Consulta el modelo</small></div>
+</div></div>
+<div class="club-card-body"><h3>Ajax</h3><p>Eredivisie · Chándal de referencia</p>
+<div class="club-bottom"><strong>Precio a consultar</strong><a aria-label="Consultar chándal de Ajax por Instagram" href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">Consultar ↗</a></div>
+<a aria-label="Ver procedencia de la fotografía de chándal de Ajax" class="selection-source" href="https://www.ajax.nl/shop/training/kleding?page=1" rel="noopener noreferrer" target="_blank">Fuente de la fotografía ↗</a>
+</div></article></div>
+<p class="selection-disclaimer">Las imágenes proceden de catálogos externos y son <strong>referencias visuales</strong>, no un inventario confirmado de FutNexo. Los modelos, las tallas, el precio final y la disponibilidad se confirman por Instagram. Algunas fotografías pueden depender de sus servidores de origen; comprueba los derechos de uso antes de emplearlas comercialmente.</p>
+</section><section class="container club-request"><div class="club-request-text"><span class="kicker">¿BUSCAS OTRO MODELO?</span><h2>LO CONSULTAMOS CONTIGO.</h2><p>Cuéntanos qué club, temporada, talla y tipo de chándal necesitas. Te indicaremos las opciones que podamos conseguir.</p></div>
+<a class="btn btn-primary" href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">PREGUNTAR POR INSTAGRAM ↗</a></section>
+</main>
+<footer class="footer"><div class="container footer-inner"><a aria-label="FutNexo, volver al inicio" class="brand" href="index.html#inicio"><span aria-hidden="true" class="brand-wordmark">FUT<span class="brand-wordmark-blue">NEXO</span></span></a><p>FutNexo · Tu fútbol, tu camiseta.<br/>Consulta la disponibilidad y las características antes de comprar.</p><div><a href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">Instagram ↗</a><a href="index.html#guia-tallas">Guía de tallas ↗</a></div></div><div class="container legal-note">Antes de comercializar artículos de marca, verificar procedencia, autenticidad y derechos de distribución. Completar la información legal y fiscal correspondiente.</div></footer>
+<script>(()=>{'use strict';
+const cards=[...document.querySelectorAll('#club-grid .club-card')];
+const filters=[...document.querySelectorAll('.club-filter[data-region-filter]')];
+const search=document.getElementById('club-search');
+const count=document.getElementById('club-count');
+const grid=document.getElementById('club-grid');
+const empty=document.createElement('p');empty.className='club-none';empty.textContent='No encontramos ese equipo. Prueba con otro nombre o país.';empty.hidden=true;grid.append(empty);
+const normalize=s=>(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+let selected='todos';
+function render(){const q=normalize(search.value.trim());let n=0;
+ cards.forEach(card=>{const ok=(selected==='todos'||card.dataset.region===selected)&&normalize(card.dataset.search).includes(q);card.hidden=!ok;if(ok)n++});
+ count.textContent=n+' '+(n===1?'equipo':'equipos')+' para explorar';empty.hidden=n!==0;
+}
+filters.forEach(btn=>btn.addEventListener('click',()=>{selected=btn.dataset.regionFilter;filters.forEach(b=>{const active=b===btn;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});render()}));
+search.addEventListener('input',render);
+const menu=document.getElementById('menu-toggle'),mobile=document.getElementById('mobile-nav');
+if(menu&&mobile){menu.addEventListener('click',()=>{const open=mobile.classList.toggle('open');menu.textContent=open?'×':'☰';menu.setAttribute('aria-expanded',String(open))});mobile.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobile.classList.remove('open');menu.textContent='☰';menu.setAttribute('aria-expanded','false')}));}
+render();})();</script></body></html>

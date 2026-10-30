@@ -1,0 +1,21 @@
+FUTNEXO V3.36 — CHÁNDALS DE CLUBES EUROPEOS
+
+CAMBIOS
+- Se añade chandals.html: 24 equipos de 7 países, con imágenes de referencia, filtros por liga/país y buscador.
+- Se sustituye en index.html el enlace antiguo de Chándals (Google Sites) por chandals.html y se añade un acceso en la navegación superior y móvil.
+- Se mantiene el resto de la versión V3.35, incluida la guía de tallas infantiles, las camisetas de portada y el escaparate eliminado.
+
+PUBLICACIÓN EN GITHUB
+1. Sustituir index.html por el nuevo index.html del ZIP.
+2. Añadir chandals.html a la raíz del repositorio (junto a clubes.html, selecciones.html y retro.html).
+3. Confirmar el cambio y comprobar el despliegue en Cloudflare.
+4. Mantener styles.css, script.js, catalogo.js, assets y el resto de archivos ya existentes.
+
+IMPORTANTE SOBRE FOTOGRAFÍAS Y PRODUCTOS
+- Las imágenes del nuevo catálogo se cargan desde servidores externos y pueden dejar de funcionar o impedir la carga; las tarjetas muestran un aviso si fallan.
+- Son REFERENCIAS FOTOGRÁFICAS, no pruebas de que FutNexo venda o tenga existencias de esos modelos.
+- La ficha de origen de cada imagen puede consultarse desde cada tarjeta.
+- Antes de usarlas en una tienda comercial es necesario disponer de derechos de uso adecuados y verificar proveedor, autenticidad, stock, tallas y precios.
+- Por ello, el catálogo muestra «Precio a consultar», sin inventar ofertas.
+
+NO NECESITAS SOBREESCRIBIR clubes.html, selecciones.html ni retro.html.

@@ -1,0 +1,21 @@
+FutNexo V3.45 — Chándals / Media cremallera
+
+Se han incorporado 6 modelos adicionales a los 20 existentes:
+- Chelsea: azul y negro
+- Inter de Milán: azul marino
+- Brasil: verde oscuro y amarillo
+- Inter Miami: rosa y negro
+- FC Barcelona: negro y azul
+- Brasil: negro y naranja
+
+La sección Media cremallera suma ahora 26 productos: 20 de clubes y 6 de selecciones.
+Se mantiene el precio de 44,99 € y el catálogo general anterior.
+Las 26 fotografías de Media cremallera están integradas directamente en chandals.html.
+
+CÓMO PUBLICAR
+1. Descomprime el ZIP.
+2. Sustituye chandals.html en la raíz del repositorio GitHub.
+3. Confirma los cambios y espera a que Cloudflare publique el despliegue.
+4. Recarga la página, preferentemente con recarga forzada si sigues viendo la versión anterior.
+
+No es necesario subir imágenes por separado ni reemplazar otros archivos.

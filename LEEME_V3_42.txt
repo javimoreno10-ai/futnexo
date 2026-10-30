@@ -1,0 +1,6 @@
+FutNexo V3.42
+
+- Catálogo de entrenamiento actualizado con 12 fotos reales aportadas por el usuario.
+- Filtros: Todos, Clubes, Selecciones y Con foto.
+- Precio mantenido en 34,99 €.
+- Se conservan el resto de páginas de la V3.41.

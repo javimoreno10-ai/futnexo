@@ -1,0 +1,12 @@
+FUTNEXO V3.46 — CHÁNDALS POR TIPO
+
+Actualiza solamente chandals.html en la raíz de GitHub.
+
+- Filtro principal, igual que en Clubes: Media cremallera (26) y Cremallera entera (0, a la espera de las imágenes).
+- Las 26 fotografías originales de media cremallera permanecen integradas en chandals.html.
+- La categoría de cremallera entera está preparada para añadir las fotos que envíes a continuación.
+- Los filtros Clubes / Selecciones y el buscador dentro de Media cremallera siguen operativos.
+- El catálogo general anterior de 24 clubes continúa debajo, separado como "Otros chándals sin clasificar".
+- El precio se mantiene en 44,99 €.
+
+Si el navegador conserva la versión anterior, realiza una recarga completa.

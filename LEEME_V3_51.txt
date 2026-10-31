@@ -1,0 +1,42 @@
+FutNexo V3.51 — NBA Actual + NBA Retro
+
+Archivos que debes actualizar en GitHub:
+  1. Sustituye únicamente nba.html en la raíz.
+
+Incluye 30 camisetas NBA Actual con imágenes aportadas previamente (integradas en HTML) y una nueva pestaña NBA Retro con 30 leyendas.
+
+IMPORTANTE: Las 30 imágenes retro son referencias externas de tiendas consultadas en la web. No están integradas y pueden dejar de estar disponibles; incluyen un marcador alternativo si no cargan.
+Su publicación comercial exige autorización para el uso de fotografías y la verificación de disponibilidad/autenticidad de los productos con el proveedor.
+El precio orientativo NBA se mantiene en 28,99 €.
+
+Referencias de las imágenes retro (deben validarse los permisos de uso antes de su publicación comercial):
+- Michael Jordan — https://feeds.frgimages.com/ss4/https%3A/feeds.frgimages.com/ss5/altimages/ss5/p-12007110_pv-1_u-yt7qcglykyzviqanzfk8_v-fso5ekiqrqlrxxzmvlm0.jpg?_hv=3
+- Kobe Bryant — https://cdn.shopify.com/s/files/1/1325/5497/products/MNLL19089_YLW0000_1_lz7vrp_1500x1500_0a33ec3e-9e97-4942-b581-7139ba950b47_1024x.jpg?v=1599037287
+- LeBron James — https://images.footballfanatics.com/cleveland-cavaliers/mens-mitchell-and-ness-lebron-james-red-cleveland-cavaliers-2003/04-big-and-tall-hardwood-classics-swingman-jersey_pi3278000_altimages_ff_3278327-ef1614742e1918b9a428alt1_full.jpg
+- Stephen Curry — https://i.ebayimg.com/images/g/q5IAAOSw0lNmlqmV/s-l1200.jpg
+- Shaquille O'Neal — https://lakersstore.com/cdn/shop/files/smjygs18179-lalltgd99son_1.jpg?v=1710368357
+- Allen Iverson — https://cdn.shopify.com/s/files/1/0603/3031/1875/files/smjygs18201-p76blck00aiv_1-square_e5dd3659-fdaa-40de-8c22-6df1cc56cb24.jpg?v=1731492751
+- Magic Johnson — https://lakersstore.com/cdn/shop/files/ajy4gs18088-lalltgd84ejh_1.jpg?v=1710367760&width=1080
+- Larry Bird — https://feeds.frgimages.com/ss4/https%3A/feeds.frgimages.com/ss5/altimages/ss5/p-11881269_pv-1_u-vn0ojmncw100kh53f4eq_v-2jscqarvng2hcy23ggsq.jpg?_hv=3
+- Vince Carter — https://www.shopjrsports.com/cdn/shop/products/VINCE-CARTER-MEN-S-MITCHELL-NESS-98-99-SWINGMAN-JERSEY__S_1.jpg?v=1611741729&width=1946
+- Dennis Rodman — https://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/izcAAOSwqrliu4R6/%24_57.JPG?set_id=8800005007
+- Dwyane Wade — https://i5.walmartimages.com/seo/Men-s-Mitchell-Ness-Dwyane-Wade-White-Miami-Heat-2005-06-Authentic-Player-Jersey_7326df15-a815-47a9-8d49-b287cc2f5d05.9d7b162cc6849e1aff64aeb122a97814.jpeg
+- Tim Duncan — https://capusa.nyc/cdn/shop/products/image_85e49667-86f1-4d4e-bbca-281d16b00bb3.png?v=1635632677&width=1200
+- Dirk Nowitzki — https://throwbackstore.com.au/cdn/shop/products/Mitchell_and_Ness_Dirk_Nowitzki_Dallas_Mavericks_10-11_HWC_Swingman_Jersey_MNDM4192_Blue_hero.jpg?v=1668404836
+- Hakeem Olajuwon — https://www.topsandbottomsusa.com/cdn/shop/files/mitchell-ness-swingman-hakeem-olajuwon-houston-rockets-nba-jersey-9n2b3brd0-rckoh_3.webp?v=1752608086&width=1500
+- Scottie Pippen — https://imgcentauro-a.akamaihd.net/1300x1300/M0WJ2A06.jpg
+- Charles Barkley — https://www.retrobasketballstore.com/cdn/shop/products/92-93_Charles_Barkley_Purple_1200x1200.png?v=1726480128
+- Karl Malone — https://www.innvictus.com/medias/jersey-mitchell-ness-karl-malone-utah-jazz-9697-in-SMJYGS18216-UJAPURP96K-1.jpg?context=bWFzdGVyfGltYWdlc3wxODkyMjZ8aW1hZ2UvanBlZ3xhVzFoWjJWekwyZzFNQzlvTkRndk1USTFOVE0wTURFMk5qTTFNVGd1YW5CbnxiZTBlN2NhMDljNDBmMzZjYmE3NWVhYzA5ZWFhNWMwNTVhOTU4ODllMzQzZjkxM2IxYTNlMDQ5NGQ5MTYzMjVm
+- Kevin Garnett — https://i5.walmartimages.com/seo/Men-s-Mitchell-Ness-Kevin-Garnett-Blue-Minnesota-Timberwolves-2001-02-Hardwood-Classics-Swingman-Jersey_817e6c15-f6a5-44e9-9e24-b0c5993c0d61.eb1b763b96493099ebbd8944ecf952f6.jpeg
+- Tracy McGrady — https://www.topsandbottomsusa.com/cdn/shop/files/mitchell-ness-swingman-tracy-mcgrady-orlando-magic-nba-jersey-9n2b7brd0-magtm_2.webp?crop=center&height=1200&v=1752696539&width=1200
+- Derrick Rose — https://shop.bulls.com/cdn/shop/files/BULLMZ0120D.jpg?v=1765898066
+- Steve Nash — https://www.classicfootballshirts.co.uk/pub/media/catalog/product/a/m/americansportsjackets-129.jpg
+- Reggie Miller — https://i.ebayimg.com/images/g/MQkAAeSw0l9pd8Ip/s-l1200.webp
+- Patrick Ewing — https://bludshop.com/hpeciai/f8a5885f25ee8157a8916b2ecde03ec6/pol_pl_Koszulka-Mitchell-Ness-New-York-Knicks-33-Patrick-Ewing-royal-Swingman-Jersey-37515_3.jpg
+- Penny Hardaway — https://fanatics.frgimages.com/orlando-magic/mens-mitchell-and-ness-penny-hardaway-blue-orlando-magic-1994/95-hardwood-classics-swingman-jersey_pi2751000_altimages_ff_2751368alt1_full.jpg?_hv=2&w=1018
+- Pau Gasol — https://mitchellandness.mx/cdn/shop/files/SMJY7609-LAL09PGALTGD_1.jpg?v=1753826182&width=2000
+- Kevin Durant — https://www.classicfootballshirts.co.uk/pub/media/catalog/product/u/h/uhi6131-1_xbvqqcw4usp2dk7b.jpg
+- Giannis Antetokounmpo — https://9b6e8d-barcin.akinoncloudcdn.com/products/2022/09/28/871260/a99a9054-a0e9-4d95-a865-32408cba1c3d.jpg
+- Nikola Jokić — https://static.lojanba.com/produtos/regata-jersey-nba-nike-denver-nuggets-jokic-n15-masculina/69/2IC-8880-C69/2IC-8880-C69_zoom1.jpg?ts=1770205647
+- Julius Erving — https://images.footballfanatics.com/philadelphia-76ers/julius-erving-red-philadelphia-76ers-autographed-mitchell-and-ness-hardwood-classics-authentic-jersey_pi4702000_altimages_ff_4702421-ca429ca8249db2598810alt3_full.jpg?_hv=2&w=1018
+- Bill Russell — https://cdn11.bigcommerce.com/s-b0wguna27q/images/stencil/1320x1320/products/5140/12615/BillRussell19621963HWCSwingmanJersey1000a__72237.1700512148.jpg?c=2

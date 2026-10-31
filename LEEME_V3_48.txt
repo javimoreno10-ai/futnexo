@@ -1,0 +1,14 @@
+FutNexo V3.48 — Segunda revisión visual de Chándals
+
+Cambios:
+- Ordenados los clubes primero y las selecciones al final en cada tipo de cremallera.
+- Conservadas las 26 fotos de media cremallera y las 17 de cremallera larga (43 conjuntos).
+- Actualizada portada con imágenes del catálogo real; quitada la referencia al Bayern, sin productos en la colección.
+- Botones de portada que abren directamente la pestaña indicada.
+- Nombres de colores uniformes y fichas con formato consistente.
+- Precio: 44,99 € sin cambios.
+
+PUBLICACIÓN
+Sustituye sólo chandals.html en la raíz de tu repositorio GitHub.
+No hace falta subir carpetas de imágenes: están integradas en el HTML.
+El resto de archivos de la web permanece igual.

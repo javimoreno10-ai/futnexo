@@ -1,0 +1,7 @@
+FutNexo V3.49 — Chándals
+
+Eliminada por completo la sección «Otros chándals sin clasificar» y sus 24 fichas.
+Conservados los 26 modelos de Media cremallera y 17 de Cremallera larga, con sus fotografías integradas en el HTML, filtros y buscadores.
+Se conserva el menú móvil y el precio de 44,99 €.
+
+Para publicar: sustituye solo chandals.html en la raíz de tu repositorio de GitHub.

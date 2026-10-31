@@ -1,82 +1,10 @@
-FUTNEXO · WEB V1
-================
+FutNexo V3.50 — Limpieza de catálogos
 
-Qué incluye:
-- Página principal profesional adaptable a móvil y ordenador.
-- Catálogo ilustrativo con filtros por Fan, Retro y Selecciones, buscador y enlaces a Instagram.
-- Precios: Fan 17,99 €, Retro 24,99 €, Player 24,99 €, Infantil 17,99 €.
-- Secciones de colecciones, precios y cómo comprar.
-- Sin checkout ni pagos reales: está preparada como escaparate hasta regularizar la actividad.
+1. chandals.html: eliminado el modelo de México del apartado Media cremallera. Quedan 25 modelos de media cremallera y 17 de cremallera larga (42 en total).
+2. entrenamiento.html: retiradas las 17 fichas que no tenían fotografía. Quedan 12 modelos con foto.
+3. entrenamiento.html: retiradas las etiquetas superpuestas “Con foto”, “Club” y “Selección”.
+4. Se conserva el precio de 44,99 € en Chándals y 34,99 € en Entrenamiento.
+5. Las imágenes de ambos catálogos siguen integradas en sus archivos HTML.
 
-EDITAR
-1. catalogo.js: edita nombres, categorías y precios de los ejemplos del catálogo.
-2. index.html: cambia títulos, textos y enlaces, así como los precios de las tarjetas fijas.
-3. styles.css: colores, tipografías y estilos.
-4. assets/: cambia fotos (actualiza las rutas si renombras archivos).
-
-PREVISUALIZAR
-Abre index.html en un navegador. No necesitas instalar nada.
-
-PUBLICAR GRATIS EN CLOUDFLARE PAGES
-1. Crea un repositorio de GitHub y sube el contenido de ESTA carpeta (index.html en la raíz).
-2. En Cloudflare, ve a Workers & Pages > Create > Pages > conectar GitHub.
-3. Selecciona el repositorio, framework: None, comando build vacío, directorio de salida: / o la raíz del proyecto (según interfaz).
-4. Publica. Cloudflare facilita una URL provisional de tipo pages.dev.
-5. Compra un dominio disponible y conéctalo en Custom domains cuando quieras.
-6. Los cambios futuros en el repositorio podrán desplegarse automáticamente.
-
-PENDIENTE ANTES DE VENDER
-- Asegurar procedencia y permisos comerciales de productos, así como información veraz de las fotos.
-- Alta fiscal/Seguridad Social según situación, política de privacidad, aviso legal, condiciones y devoluciones, IVA y aduanas.
-- Configurar pasarela de pago sólo cuando legalmente proceda.
-- Confirmar inventario real y características antes de publicar productos como disponibles.
-
-Los textos sobre fotografías y disponibilidad son deliberadamente prudentes: las imágenes son ilustrativas, no prueban que exista stock ni autorización para vender prendas de marca.
-
-
-BORRADOR V2 (no publicado): incorpora cambios solicitados: logo negro/blanco/azul, colores de portada, contador de Halloween, guia de tallas original, precios superiores Fan y Retro, elimina numeracion de colecciones, secciones Encuentra tu camiseta y Mas FutNexo como en la antigua web.
-NOTA: las categorias todavia redirigen a Google Sites hasta su migracion. Validar tablas con el proveedor. Subir el contenido de la carpeta (no el ZIP) a la raiz del repo para activar, preferiblemente tras concluir la lista de cambios.
-
-
-FUTNEXO V3 — BORRADOR PARA REVISAR ANTES DE PUBLICAR
-- Eliminados números decorativos 01–04 de «Elige tu versión».
-- Eliminados números 01–03 de «Tu próxima camiseta».
-- Logo: escudo + nombre tipográfico FutNexo, más legible en cabecera y pie.
-- Clubes 26/27: composición de dos diseños ilustrativos (no fotografías oficiales).
-- Escaparate: tarjetas más visuales, mejor botón Consultar, contador dinámico de resultados y búsqueda/filtros conservados.
-- La promoción del reto Halloween 1/20 en Google Sites NO se ha añadido a esta versión de Cloudflare.
-- Antes de publicar: comprobar visualmente en móvil y escritorio, además de revisar enlaces externos.
-
-V3.1 — SIN LOGO DE IMAGEN
-Se retiró la imagen del escudo del encabezado y del pie de página. Ahora se muestra FUTNEXO con letras blancas y azules. No requiere cargar ninguna imagen para mostrar la marca.
-La imagen anterior puede permanecer sin utilizar en el repositorio; no se muestra en la página.
-
-
-FUTNEXO V3.2 — CLUBES DENTRO DE FUTNEXO
-- La tarjeta «Clubes 26/27» de la portada abre clubes.html, dentro del mismo dominio y pestaña.
-- Nueva página con buscador de equipos, filtros España/Inglaterra/Europa y 12 imágenes de referencia procedentes de archivos de trabajo.
-- Personaliza el listado y los nombres de los equipos en clubes.js. Las fotografías están en assets/clubes/.
-- Personaliza apariencia en clubes.css y textos en clubes.html.
-- NO se han migrado todavía las secciones Selecciones, Retro o Más FutNexo; siguen enlazando a Google Sites.
-- Las fotos NO certifican la temporada 26/27, autenticidad ni stock real. Verifica procedencia y derechos comerciales antes de vender o publicitar prendas de marcas.
-- PARA PUBLICAR: subir index.html, clubes.html, clubes.css, clubes.js y la carpeta assets/clubes/ al repositorio, respetando rutas. No subir solo clubes.html.
-
-
-FUTNEXO V3.3 — CLUBES AMPLIADOS + FOTOS INTEGRADAS
-- Se amplió el catálogo a 51 clubes (antes 12). Es una propuesta ampliada; no se ha logrado recuperar íntegramente el listado original de Google Sites.
-- 16 equipos incluyen fotos procedentes de imágenes locales; el resto llevan ilustraciones genéricas etiquetadas (no equipaciones oficiales ni stock).
-- La página clubes.html incluye su propio CSS, Javascript y fotos: se pueden publicar clubes.html e index.html sin subir assets/clubes. Se sigue usando styles.css global para la identidad de la marca.
-- Los enlaces de Selecciones, Retro y categorías adicionales no se han migrado y siguen apuntando a Google Sites.
-- Para igualar exactamente los equipos y las fotos del antiguo catálogo, necesitamos una lista/captura/archivos originales del propietario.
-- Para publicar: subir clubes.html a la raiz del repositorio. No hay que tocar otros archivos si ya está publicada la V3.2.
-
-
-FUTNEXO V3.4 — EQUIPOS COMPLETOS DE LAS CINCO GRANDES LIGAS 26/27
-- LaLiga: 20 equipos; Premier League: 20; Serie A: 20; Bundesliga: 18; Ligue 1: 18.
-- Otros clubes: 13 adicionales. TOTAL: 109 tarjetas de equipo, 96 de las cinco ligas.
-- Relación de participantes comprobada el 28-10-2026 en fuentes de clasificación/calendarios.
-- Las fotografías (16) de la V3.3 siguen integradas en clubes.html. El resto muestra ilustraciones genéricas no oficiales, para no inventar diseños reales.
-- No se muestran puntos ni posiciones que cambiarían durante la temporada.
-- El CSS y el JS de los filtros, búsqueda y fotos están dentro de clubes.html.
-- Si la V3.3 ya funciona en GitHub/Cloudflare, basta con sustituir clubes.html en la raíz del repositorio.
-- Los demás archivos se mantienen sin cambios. No supone publicación automática desde ChatGPT.
+PUBLICACIÓN: sustituye ÚNICAMENTE chandals.html y entrenamiento.html en la raíz del repositorio GitHub.
+No es necesario subir carpetas de imágenes.

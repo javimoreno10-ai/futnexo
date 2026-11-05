@@ -1,0 +1,33 @@
+FUTNEXO V3.52 — ACTUALIZACIÓN DE PRECIOS Y PACKS
+=================================================
+Fecha: 5 de noviembre de 2026
+
+Este ZIP contiene el sitio completo en 10 archivos HTML.
+Base: V3.41 (sitio completo) + V3.50 (chándales y entrenamiento) + V3.51 (NBA Actual y Retro).
+
+ACTUALIZADO
+- Precios individuales y packs de 2 según último acuerdo.
+- Camisetas Fan: 29,99 / 44,99 €
+- Player: 36,99 / 54,99 €
+- Retro: 36,99 / 54,99 €
+- Infantil: 27,99 / 41,99 €
+- Adulto: 29,99 / 44,99 €
+- NBA actual y retro: 39,99 / 64,99 €
+- F1: 36,99 / 59,99 €
+- Chándal media cremallera: 54,99 / 89,99 €
+- Chándal cremallera larga: 64,99 / 109,99 €
+- Entrenamiento: 34,99 / 54,99 €
+- Pantalón: 19,99 / 29,99 €
+- Tirantes: 29,99 / 46,99 €
+- Mixto Retro + Fan: 49,99 €.
+- Otros packs de categorías distintas: descuento del 10 % sobre el producto más barato (sin acumular con packs de la misma categoría).
+- Nombre y dorsal +1,50 € por prenda; parche +1,50 € por prenda.
+- 1 producto: +2,99 € de envío; 2 o más: envío gratis.
+- Calculadora interactiva de packs en la portada (informativa; no es checkout).
+- Precios por categoría y banda de promociones en las páginas internas.
+
+ATENCIÓN
+- La web sigue siendo un catálogo que deriva las consultas a Instagram. No existe pasarela de pago ni carrito de compra en estos archivos. El precio del pack se muestra y se calcula informativamente, pero no se cobra automáticamente al cliente.
+- Para publicar: haz copia de tu repositorio y sustituye los archivos HTML homónimos por estos 10, sin borrar otros archivos existentes. Sube y comprueba el despliegue de Cloudflare Workers.
+- La calculadora aplica el 10 % al artículo más barato cuando se combinan categorías distintas; Retro + Fan tiene el precio excepcional de 49,99 €.
+- En productos con costes de compra pendientes, comprueba el margen antes de aceptar un pedido.

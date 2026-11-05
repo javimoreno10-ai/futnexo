@@ -1,0 +1,17 @@
+FUTNEXO — VERSION 3.54 — ASI FUNCIONA TU PEDIDO
+
+Base: FutNexo V3.53.
+
+CAMBIOS
+- Se sustituye la antigua sección de tres pasos "Como comprar" por una sección de cinco pasos "Asi funciona tu pedido".
+- La sección aparece después de las promociones de packs y antes de los precios.
+- Incluye selección, consulta por Instagram, confirmación y pago, seguimiento y entrega.
+- Recuerda el envío de 2,99 EUR para una unidad y envío gratis a partir de dos.
+- Incluye botón directo al Instagram de FutNexo.
+- Diseño responsive para ordenador, tableta y móvil.
+- No se modifican el catálogo, los precios ni las fotografías de V3.53.
+
+PUBLICACION
+Si ya tienes V3.53 publicada, basta con sustituir index.html en GitHub.
+Los otros archivos HTML son iguales.
+Esta carpeta contiene los HTML de la web. Si el proyecto publicado tiene ficheros de estilos, scripts e iconos por separado, hay que conservarlos: no se incluyen en este ZIP porque tampoco estaban en V3.53.

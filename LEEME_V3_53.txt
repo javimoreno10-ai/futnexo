@@ -1,0 +1,19 @@
+FUTNEXO V3.53 - CATEGORÍAS CON FOTOS
+
+Base de trabajo: V3.52 (precios, packs y extras de 1,50 EUR, sin cambios).
+
+Cambios:
+- Eliminada la sección de oferta/cuenta atrás de Halloween de index.html.
+- Eliminada por completo la sección «Explora otras categorías» y enlaces de navegación asociados.
+- En «Encuentra tu producto», las 9 categorías tienen una imagen integrada en index.html.
+- Las categorías Chándals, Entrenamiento y NBA usan imágenes de los catálogos de FutNexo.
+- Las categorías Pantalones, Tirantes y Fórmula 1 usan fotografías ilustrativas (no imágenes reales de un artículo puesto a la venta).
+- Se mantienen las fotos existentes de Clubes, Selecciones y Retro.
+- Las imágenes de la portada están incrustadas para que no dependan de enlaces externos.
+
+Archivos: diez páginas HTML y esta nota.
+
+PUBLICACIÓN: Sustituye los diez HTML en el mismo repositorio/carpeta de GitHub que alberga FutNexo.
+No se incluyen los archivos compartidos ya existentes, como styles.css y favicon.*; deben permanecer en el repositorio.
+
+Validaciones: las nueve tarjetas apuntan a sus páginas de catálogo; precios y calculadora no modificados.

@@ -1,0 +1,33 @@
+FUTNEXO V3.58 — PROCESO DE SOLICITUD VISUAL
+
+CAMBIOS INCLUIDOS
+- Formulario de pedido completamente vertical y adaptado a móviles, con los pasos claramente ordenados.
+- Desplegables dependientes categoría > equipo/jugador > temporada > modelo > color > referencia, basados en 348 fichas reales de HTML (no en opciones inventadas).
+- Los productos con color o temporada no indicados quedan como 'por confirmar'. No se inventan variantes.
+- Todos los enlaces de los productos en Clubes, Selecciones, Retro, NBA, Chándals y Entrenamiento llevan a pedido.html?ref=ID y seleccionan la ficha concreta.
+- Botones «Hacer pedido» o «Consultar disponibilidad» según el estado existente en catálogo.
+- Foto exacta del artículo añadido en la solicitud cuando el catálogo contiene imagen. Las que no tienen imagen muestran un marcador honesto, sin foto genérica.
+- Editar y eliminar productos, cesta persistente en el navegador y descuento automático de packs.
+- Instagram obligatorio: formato de nombre de usuario; aviso explícito de que FutNexo contactará por DM para completar el pedido, con aceptación obligatoria.
+- Nombre y correo continúan obligatorios. El formulario sigue enviando por FormSubmit al destinatario YA ACTIVADO javiermr810@gmail.com.
+- Resumen enviado por email ahora incluye ID y enlace directo a cada producto para identificarlo sin dudas.
+- No se solicita dirección, DNI o datos bancarios. No se realiza ningún pago.
+- Se conservan las mejoras de V3.55 a V3.57, incluida la camiseta de Duncan.
+
+INSTALACIÓN
+1. Subir TODOS los archivos y la carpeta assets/ al mismo directorio de publicación de la web (mantener rutas).
+2. No eliminar del repositorio original otros recursos como styles.css, catalogo.js o script.js (no incluidos en los ZIP anteriores).
+3. Dejar catalogo-pedidos.js y pedido.js junto a pedido.html (archivos nuevos, obligatorios).
+4. Abrir cualquier camiseta, pulsar «Hacer pedido», confirmar foto/referencia, añadir, editar y enviar solicitud de prueba.
+5. Comprobar recepción en javiermr810@gmail.com y verificar que el enlace de cada referencia abre la prenda correcta.
+
+ADVERTENCIAS
+- Imágenes externas pueden dejar de funcionar. Si la foto de una prenda es inexistente/no accesible, se muestra «Foto no disponible».
+- La foto exacta de Gasol aportada anteriormente no está disponible como archivo independiente en esta versión de la sesión: se ha conservado su imagen del catálogo. La imagen de Duncan sí se conserva.
+- «Por confirmar» no garantiza stock. Algunos clubes de Segunda División 2026/27 estaban pendientes de revisión deportiva/proveedor.
+- FormSubmit es un proveedor externo y no se ha certificado el cumplimiento legal del tratamiento de datos. Los borradores legales del proyecto no se han publicado automáticamente.
+- Las imágenes de fuentes externas pueden estar sujetas a derechos de autor; retirar la línea «fuente» no concede derechos de uso.
+- El importe es orientativo y los descuentos deben validarse comercialmente.
+- No se ha realizado envío real al correo desde esta sesión: probar en la web publicada.
+
+CATÁLOGO INDEXADO: 348 fichas; 197 fotografías locales independientes; 960 enlaces de producto actualizados.

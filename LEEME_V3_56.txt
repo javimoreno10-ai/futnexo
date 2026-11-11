@@ -1,0 +1,7 @@
+FutNexo V3.56 - actualización parcial de fotografías NBA
+
+Cambios: la ficha NBA Retro de Tim Duncan / San Antonio Spurs #21 usa ahora la foto aportada por el usuario, embebida en nba.html.
+Se conserva el formato de las demás camisetas, el enlace a pedido, los precios y el resto del catálogo.
+Pendiente: sustituir la foto de Pau Gasol #16 por la imagen exacta aportada, que no se pudo recuperar como archivo independiente en esta sesión. La foto anterior de Gasol permanece sin cambios.
+
+Si V3.55 ya está desplegada, sustituir nba.html. Para completar Gasol, volver a adjuntar la fotografía como archivo independiente.

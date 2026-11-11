@@ -1,0 +1,26 @@
+FUTNEXO V3.55 — VERSIÓN DE PRUEBA, NO PUBLICAR COMO TIENDA COMPLETA
+
+CAMBIOS INCLUIDOS
+- Clubes: sección de 22 equipos de Segunda División 2026/27 con modelos/fotografías pendientes.
+- Retro: doce modelos históricos añadidos como solicitudes pendientes; agrupación por equipos/selecciones.
+- Entrenamiento: ocho equipos añadidos como solicitudes pendientes.
+- Eliminados rótulos/links visibles «Fuente de foto» y «Fuente» de los listados; ATENCIÓN: esto no resuelve licencias de las imágenes externas. Sustituir por fotos propias/autorizadas antes del lanzamiento.
+- Pedido.html: ficha de producto y cesta de solicitud, tallas, personalización, parches, descuento de 2/5/10 prendas. Envío individual 2,99 €; desde dos, gratis.
+- Carrito guarda solo prendas localmente en el navegador. Los datos de contacto NO se almacenan en servidor.
+- Se genera resumen que el cliente debe COPIAR y ENVIAR MANUALMENTE por Instagram.
+- No existe recepción automática de formularios en esta versión. Es imprescindible facilitar un destino de recepción (correo de pedidos o integración Cloudflare/Google Sheets) e implementar una API segura o servicio autorizado de formularios antes de ofrecer entrega automática.
+- Pantalones, F1, Tirantes marcados «Próximamente».
+
+PRECIOS Y PROMOCIONES (PROPUESTA, PENDIENTE DE VALIDAR MÁRGENES)
+- 5–9 prendas: 5 % adicional sobre precio equivalente del pack de 2, no acumulable.
+- 10+ prendas: 10 % adicional sobre precio equivalente del pack de 2, no acumulable.
+- 2 prendas iguales: pack oficial; Fan + Retro: 49,99 €. Otros pares: 10 % sobre la prenda más barata.
+- Se pueden mezclar productos en pedidos >=5. Total orientativo, se confirma antes de cobro.
+- Para variaciones de tallas o dorsales, añadir la variante como línea separada.
+
+IMPORTANTE
+- La documentación legal preparada en el paso 2 es un BORRADOR no publicado.
+- Verificar procedencia, derechos de comercialización y consentimiento/licencias de las fotografías antes de aceptar pedidos.
+- Verificar disponibilidad y márgenes de cada producto, en especial los pendientes.
+- El sitio original referencia assets que NO están en este ZIP: styles.css, script.js, catalogo.js. Si están desplegados desde el repositorio original, se conservarán. Si no, hay que incorporarlos/corregir esas referencias.
+- Este paquete es una actualización de los diez HTML existentes más pedido.html. No es un despliegue automatizado de Cloudflare.

@@ -1,0 +1,10 @@
+FUTNEXO V3.62
+
+- 146 clubes: exactamente una ficha por club, sin segundas/terceras variantes adicionales.
+- Se conservan los 146 clubes de la V3.59, agrupados en las mismas ligas.
+- Nueva consulta de disponibilidad en pedido.html#consulta-disponibilidad; funciona sin añadir artículos al carrito.
+- Se han retirado 13 variantes añadidas de Barcelona, Real Madrid y Atlético, no los clubes.
+- Fotografías de las referencias originales conservadas de V3.61.
+- IMPORTANTE: no se ha verificado la composición oficial de las ligas 2026/27; las agrupaciones reflejan el catálogo existente.
+- La entrega del formulario depende de la activación/configuración de FormSubmit; probar recepción con consulta de prueba.
+- Reemplazar los archivos de la raíz del sitio, no subir el ZIP como un archivo aislado.

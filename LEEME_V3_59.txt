@@ -1,0 +1,35 @@
+FUTNEXO V3.59 · BUSCADOR Y FOTOGRAFÍAS LOCALES
+
+RESULTADOS DEL CATÁLOGO
+- Total de referencias identificadas: 348.
+- Fotografías locales asociadas a una referencia: 270.
+- Fotografías pendientes de la referencia exacta: 78.
+- Referencias con nueva fotografía del proveedor (selecciones 2026 y retro): 74.
+- Se han retirado los enlaces de fotos a dominios externos (no se conserva ninguna dependencia de fotografías remotas de producto).
+- Las prendas sin imagen verificada muestran un marcador local de 'Fotografía pendiente', no una camiseta de otra temporada.
+- Consultar FOTOGRAFIAS_PENDIENTES.txt e INFORME_FOTOGRAFIAS.csv para la lista exacta de ausencias.
+
+FORMULARIO Y PROCESO DE PEDIDOS
+- Campo de búsqueda para equipos, selecciones y jugadores (tolerante a acentos y mayúsculas).
+- Suprimido el selector de color.
+- Las categorías Clubes y Selecciones solo muestran Primera / Segunda / Tercera / Cuarta equipación si ese modelo está IDENTIFICADO dentro del catálogo.
+- Otros tipos de prendas usan referencia exacta y no inventan modelos de equipación.
+- Se conserva el enlace 'Hacer pedido' desde la ficha concreta al resumen con su imagen o el marcador pendiente.
+- Se conserva la cesta editable, nombre, Instagram y email obligatorios, envío a javiermr810@gmail.com por FormSubmit y promociones.
+- La talla no viene preseleccionada. Se aclara el mensaje del pack de dos prendas de la misma categoría.
+
+IMPORTANTE — PRODUCTOS DE CLUBES 2026/27
+- El catálogo de clubes enlazado en el Linktree del proveedor está etiquetado 2025/26. No se han usado esas fotografías para suplir 2026/27.
+- Las fotos externas originales de los equipos para los que no existe imagen local se han retirado. Para cubrirlas hace falta el catálogo de clubes 2026/27 del proveedor, o fotos originales autorizadas de esa temporada.
+- Las 22 referencias de Segunda División que ya figuraban como pendientes siguen pendientes de confirmación de imagen/modelo.
+- 'Fotografía local' solo significa almacenada en assets/, NO que se haya comprobado el stock, la autenticidad o los derechos de publicación.
+- Confirmar con TODOFUTBOL_GRANADA la autorización para reutilizar sus fotografías comercialmente. Las fotografías añadidas aquí se mantienen como material de proveedor sujeto a esa confirmación.
+
+DESPLIEGUE
+1. Descomprime y sube todo el contenido del ZIP, incluida la carpeta assets, al directorio de GitHub de FutNexo.
+2. Mantén los archivos ajenos a estas versiones que ya estén en tu repositorio (p. ej. CSS y JS anteriores).
+3. Realiza una solicitud real de prueba para confirmar que FormSubmit sigue enviando al correo activado.
+4. Comprueba el buscador con España, Madrid y Aston Villa; prueba artículo con foto y otro sin ella.
+5. No considerar definitivamente vendidos los modelos con foto pendiente sin consultar antes con el proveedor.
+
+PENDIENTES POR CATEGORÍA: {'Clubes': 36, 'Selecciones': 5, 'NBA': 29, 'Entrenamiento': 8}

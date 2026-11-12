@@ -1,0 +1,45 @@
+FUTNEXO V3.63 — AUDITORÍA, OPTIMIZACIÓN Y CONSULTAS
+
+FECHA: 12/11/2026
+ORIGEN: FutNexo V3.62 (actualizada en javimoreno10-ai/futnexo).
+
+1) AUDITORÍA DE LIGAS
+- 146 clubes originales (1 ficha por club). LaLiga 20, Segunda 22, Premier 20,
+  Serie A 20, Bundesliga 18, Ligue 1 18 y 28 otros.
+- Contrastadas las 6 ligas oficiales 2026/27. No se han eliminado ni incorporado clubes.
+- AUDITORIA_LIGAS_2026_27.csv incluye cada referencia y su fuente.
+
+2) FOTOGRAFÍAS
+- 300 fotografías existentes conservadas, sin sustituirlas por fotos incorrectas.
+- 48 referencias siguen pendientes de imagen auténtica: 6 clubes, 5 selecciones,
+  8 entrenamiento y 29 NBA. Lista exacta: FOTOGRAFIAS_PENDIENTES_V3_63.csv.
+- Las fotografías existentes se han extraído de HTML/JS a assets/catalogo/,
+  con identificadores por hash y bytes originales, sin recomprimir.
+- Se han mantenido intactas 348 referencias, precios y una sola camiseta por club.
+- No se han incorporado fotografías de fuentes externas sin confirmar derechos de uso.
+
+3) PEDIDOS Y CONSULTAS
+- El formulario de consultas funciona sin carrito. Puede rellenarse desde
+  ?consulta=fn-XXXX o desde ?buscar=texto.
+- Las referencias sin fotografía enlazan a consulta; se indica imagen pendiente.
+- Se añaden validaciones de Instagram y campos antispam y consentimiento.
+- FormSubmit NO está probado en producción; requiere envío y verificación de correo.
+- COMPLETAR aviso legal y política de privacidad antes de operar comercialmente.
+
+4) RENDIMIENTO
+- Las imágenes antes incrustadas se sirven por rutas estáticas reutilizables.
+- IMPORTANTÍSIMO: esta versión SÍ requiere subir la carpeta assets/catalogo.
+- NO subir solo archivos .html/.js a GitHub: faltarán imágenes si se omite assets.
+
+5) CATALOGO NBA Y EXPANSIÓN
+- Se mantienen las 29 camisetas históricas NBA sin inventar fotografías.
+- La expansión de equipos/modelos queda sujeta a fotos exactas y confirmación
+  del proveedor. No se añaden segundas ni terceras equipaciones sin autorización.
+
+PUBLICACIÓN / SEGURIDAD
+- Subir todos los archivos y la carpeta assets/ conservando estructura.
+- Probar en navegador de escritorio y móvil; probar 1 pedido y 1 consulta SIN
+  completar una compra ni enviar datos reales innecesarios.
+- Verificar que el hosting sirve .webp con Content-Type image/webp.
+- No eliminar la carpeta assets de versiones anteriores hasta verificar.
+- La actualización de GitHub no asegura por sí sola el despliegue en Cloudflare.

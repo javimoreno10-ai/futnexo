@@ -1,62 +1,60 @@
-FUTNEXO V3.61 · PRODUCTOS SIN FOTOGRAFÍA LOCAL (48)
-La integración del Drive cubre 30 productos antes pendientes y añade 13 variantes de Barcelona, Atlético y Real Madrid.
-No se muestra una foto ajena para rellenar referencias pendientes.
+FUTNEXO V3.63 - 48 PRODUCTOS SIN FOTOGRAFÍA COMPROBADA
+No se muestran fotografías de otros productos ni se garantiza el stock.
 
-=== Clubes: 6 pendientes ===
-fn-0125 | AD Ceuta FC | 2026/27 | Modelo por confirmar | Segunda División 2026/27 · Modelo por confirmar
-fn-0130 | CD Eldense | 2026/27 | Modelo por confirmar | Segunda División 2026/27 · Modelo por confirmar
-fn-0133 | CE Sabadell | 2026/27 | Modelo por confirmar | Segunda División 2026/27 · Modelo por confirmar
-fn-0134 | Celta Fortuna | 2026/27 | Modelo por confirmar | Segunda División 2026/27 · Modelo por confirmar
-fn-0136 | FC Andorra | 2026/27 | Modelo por confirmar | Segunda División 2026/27 · Modelo por confirmar
-fn-0139 | Real Sociedad B | 2026/27 | Modelo por confirmar | Segunda División 2026/27 · Modelo por confirmar
+=== CLUBES (6) ===
+fn-0125 | AD Ceuta FC | 2026/27 | Segunda División 2026/27 · Modelo por confirmar
+fn-0130 | CD Eldense | 2026/27 | Segunda División 2026/27 · Modelo por confirmar
+fn-0133 | CE Sabadell | 2026/27 | Segunda División 2026/27 · Modelo por confirmar
+fn-0134 | Celta Fortuna | 2026/27 | Segunda División 2026/27 · Modelo por confirmar
+fn-0136 | FC Andorra | 2026/27 | Segunda División 2026/27 · Modelo por confirmar
+fn-0139 | Real Sociedad B | 2026/27 | Segunda División 2026/27 · Modelo por confirmar
 
-=== Selecciones: 5 pendientes ===
-fn-0166 | Egipto | 2026 | Primera equipación | África · Primera equipación 2026
-fn-0176 | Irak | 2026 | Primera equipación | Asia · Primera equipación 2026
-fn-0177 | Irán | 2026 | Primera equipación | Asia · Primera equipación 2026
-fn-0179 | Jordania | 2026 | Primera equipación | Asia · Primera equipación 2026
-fn-0180 | Uzbekistán | 2026 | Primera equipación | Asia · Primera equipación 2026
+=== SELECCIONES (5) ===
+fn-0166 | Egipto | 2026 | África · Primera equipación 2026
+fn-0176 | Irak | 2026 | Asia · Primera equipación 2026
+fn-0177 | Irán | 2026 | Asia · Primera equipación 2026
+fn-0179 | Jordania | 2026 | Asia · Primera equipación 2026
+fn-0180 | Uzbekistán | 2026 | Asia · Primera equipación 2026
 
-=== NBA: 29 pendientes ===
-fn-0257 | Michael Jordan | 1995/96 | Camiseta NBA retro | Chicago Bulls · #23 · Roja · 1995/96
-fn-0258 | Kobe Bryant | 2000/01 | Camiseta NBA retro | Los Angeles Lakers · #8 · Amarilla · 2000/01
-fn-0259 | LeBron James | 2003/04 | Camiseta NBA retro | Cleveland Cavaliers · #23 · Granate · 2003/04
-fn-0260 | Stephen Curry | 2015/16 | Camiseta NBA retro | Golden State Warriors · #30 · Azul · 2015/16
-fn-0261 | Shaquille O'Neal | 1999/00 | Camiseta NBA retro | Los Angeles Lakers · #34 · Amarilla · 1999/00
-fn-0262 | Allen Iverson | 2000/01 | Camiseta NBA retro | Philadelphia 76ers · #3 · Negra · 2000/01
-fn-0263 | Magic Johnson | Temporada por confirmar | Camiseta NBA retro | Los Angeles Lakers · #32 · Amarilla · Años 80
-fn-0264 | Larry Bird | 1985/86 | Camiseta NBA retro | Boston Celtics · #33 · Verde · 1985/86
-fn-0265 | Vince Carter | 1998/99 | Camiseta NBA retro | Toronto Raptors · #15 · Morada · 1998/99
-fn-0266 | Dennis Rodman | 1995/96 | Camiseta NBA retro | Chicago Bulls · #91 · Negra con rayas · 1995/96
-fn-0267 | Dwyane Wade | 2005/06 | Camiseta NBA retro | Miami Heat · #3 · Blanca · 2005/06
-fn-0269 | Dirk Nowitzki | 2010/11 | Camiseta NBA retro | Dallas Mavericks · #41 · Azul · 2010/11
-fn-0270 | Hakeem Olajuwon | 1993/94 | Camiseta NBA retro | Houston Rockets · #34 · Roja · 1993/94
-fn-0271 | Scottie Pippen | 1995/96 | Camiseta NBA retro | Chicago Bulls · #33 · Roja · 1995/96
-fn-0272 | Charles Barkley | 1992/93 | Camiseta NBA retro | Phoenix Suns · #34 · Morada con sol · 1992/93
-fn-0273 | Karl Malone | 1996/97 | Camiseta NBA retro | Utah Jazz · #32 · Morada con montañas · 1996/97
-fn-0274 | Kevin Garnett | 2000 | Camiseta NBA retro | Minnesota Timberwolves · #21 · Azul · Años 2000
-fn-0275 | Tracy McGrady | 2002/03 | Camiseta NBA retro | Orlando Magic · #1 · Azul con estrellas · 2002/03
-fn-0276 | Derrick Rose | 2010 | Camiseta NBA retro | Chicago Bulls · #1 · Roja · Años 2010
-fn-0277 | Steve Nash | 2004/06 | Camiseta NBA retro | Phoenix Suns · #13 · Naranja · 2004/06
-fn-0278 | Reggie Miller | 1999/00 | Camiseta NBA retro | Indiana Pacers · #31 · Amarilla con rayas · 1999/00
-fn-0279 | Patrick Ewing | 1991/92 | Camiseta NBA retro | New York Knicks · #33 · Azul · 1991/92
-fn-0280 | Penny Hardaway | 1994/95 | Camiseta NBA retro | Orlando Magic · #1 · Azul con rayas · 1994/95
-fn-0281 | Pau Gasol | 2009/10 | Camiseta NBA retro | Los Angeles Lakers · #16 · Amarilla · 2009/10
-fn-0282 | Kevin Durant | 2013/14 | Camiseta NBA retro | Oklahoma City Thunder · #35 · Azul · 2013/14
-fn-0283 | Giannis Antetokounmpo | 2020/21 | Camiseta NBA retro | Milwaukee Bucks · #34 · Verde · 2020/21
-fn-0284 | Nikola Jokić | 2022/23 | Camiseta NBA retro | Denver Nuggets · #15 · Azul marino · 2022/23
-fn-0285 | Julius Erving | 1982/83 | Camiseta NBA retro | Philadelphia 76ers · #6 · Roja · 1982/83
-fn-0286 | Bill Russell | Años 60 | Camiseta NBA retro | Boston Celtics · #6 · Verde · Años 60
+=== ENTRENAMIENTO (8) ===
+fn-0341 | Atlético de Madrid | Temporada por confirmar | Conjunto de entrenamiento · Solicitar modelo
+fn-0342 | Arsenal | Temporada por confirmar | Conjunto de entrenamiento · Solicitar modelo
+fn-0343 | Bayern de Múnich | Temporada por confirmar | Conjunto de entrenamiento · Solicitar modelo
+fn-0344 | Inter de Milán | Temporada por confirmar | Conjunto de entrenamiento · Solicitar modelo
+fn-0345 | Juventus | Temporada por confirmar | Conjunto de entrenamiento · Solicitar modelo
+fn-0346 | Manchester City | Temporada por confirmar | Conjunto de entrenamiento · Solicitar modelo
+fn-0347 | Portugal | Temporada por confirmar | Conjunto de entrenamiento · Solicitar modelo
+fn-0348 | AC Milan | Temporada por confirmar | Conjunto de entrenamiento · Solicitar modelo
 
-=== Entrenamiento: 8 pendientes ===
-fn-0341 | Atlético de Madrid | Temporada por confirmar | Conjunto de entrenamiento | Conjunto de entrenamiento · Solicitar modelo
-fn-0342 | Arsenal | Temporada por confirmar | Conjunto de entrenamiento | Conjunto de entrenamiento · Solicitar modelo
-fn-0343 | Bayern de Múnich | Temporada por confirmar | Conjunto de entrenamiento | Conjunto de entrenamiento · Solicitar modelo
-fn-0344 | Inter de Milán | Temporada por confirmar | Conjunto de entrenamiento | Conjunto de entrenamiento · Solicitar modelo
-fn-0345 | Juventus | Temporada por confirmar | Conjunto de entrenamiento | Conjunto de entrenamiento · Solicitar modelo
-fn-0346 | Manchester City | Temporada por confirmar | Conjunto de entrenamiento | Conjunto de entrenamiento · Solicitar modelo
-fn-0347 | Portugal | Temporada por confirmar | Conjunto de entrenamiento | Conjunto de entrenamiento · Solicitar modelo
-fn-0348 | AC Milan | Temporada por confirmar | Conjunto de entrenamiento | Conjunto de entrenamiento · Solicitar modelo
+=== NBA (29) ===
+fn-0257 | Michael Jordan | 1995/96 | Chicago Bulls · #23 · Roja · 1995/96
+fn-0258 | Kobe Bryant | 2000/01 | Los Angeles Lakers · #8 · Amarilla · 2000/01
+fn-0259 | LeBron James | 2003/04 | Cleveland Cavaliers · #23 · Granate · 2003/04
+fn-0260 | Stephen Curry | 2015/16 | Golden State Warriors · #30 · Azul · 2015/16
+fn-0261 | Shaquille O'Neal | 1999/00 | Los Angeles Lakers · #34 · Amarilla · 1999/00
+fn-0262 | Allen Iverson | 2000/01 | Philadelphia 76ers · #3 · Negra · 2000/01
+fn-0263 | Magic Johnson | Temporada por confirmar | Los Angeles Lakers · #32 · Amarilla · Años 80
+fn-0264 | Larry Bird | 1985/86 | Boston Celtics · #33 · Verde · 1985/86
+fn-0265 | Vince Carter | 1998/99 | Toronto Raptors · #15 · Morada · 1998/99
+fn-0266 | Dennis Rodman | 1995/96 | Chicago Bulls · #91 · Negra con rayas · 1995/96
+fn-0267 | Dwyane Wade | 2005/06 | Miami Heat · #3 · Blanca · 2005/06
+fn-0269 | Dirk Nowitzki | 2010/11 | Dallas Mavericks · #41 · Azul · 2010/11
+fn-0270 | Hakeem Olajuwon | 1993/94 | Houston Rockets · #34 · Roja · 1993/94
+fn-0271 | Scottie Pippen | 1995/96 | Chicago Bulls · #33 · Roja · 1995/96
+fn-0272 | Charles Barkley | 1992/93 | Phoenix Suns · #34 · Morada con sol · 1992/93
+fn-0273 | Karl Malone | 1996/97 | Utah Jazz · #32 · Morada con montañas · 1996/97
+fn-0274 | Kevin Garnett | 2000 | Minnesota Timberwolves · #21 · Azul · Años 2000
+fn-0275 | Tracy McGrady | 2002/03 | Orlando Magic · #1 · Azul con estrellas · 2002/03
+fn-0276 | Derrick Rose | 2010 | Chicago Bulls · #1 · Roja · Años 2010
+fn-0277 | Steve Nash | 2004/06 | Phoenix Suns · #13 · Naranja · 2004/06
+fn-0278 | Reggie Miller | 1999/00 | Indiana Pacers · #31 · Amarilla con rayas · 1999/00
+fn-0279 | Patrick Ewing | 1991/92 | New York Knicks · #33 · Azul · 1991/92
+fn-0280 | Penny Hardaway | 1994/95 | Orlando Magic · #1 · Azul con rayas · 1994/95
+fn-0281 | Pau Gasol | 2009/10 | Los Angeles Lakers · #16 · Amarilla · 2009/10
+fn-0282 | Kevin Durant | 2013/14 | Oklahoma City Thunder · #35 · Azul · 2013/14
+fn-0283 | Giannis Antetokounmpo | 2020/21 | Milwaukee Bucks · #34 · Verde · 2020/21
+fn-0284 | Nikola Jokić | 2022/23 | Denver Nuggets · #15 · Azul marino · 2022/23
+fn-0285 | Julius Erving | 1982/83 | Philadelphia 76ers · #6 · Roja · 1982/83
+fn-0286 | Bill Russell | Años 60 | Boston Celtics · #6 · Verde · Años 60
 
-
-IMPORTANTE: las otras 313 referencias usan fotografías incrustadas en el código para evitar fallos de ruta de publicación.
+Para completar: solicitar al proveedor fotografías de cada referencia, con temporada/modelo identificables y permiso de uso comercial.

@@ -1,0 +1,21 @@
+RESULTADOS DE QA FUTNEXO V3.63 (12/11/2026)
+
+- 146 tarjetas club, 1 por club, distribución 20+22+20+20+18+18+28.
+- 348 referencias catalogadas, 300 con fotos locales, 48 sin foto.
+- Todas las 300 fotos del catálogo comparadas byte a byte con la V3.62: idénticas.
+- 310 recursos raster únicos separados del HTML/JS (se preservan imágenes hero/adicionales).
+- Todas las referencias HTML/CSS/JS e imágenes locales comprobadas.
+- Sintaxis de todos los archivos JS y scripts en línea validada con Node.
+- Pruebas de interfaz Chromium en escritorio 1365px y móvil 390px: navegación, filtros,
+  búsqueda vacía, pestañas NBA, añadir al carrito, totales y formulario prellenado.
+- No se reportaron errores JavaScript durante estas pruebas.
+- El formulario no ha sido enviado realmente a FormSubmit: hay que verificar su activación.
+- El sitio publicado en Cloudflare no es accesible desde este entorno para QA end-to-end.
+- Las 48 fotos faltantes no se pueden añadir con garantías desde las fuentes actualmente
+  facilitadas; no se han inventado imágenes o disponibilidad de stock.
+- Comprobar también derechos de uso comercial de las imágenes presentes.
+- Aviso legal/privacidad deben revisarse con datos reales del titular antes de ventas.
+
+NOTA: En el navegador de pruebas el acceso a URLs locales está restringido; se cargaron
+los HTML y JavaScript directamente para comprobar la interfaz. Los archivos de fotos
+se validaron de forma independiente por rutas y comparación binaria.

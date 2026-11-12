@@ -45,7 +45,7 @@ function preview(){const p=selected(),el=$('product-preview');if(!p){el.innerHTM
 for(const id of ['season','model']){$(id).addEventListener('change',()=>synchronize(fields.indexOf(id)+1));}
 $('reference').addEventListener('change',preview);
 $('category').addEventListener('change',()=>{$('team-search').value='';synchronize(1)});
-$('team-search').addEventListener('input',()=>synchronize(1));
+$('team-search').addEventListener('input',()=>{synchronize(1);updateUnknownTeam()});
 $('team').addEventListener('change',()=>{$('team-search').value=$('team').value;synchronize(2)});
 function setProduct(p){if(!p)return;$('team-search').value='';synchronize(0,p);}
 let start=byId.get(params.get('ref'));if(start)setProduct(start);else synchronize(0,null);
@@ -75,5 +75,28 @@ function validate(){if(!cart.length){$('copy-status').textContent='Añade al men
 $('contact').addEventListener('input',()=>{$('contact').setCustomValidity('')});
 $('order-form').addEventListener('submit',e=>{if(!validate()){e.preventDefault();return}if($('website-check').value){e.preventDefault();return}$('summary-input').value=message();$('copy-status').classList.remove('error');$('copy-status').textContent='Enviando al servicio de formularios. Puede aparecer una verificación antispam.';});
 $('copy').addEventListener('click',async()=>{if(!cart.length){$('copy-status').textContent='Añade al menos una prenda para copiar el resumen.';return;}const text=message();try{await navigator.clipboard.writeText(text);$('copy-status').textContent='Resumen copiado.'}catch(e){const t=document.createElement('textarea');t.value=text;document.body.append(t);t.select();let ok=document.execCommand('copy');t.remove();$('copy-status').textContent=ok?'Resumen copiado.':'No se pudo copiar. Revisa los permisos del navegador.'}});
+
+function updateUnknownTeam(){const q=$('team-search').value.trim(), noMatch=q&&!Array.from($('team').options).length;
+ const help=$('fn-unknown-team');if(!help)return;help.hidden=!noMatch;
+ if(noMatch)$('fn-unknown-team-link').href='pedido.html?buscar='+encodeURIComponent(q)+'#consulta-disponibilidad';}
+function prepareAvailability(){
+ const requested=byId.get(params.get('consulta'));
+ const searchText=(params.get('buscar')||'').trim().slice(0,140);
+ const form=$('availability-form');if(!form)return;
+ if(requested){
+  const kind={'Clubes':'Camiseta de fútbol','Selecciones':'Camiseta de fútbol','NBA':'Camiseta NBA','Retro':'Prenda retro','Chándals':'Chándal','Entrenamiento':'Conjunto de entrenamiento'}[requested.category]||'Otra prenda';
+  $('availability-category').value=kind;
+  $('availability-description').value=requested.name+' — '+requested.description+' ('+requested.season+'). Referencia: '+requested.id+'.';
+  $('availability-details').value='Quiero saber si está disponible y qué tallas o versiones puedo solicitar.';
+ } else if(searchText){
+  $('availability-description').value='Busco: '+searchText+'. Quiero saber si podéis conseguir esta prenda.';
+ }
+ form.addEventListener('submit',function(e){const ig=$('availability-instagram');ig.value=ig.value.trim();
+  const invalid=!/^@?[A-Za-z0-9._]{1,30}$/.test(ig.value);ig.setCustomValidity(invalid?'Introduce un usuario de Instagram válido.':'');
+  if($('availability-website').value||!form.checkValidity()){e.preventDefault();form.reportValidity();}
+ });
+ $('availability-instagram').addEventListener('input',function(){$('availability-instagram').setCustomValidity('')});
+}
+prepareAvailability();updateUnknownTeam();
 render();
 })();

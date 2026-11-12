@@ -1,0 +1,61 @@
+FUTNEXO V3.61 · FOTOGRAFÍAS INCRUSTADAS PARA EVITAR IMÁGENES ROTAS
+
+CAUSA Y SOLUCIÓN
+La V3.60 incluía todas las imágenes locales en assets, pero si no se subía toda esa carpeta al servidor, las páginas mostraban huecos.
+La V3.61 integra las imágenes reales que ya teníamos directamente en el HTML y en catalogo-pedidos.js,
+mediante datos de imagen WebP. No se requiere publicar la carpeta assets para mostrar las fotos existentes.
+Los archivos originales siguen incluidos en assets por compatibilidad y para futuras ediciones.
+
+ESTADO
+- Referencias: 361
+- Con fotografía integrada en el pedido: 313
+- Sin fotografía real: 48
+- Imágenes únicas integradas: 307
+- Imágenes originales leídas: 21697 KiB; tras convertir: 7371 KiB
+- Imagenes incrustadas por página: {'tirantes.html': 0, 'selecciones.html': 50, 'nba.html': 60, 'retro.html': 22, 'pedido.html': 0, 'formula1.html': 0, 'chandals.html': 42, 'entrenamiento.html': 12, 'pantalones.html': 0, 'index.html': 0, 'clubes.html': 153}
+
+FOTOGRAFÍAS QUE NO SE HAN PODIDO AÑADIR
+No podemos presentar como fotos reales imágenes que no se han podido descargar o verificar desde los tres enlaces aportados.
+Las cinco selecciones Egipto, Irak, Irán, Jordania y Uzbekistán no aparecen en el Drive facilitado.
+Las ocho referencias adicionales de entrenamiento no tenían fotografía en el ZIP anterior.
+En Yupoo se han localizado álbumes para al menos seis equipos, pero no es posible obtener las fotografías como archivo local desde este entorno.
+Por tanto estos 13 productos siguen señalados «Fotografía pendiente», además de los seis clubes y 29 NBA de la versión anterior.
+Se han mantenido las descripciones y enlaces de solicitud, sin inventar fotos ni confundir temporadas.
+
+COMPROBACIÓN
+1. Abre diagnostico-fotos.html (incluido): deben aparecer varios productos con marca «Imagen OK».
+2. Publica los archivos HTML actualizados y el archivo catalogo-pedidos.js (también pedido.js para evitar desfases).
+3. GitHub Pages: no subas el ZIP cerrado. Descomprímelo y conserva su estructura en la raíz del repositorio.
+4. Pulsa Ctrl+F5 (PC) o borra la caché del navegador tras la publicación.
+5. Entra en selecciones.html, entrenamiento.html y pedido.html?ref=fn-0001 y verifica imágenes.
+6. Si aún no aparecen, verifica que tu dominio publica este repositorio/rama y que los HTML/JS son V3.61.
+
+PARA INTEGRAR LOS 13 MODELOS REALES PENDIENTES
+Aporta fotografías originales en una carpeta ZIP, con carpetas por selección y conjunto de entrenamiento, o enlaces directos descargables a cada imagen.
+Entonces se pueden insertar también de forma autocontenida, sin depender de rutas externas.
+
+ARCHIVOS DEL ZIP DE PUBLICACIÓN
+Esta edición se distribuye en formato simplificado: imágenes dentro de HTML/JS y sin la carpeta assets.
+Por tanto no necesitas subir ninguna carpeta de fotos para que las 313 imágenes existentes se vean.
+El ZIP anterior V3.60 conserva las fotografías como archivos individuales por si quieres editarlas.
+
+FUENTES_PENDIENTES_SELECCIONES_ENTRENAMIENTO.csv
+Incluye 13 referencias pendientes y enlaces a los álbumes localizados.
+Esos enlaces NO prueban la disponibilidad de un modelo ni permiten su descarga como archivo en este entorno.
+
+OTROS PROBLEMAS DE LAS VERSIONES ANTERIORES DETECTADOS Y CORREGIDOS
+- styles.css no estaba en los archivos ZIP anteriores: ahora va incluido y su CSS base también está incrustado en las páginas.
+- index.html hacía referencia a catalogo.js y script.js, que no se suministraban. La portada ya no necesita catalogo.js para sus enlaces estáticos y se incluye un script.js funcional para el menú móvil.
+- Se incluyen los iconos favicon a los que apuntaban las páginas.
+- Se ha incorporado un identificador de versión 3.61 y un parámetro ?v=361 para renovar archivos JS/CSS al publicar.
+
+PUBLICACIÓN ESENCIAL
+Descomprime y sube TODO el contenido de esta V3.61 a la RAÍZ del repositorio publicado.
+Si utilizas GitHub Pages, revisa Settings > Pages y confirma rama y carpeta de publicación.
+IMPORTANTE: no publiques el archivo .zip tal cual ni lo dejes dentro de una subcarpeta.
+Abre diagnostico-fotos.html en el sitio publicado. Debe mostrar el estado de imágenes y cinco miniaturas.
+La portada, los catálogos y el pedido deben visualizar sus fotos aunque la carpeta assets no exista.
+
+ALCANCE HONESTO
+Las 13 fotos que solicitabas añadir (5 selecciones y 8 entrenamiento) todavía no están incluidas como fotos: no se obtuvieron archivos fuente.
+Las 313 fotos anteriores sí se entregan dentro de las páginas, con ruta independiente.

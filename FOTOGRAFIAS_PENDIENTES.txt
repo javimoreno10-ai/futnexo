@@ -1,4 +1,4 @@
-FUTNEXO V3.60 · PRODUCTOS SIN FOTOGRAFÍA LOCAL (48)
+FUTNEXO V3.61 · PRODUCTOS SIN FOTOGRAFÍA LOCAL (48)
 La integración del Drive cubre 30 productos antes pendientes y añade 13 variantes de Barcelona, Atlético y Real Madrid.
 No se muestra una foto ajena para rellenar referencias pendientes.
 
@@ -58,3 +58,5 @@ fn-0346 | Manchester City | Temporada por confirmar | Conjunto de entrenamiento 
 fn-0347 | Portugal | Temporada por confirmar | Conjunto de entrenamiento | Conjunto de entrenamiento · Solicitar modelo
 fn-0348 | AC Milan | Temporada por confirmar | Conjunto de entrenamiento | Conjunto de entrenamiento · Solicitar modelo
 
+
+IMPORTANTE: las otras 313 referencias usan fotografías incrustadas en el código para evitar fallos de ruta de publicación.

@@ -7,7 +7,7 @@ const money=x=>Number(x).toFixed(2).replace('.',',')+' €';
 const cartKey='futnexo_v358_cart';let cart=[],editIndex=-1;
 try{const data=JSON.parse(localStorage.getItem(cartKey)||'[]');if(Array.isArray(data))cart=data.filter(x=>byId.has(x.id)&&prices[x.type]&&Number.isInteger(x.quantity)&&x.quantity>=1&&x.quantity<=40).slice(0,40)}catch(e){}
 const unique=xs=>[...new Set(xs)].sort((a,b)=>a.localeCompare(b,'es'));
-const normalizeSearch=v=>String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('es').trim();
+const normalizeSearch=v=>String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('es').replace(/\bbarca\b/g,'barcelona').trim();
 const modelLabel=m=>{const v=normalizeSearch(m);if(/^(primera equipacion|local|primera)$/.test(v))return 'Primera equipación';if(/^(segunda equipacion|visitante|segunda)$/.test(v))return 'Segunda equipación';if(/^(tercera equipacion|tercera)$/.test(v))return 'Tercera equipación';if(/^(cuarta equipacion|cuarta)$/.test(v))return 'Cuarta equipación';return '';};
 const params=new URLSearchParams(location.search);
 const fields=['category','team','season','model','reference'];
@@ -22,6 +22,8 @@ function synchronize(from=0,preferred=null){const cfg=[['category','category'],[
     const kit=/^(Clubes|Selecciones)$/.test(category);
     items=kit?items.map(modelLabel).filter(Boolean):[];
     items=unique(items);
+    const modelOrder=['Primera equipación','Segunda equipación','Tercera equipación','Cuarta equipación'];
+    items.sort((a,b)=>modelOrder.indexOf(a)-modelOrder.indexOf(b));
     const show=kit&&items.length>0;
     $('model-field').hidden=!show;
     if(!show)items=[''];
@@ -35,8 +37,8 @@ function selected(){const l=filtered(4);return l.find(p=>p.id===$('reference').v
 function picture(p){if(!p||!p.photo)return '<div class="no-photo" aria-label="Fotografía pendiente">👕<span>Foto por confirmar</span></div>';
  return '<img class="photo" src="'+esc(p.photo)+'" alt="Foto de '+esc(p.name)+'" loading="lazy">';}
 function preview(){const p=selected(),el=$('product-preview');if(!p){el.innerHTML='<div class="no-photo">👕<span>Sin referencia</span></div><div><p class="preview-title">No hay prendas disponibles para esta elección</p></div>';return}
- const typeField=$('version-field');typeField.hidden=!['Clubes','Selecciones'].includes(p.category);
- let note=p.pending?'Referencia pendiente de confirmar con el proveedor.':'Referencia del catálogo. Comprueba la fotografía y elige tu talla.';if(!p.photo)note+=' Fotografía pendiente: no se muestra una imagen de otra equipación.';
+ const typeField=$('version-field');typeField.hidden=!!p.fixedVersion||!['Clubes','Selecciones'].includes(p.category);
+ let note=p.pending?'Referencia pendiente de confirmar con el proveedor.':'Referencia del catálogo. Comprueba la fotografía y elige tu talla.';if(p.fixedVersion)note+=' Fotografía correspondiente a versión '+p.fixedVersion+'.';if(!p.photo)note+=' Fotografía pendiente: no se muestra una imagen de otra equipación.';
  $('selection-notice').textContent=note;
  el.innerHTML=picture(p)+'<div><p class="preview-title">'+esc(p.name)+'</p><p class="preview-desc">'+esc(p.description)+'</p><p class="preview-desc" style="margin-top:7px">Temporada: '+esc(p.season)+'</p>'+(p.pending?'<span class="pill" style="margin-top:7px">Disponibilidad pendiente</span>':'')+'</div>';
 }
@@ -49,7 +51,7 @@ function setProduct(p){if(!p)return;$('team-search').value='';synchronize(0,p);}
 let start=byId.get(params.get('ref'));if(start)setProduct(start);else synchronize(0,null);
 $('personalize').addEventListener('change',()=>{$('personal-fields').hidden=!$('personalize').checked});
 function persist(){try{localStorage.setItem(cartKey,JSON.stringify(cart))}catch(e){}}
-function typeFor(p){return ['Clubes','Selecciones'].includes(p.category)?$('version').value:p.priceType;}
+function typeFor(p){return p.fixedVersion||(['Clubes','Selecciones'].includes(p.category)?$('version').value:p.priceType);}
 function calc(){const units=cart.reduce((s,x)=>s+x.quantity,0),normal=cart.reduce((s,x)=>s+prices[x.type][0]*x.quantity,0),extras=cart.reduce((s,x)=>s+x.quantity*(1.5*Number(x.personalized)+1.5*Number(x.patch)),0),ship=units===1?2.99:0;
  let base=normal,message='Añade al menos una prenda para calcular el importe.';
  if(units===1)message='Una prenda: 2,99 € de envío.';

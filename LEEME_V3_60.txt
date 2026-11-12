@@ -1,0 +1,31 @@
+FUTNEXO V3.60 · FOTOGRAFÍAS DEL DRIVE EN CATÁLOGO Y PEDIDOS
+
+ORIGEN DE LAS FOTOGRAFÍAS
+- Carpeta: https://drive.google.com/drive/folders/1-47TKTelTPwb7hR_7ftvI3jdmGN8iC2M
+- Se han incorporado 43 archivos WebP locales en assets/drive, descargados de la carpeta compartida.
+- 30 fichas de Clubes que estaban sin fotografía reciben ahora la foto de su primera equipación.
+- Se añaden 13 fichas de variantes visualmente diferenciadas (segunda, tercera y cuarta según disponibilidad, Player e Infantil) de FC Barcelona, Atlético de Madrid y Real Madrid.
+- El catálogo pasa de 348 a 361 referencias, con 313 fichas con fotografía local y 48 pendientes.
+- No se utilizan enlaces de imagen de Google Drive en la web: los 43 archivos son locales y forman parte del ZIP.
+
+COMPORTAMIENTO
+- En clubes.html las nuevas fotografías corresponden a la referencia concreta de pedido.
+- En pedido.html el selector y la cesta muestran esa misma foto por identificador.
+- Las nuevas referencias con foto tienen la versión fijada: Fan, Player o Infantil. Esto evita mostrar fotografía de una versión para encargar otra.
+- El buscador y los filtros se mantienen y muestran los modelos nuevos.
+- Se conservan los precios, las promociones, el formulario y el envío por FormSubmit.
+- No se han borrado las otras 270 fotos anteriores ni páginas como selecciones, retro o NBA.
+
+ALCANCE Y PENDIENTES
+- Esta versión no importa todo el archivo del Drive: faltan muchas fotos de otras camisetas y variantes; esta entrega prioriza las 30 fichas sin foto de Clubes que tienen correspondencia comprobable con carpetas disponibles.
+- Seis referencias de Segunda División no se han podido asociar a imágenes exactas del Drive (Ceuta, Eldense, Sabadell, Celta Fortuna, Andorra, Real Sociedad B). La lista completa está en FOTOGRAFIAS_PENDIENTES.txt.
+- Los modelos se infieren de las etiquetas «1, 2, 3, 4, Player Version, Niño» del Drive; dichas etiquetas no acreditan por sí mismas la temporada 2026/27.
+- Antes de vender, confirmar la temporada, el stock, la autenticidad y los permisos comerciales de las fotografías.
+- Para completar todas las fotos del Drive de una vez de forma fiable, la forma más práctica es descargar el contenido del Drive en ZIP, manteniendo la estructura de carpetas, y aportarlo para importación masiva.
+
+DESPLIEGUE
+1. Descomprime este ZIP en la raíz del repositorio de la web, conservando la carpeta assets/drive.
+2. Sube todos los archivos cambiados (clubes.html, catalogo-pedidos.js, pedido.js y assets/drive).
+3. Comprueba la búsqueda de «Barça», «Madrid», «Albacete» y «Granada».
+4. Prueba «Hacer pedido» y la cesta para primera, segunda y Player en los equipos compatibles.
+5. Haz una prueba del formulario de pedidos, que mantiene la configuración anterior.

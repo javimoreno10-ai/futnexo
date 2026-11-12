@@ -1,53 +1,23 @@
-FUTNEXO V3.59 · IMÁGENES PENDIENTES DE FOTOGRAFÍA REAL
-La web no carga imágenes desde dominios externos; no se asignan fotografías de otra temporada.
-Informe completo en INFORME_FOTOGRAFIAS.csv.
+FUTNEXO V3.60 · PRODUCTOS SIN FOTOGRAFÍA LOCAL (48)
+La integración del Drive cubre 30 productos antes pendientes y añade 13 variantes de Barcelona, Atlético y Real Madrid.
+No se muestra una foto ajena para rellenar referencias pendientes.
 
-=== Clubes (36 pendientes) ===
-fn-0001 | FC Barcelona | 2026/27 | Modelo por confirmar | LaLiga · Consultar modelos y tallas
-fn-0002 | Atlético de Madrid | 2026/27 | Modelo por confirmar | LaLiga · Consultar modelos y tallas
-fn-0003 | Real Madrid | 2026/27 | Modelo por confirmar | LaLiga · Consultar modelos y tallas
-fn-0004 | Real Betis | 2026/27 | Modelo por confirmar | LaLiga · Consultar modelos y tallas
-fn-0005 | Real Sociedad | 2026/27 | Modelo por confirmar | LaLiga · Consultar modelos y tallas
-fn-0007 | Deportivo Alavés | 2026/27 | Modelo por confirmar | LaLiga · Consultar modelos y tallas
-fn-0008 | Athletic Club | 2026/27 | Modelo por confirmar | LaLiga · Consultar modelos y tallas
-fn-0011 | Deportivo de La Coruña | 2026/27 | Modelo por confirmar | LaLiga · Consultar modelos y tallas
-fn-0012 | CA Osasuna | 2026/27 | Modelo por confirmar | LaLiga · Consultar modelos y tallas
-fn-0013 | Racing de Santander | 2026/27 | Modelo por confirmar | LaLiga · Consultar modelos y tallas
-fn-0017 | Getafe CF | 2026/27 | Modelo por confirmar | LaLiga · Consultar modelos y tallas
-fn-0018 | RCD Espanyol | 2026/27 | Modelo por confirmar | LaLiga · Consultar modelos y tallas
-fn-0019 | Valencia CF | 2026/27 | Modelo por confirmar | LaLiga · Consultar modelos y tallas
-fn-0020 | Málaga CF | 2026/27 | Modelo por confirmar | LaLiga · Consultar modelos y tallas
+=== Clubes: 6 pendientes ===
 fn-0125 | AD Ceuta FC | 2026/27 | Modelo por confirmar | Segunda División 2026/27 · Modelo por confirmar
-fn-0126 | Albacete BP | 2026/27 | Modelo por confirmar | Segunda División 2026/27 · Modelo por confirmar
-fn-0127 | Burgos CF | 2026/27 | Modelo por confirmar | Segunda División 2026/27 · Modelo por confirmar
-fn-0128 | Cádiz CF | 2026/27 | Modelo por confirmar | Segunda División 2026/27 · Modelo por confirmar
-fn-0129 | CD Castellón | 2026/27 | Modelo por confirmar | Segunda División 2026/27 · Modelo por confirmar
 fn-0130 | CD Eldense | 2026/27 | Modelo por confirmar | Segunda División 2026/27 · Modelo por confirmar
-fn-0131 | CD Leganés | 2026/27 | Modelo por confirmar | Segunda División 2026/27 · Modelo por confirmar
-fn-0132 | CD Tenerife | 2026/27 | Modelo por confirmar | Segunda División 2026/27 · Modelo por confirmar
 fn-0133 | CE Sabadell | 2026/27 | Modelo por confirmar | Segunda División 2026/27 · Modelo por confirmar
 fn-0134 | Celta Fortuna | 2026/27 | Modelo por confirmar | Segunda División 2026/27 · Modelo por confirmar
-fn-0135 | Córdoba CF | 2026/27 | Modelo por confirmar | Segunda División 2026/27 · Modelo por confirmar
 fn-0136 | FC Andorra | 2026/27 | Modelo por confirmar | Segunda División 2026/27 · Modelo por confirmar
-fn-0137 | Girona FC | 2026/27 | Modelo por confirmar | Segunda División 2026/27 · Modelo por confirmar
-fn-0138 | Granada CF | 2026/27 | Modelo por confirmar | Segunda División 2026/27 · Modelo por confirmar
 fn-0139 | Real Sociedad B | 2026/27 | Modelo por confirmar | Segunda División 2026/27 · Modelo por confirmar
-fn-0140 | RCD Mallorca | 2026/27 | Modelo por confirmar | Segunda División 2026/27 · Modelo por confirmar
-fn-0141 | Real Oviedo | 2026/27 | Modelo por confirmar | Segunda División 2026/27 · Modelo por confirmar
-fn-0142 | Real Sporting | 2026/27 | Modelo por confirmar | Segunda División 2026/27 · Modelo por confirmar
-fn-0143 | Real Valladolid CF | 2026/27 | Modelo por confirmar | Segunda División 2026/27 · Modelo por confirmar
-fn-0144 | SD Eibar | 2026/27 | Modelo por confirmar | Segunda División 2026/27 · Modelo por confirmar
-fn-0145 | UD Almería | 2026/27 | Modelo por confirmar | Segunda División 2026/27 · Modelo por confirmar
-fn-0146 | UD Las Palmas | 2026/27 | Modelo por confirmar | Segunda División 2026/27 · Modelo por confirmar
 
-=== Selecciones (5 pendientes) ===
+=== Selecciones: 5 pendientes ===
 fn-0166 | Egipto | 2026 | Primera equipación | África · Primera equipación 2026
 fn-0176 | Irak | 2026 | Primera equipación | Asia · Primera equipación 2026
 fn-0177 | Irán | 2026 | Primera equipación | Asia · Primera equipación 2026
 fn-0179 | Jordania | 2026 | Primera equipación | Asia · Primera equipación 2026
 fn-0180 | Uzbekistán | 2026 | Primera equipación | Asia · Primera equipación 2026
 
-=== NBA (29 pendientes) ===
+=== NBA: 29 pendientes ===
 fn-0257 | Michael Jordan | 1995/96 | Camiseta NBA retro | Chicago Bulls · #23 · Roja · 1995/96
 fn-0258 | Kobe Bryant | 2000/01 | Camiseta NBA retro | Los Angeles Lakers · #8 · Amarilla · 2000/01
 fn-0259 | LeBron James | 2003/04 | Camiseta NBA retro | Cleveland Cavaliers · #23 · Granate · 2003/04
@@ -78,7 +48,7 @@ fn-0284 | Nikola Jokić | 2022/23 | Camiseta NBA retro | Denver Nuggets · #15 �
 fn-0285 | Julius Erving | 1982/83 | Camiseta NBA retro | Philadelphia 76ers · #6 · Roja · 1982/83
 fn-0286 | Bill Russell | Años 60 | Camiseta NBA retro | Boston Celtics · #6 · Verde · Años 60
 
-=== Entrenamiento (8 pendientes) ===
+=== Entrenamiento: 8 pendientes ===
 fn-0341 | Atlético de Madrid | Temporada por confirmar | Conjunto de entrenamiento | Conjunto de entrenamiento · Solicitar modelo
 fn-0342 | Arsenal | Temporada por confirmar | Conjunto de entrenamiento | Conjunto de entrenamiento · Solicitar modelo
 fn-0343 | Bayern de Múnich | Temporada por confirmar | Conjunto de entrenamiento | Conjunto de entrenamiento · Solicitar modelo

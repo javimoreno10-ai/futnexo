@@ -1,0 +1,5 @@
+FutNexo V3.67 — Carrito de compra
+
+Novedades: botón Añadir al carrito en 6 catálogos, selector de talla/versión/cantidad/personalización, carrito persistente localStorage y acceso flotante. El carrito se revisa en pedido.html#solicitud y utiliza el cálculo de packs y el formulario existentes. No se cobra online; la solicitud requiere confirmación.
+
+Publicación: subir todos los archivos descomprimidos conservando carpetas. Comprobar en móvil y escritorio antes de anunciar.

@@ -10,7 +10,7 @@
 <meta content="#060911" name="theme-color"/>
 <meta content="FutNexo NBA: 30 camisetas actuales por conferencias y 30 modelos retro de jugadores legendarios, con filtros, buscadores y consulta por Instagram." name="description"/>
 <title>NBA | FutNexo</title>
-<link href="styles.css?v=363" rel="stylesheet"/>
+<link href="styles.css?v=367" rel="stylesheet"/>
 <style id="futnexo-v340-core-fallback">
 /* Core visual style shared with Clubs (safe fallback if external CSS is missing) */
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{background:#060911;color:#f1f6ff;margin:0;font-family:Arial,'Helvetica Neue',sans-serif;min-width:300px}a{color:inherit;text-decoration:none}button,input{font:inherit}button{cursor:pointer}img{max-width:100%}
@@ -394,4 +394,4 @@ btns.forEach(b=>b.addEventListener('click',()=>{selectedEra=b.dataset.retroEra;b
 for(const img of document.querySelectorAll('.nba-retro-card img')){const photo=img.closest('.retro-photo');img.addEventListener('load',()=>photo.dataset.photoState='ok');img.addEventListener('error',()=>photo.dataset.photoState='error');if(img.complete){photo.dataset.photoState=img.naturalWidth?'ok':'error';}}
 if(window.location.hash==='#nba-retro'){choose('retro');}render();
 })();
-</script><script>(function(){function setLinks(){document.querySelectorAll('#club-none,.club-none').forEach(function(p){var a=p.querySelector('a[href*="consulta-disponibilidad"]');if(!a){a=document.createElement('a');a.textContent=' Preguntar por la prenda →';p.appendChild(a);}a.classList.add('fn-availability-link');var q=document.getElementById('club-search');var text=q&&q.value.trim();a.href=text?'pedido.html?buscar='+encodeURIComponent(text)+'#consulta-disponibilidad':'pedido.html#consulta-disponibilidad';});}document.addEventListener('input',setLinks);document.addEventListener('click',setLinks);setLinks();})();</script></body></html>
+</script><script>(function(){function setLinks(){document.querySelectorAll('#club-none,.club-none').forEach(function(p){var a=p.querySelector('a[href*="consulta-disponibilidad"]');if(!a){a=document.createElement('a');a.textContent=' Preguntar por la prenda →';p.appendChild(a);}a.classList.add('fn-availability-link');var q=document.getElementById('club-search');var text=q&&q.value.trim();a.href=text?'pedido.html?buscar='+encodeURIComponent(text)+'#consulta-disponibilidad':'pedido.html#consulta-disponibilidad';});}document.addEventListener('input',setLinks);document.addEventListener('click',setLinks);setLinks();})();</script><script src="catalogo-pedidos.js?v=367"></script><script src="carrito-catalogo.js?v=367"></script></body></html>

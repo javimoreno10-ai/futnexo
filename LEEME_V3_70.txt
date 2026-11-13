@@ -1,0 +1,1 @@
+V3.70: fotos frontales de selecciones tomadas del ZIP del usuario. Se actualiza selecciones.html y catalogo-pedidos.js. Las fotos no identificadas se mantienen sin cambios. No se modifican otras categorias.

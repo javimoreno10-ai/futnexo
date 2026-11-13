@@ -64,23 +64,6 @@
 
 /* FutNexo V3.10: fotos locales correctamente asignadas */
 .club-photo img.uploaded-kit-photo{background:#f7f8fa;border-radius:10px;padding:8px;filter:none;object-fit:contain}
-
-/* V3.69: selector de cremalleras visible en móvil y escritorio */
-.chandal-choice-intro{margin:24px 0 12px;font-size:.82rem;font-weight:800;letter-spacing:.12em;color:#9fd8ff}
-.chandal-choice-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px!important;width:100%;margin:0 0 10px}
-.chandal-choice-grid .chandal-choice-card{white-space:normal!important;display:flex!important;align-items:center;text-align:left;gap:16px;min-height:156px;padding:22px!important;border:2px solid #3d638d!important;border-radius:20px!important;background:linear-gradient(130deg,#15283e,#0a1628)!important;color:#fff!important;transition:transform .2s,border-color .2s,box-shadow .2s}
-.chandal-choice-grid .chandal-choice-card:hover{transform:translateY(-3px);border-color:#9fd8ff!important}
-.chandal-choice-grid .chandal-choice-card.active,.chandal-choice-grid .chandal-choice-card[aria-pressed="true"]{border-color:#55bbff!important;background:linear-gradient(125deg,#143c65,#10243c)!important;box-shadow:0 0 0 3px rgba(60,171,250,.17),0 12px 25px rgba(0,0,0,.25)}
-.chandal-choice-icon{flex:0 0 54px;width:54px;height:54px;display:grid;place-items:center;border-radius:14px;background:#254f77;color:#fff;font-size:30px}
-.chandal-choice-content{display:flex;flex:1;flex-direction:column;align-items:flex-start;gap:8px;min-width:0}
-.chandal-choice-content strong{font-size:1.25rem;letter-spacing:.025em;line-height:1.2}
-.chandal-choice-content small{font-size:.9rem;line-height:1.4;color:#c5d8ed}
-.chandal-choice-content em{font-size:.9rem;font-style:normal;font-weight:800;color:#a8e3ff}
-.chandal-choice-action{font-size:.75rem;font-weight:800;color:#b7e4ff;white-space:nowrap}
-.chandal-choice-help{font-size:.9rem;color:#a8bad0;margin:10px 0 24px}
-@media(max-width:900px){.chandal-choice-grid{grid-template-columns:1fr}.chandal-choice-grid .chandal-choice-card{min-height:128px}.chandal-choice-action{display:none}}
-@media(max-width:440px){.chandal-choice-grid .chandal-choice-card{padding:16px!important;gap:12px}.chandal-choice-icon{width:44px;height:44px;flex-basis:44px;font-size:24px}.chandal-choice-content strong{font-size:1.08rem}}
-
 </style>
 <style id="futnexo-fn-logo-v39">
 .site-header .brand-fn-icon{display:inline-flex;align-items:center;justify-content:center;flex:0 0 34px;width:34px;height:34px;border:1px solid #2f486c;border-radius:9px;background:#0b1425;color:white;font-family:Arial,sans-serif;font-size:17px;line-height:1;font-weight:900;letter-spacing:-1.5px;box-shadow:0 3px 12px #050b1580}
@@ -418,7 +401,24 @@ th{color:#d4e8ff}
 .size-block{background:#0e1c30;border:1px solid #2c405d;border-radius:12px;padding:19px;margin:20px 0}
 @media(max-width:800px){.pricing-cards,.prices-grid,.price-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-art .art-card.art-back{transform:rotate(-12deg) translateX(-72px)}.hero-art .art-card.art-side{transform:rotate(12deg) translateX(72px)}}
 @media(max-width:530px){.announcement{font-size:8px;padding:5px 14px}.announcement-right{display:none}.hero-stats{gap:12px}.hero-stats>div{flex-direction:column;align-items:start;gap:0}.hero-art .art-card.art-back{transform:rotate(-10deg) translateX(-56px)}.hero-art .art-card.art-side{transform:rotate(10deg) translateX(56px)}.pricing-cards,.prices-grid,.price-cards{grid-template-columns:1fr}}
-</style></head><body>
+</style><style id="futnexo-v369-chandal-choice">
+.chandal-choice-intro{font-size:13px;font-weight:900;letter-spacing:.13em;color:#8fcaff;margin:28px 0 12px}
+.chandal-choice-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px!important;margin:0!important;overflow:visible!important;padding:0!important;width:100%}
+.chandal-choice-grid .chandal-choice-card{white-space:normal!important;display:flex!important;align-items:center;text-align:left;gap:16px;min-height:156px;padding:22px!important;border:2px solid #3d638d!important;border-radius:20px!important;background:linear-gradient(130deg,#15283e,#0a1628)!important;color:#fff!important;box-shadow:0 9px 25px rgba(0,0,0,.23);transition:transform .15s,border-color .15s,background .15s;min-width:0}
+.chandal-choice-grid .chandal-choice-card:hover{transform:translateY(-3px);border-color:#9fd8ff!important}
+.chandal-choice-grid .chandal-choice-card.active,.chandal-choice-grid .chandal-choice-card[aria-pressed="true"]{border-color:#55bbff!important;background:linear-gradient(125deg,#143c65,#10243c)!important;box-shadow:0 0 0 3px rgba(60,171,250,.17),0 12px 25px rgba(0,0,0,.25)}
+.chandal-choice-icon{flex:0 0 56px;width:56px;height:56px;border-radius:15px;display:grid;place-items:center;background:#22486d;color:#b7e7ff;font-size:34px;font-weight:900;line-height:1}
+.chandal-choice-content{display:flex;flex:1;flex-direction:column;gap:8px;min-width:0;opacity:1!important;margin:0!important}
+.chandal-choice-content strong{font:900 clamp(21px,2.3vw,29px)/1.1 'Barlow Condensed',Arial,sans-serif;letter-spacing:.02em;color:#fff}
+.chandal-choice-content small{font-size:13px;line-height:1.45;color:#d2e3f6;font-weight:500}
+.chandal-choice-content em{font-style:normal;font-size:13px;font-weight:800;color:#9be2ff}
+.chandal-choice-action{font-size:11px;font-weight:900;letter-spacing:.04em;color:#fff;background:#2676bc;padding:11px;border-radius:10px;opacity:1!important;margin:0!important;white-space:nowrap}
+.chandal-choice-help{font-size:13px;color:#b3cce7;margin:13px 0 30px;line-height:1.5}
+@media(max-width:900px){.chandal-choice-grid .chandal-choice-card{flex-wrap:wrap}.chandal-choice-action{width:100%;text-align:center}}
+@media(max-width:620px){.chandal-choice-grid{grid-template-columns:1fr!important;gap:12px!important}.chandal-choice-grid .chandal-choice-card{min-height:125px;padding:17px!important;flex-wrap:nowrap}.chandal-choice-icon{width:48px;height:48px;flex-basis:48px;font-size:27px}.chandal-choice-action{display:none}.chandal-choice-content strong{font-size:25px}}
+@media(prefers-reduced-motion:reduce){.chandal-choice-grid .chandal-choice-card{transition:none}}
+</style>
+</head><body>
 <div class="announcement"><span class="dot"></span> FUTNEXO · CAMISETAS DE FÚTBOL <span class="announcement-right">Tu fútbol, tu camiseta</span></div>
 <header class="site-header">
 <a aria-label="FutNexo, volver al inicio" class="brand" href="index.html#inicio"><span aria-hidden="true" class="brand-fn-icon">F<span>N</span></span><span aria-hidden="true" class="brand-wordmark">FUT<span class="brand-wordmark-blue">NEXO</span></span></a>

@@ -1,0 +1,1 @@
+FutNexo V3.69: selector de chándales con dos tarjetas destacadas: cremallera corta (media cremallera) y cremallera larga (completa). Mantiene los filtros y carrito existentes.

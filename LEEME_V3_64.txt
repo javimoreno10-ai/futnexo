@@ -1,0 +1,5 @@
+FutNexo V3.64 — Auditoría visual de orientación de selecciones
+
+Se han revisado visualmente 48 tarjetas. Se identifican 14 fotografías con vista trasera y 5 fichas sin fotografía. Las 14 vistas traseras quedan identificadas en la web mediante etiqueta visible, sin alterar ni falsificar las fotografías originales. Las 29 restantes parecen mostrar la vista delantera, pero no se ha verificado autenticidad ni temporada.
+
+Para sustituir las 14 imágenes traseras y completar las 5 ausentes, hacen falta fotografías frontales verificadas y con permiso de uso. El archivo CSV detalla el estado de cada selección. No se han realizado cambios en GitHub.

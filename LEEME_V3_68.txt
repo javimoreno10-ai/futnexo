@@ -1,0 +1,4 @@
+FutNexo V3.68
+En Clubes, el selector del carrito ofrece Fan (29,99 €), Player (36,99 €) e Infantil (27,99 €) sin quedar bloqueado por fixedVersion=Fan.
+Los importes son orientativos y requieren confirmación.
+Se actualiza la versión de caché del JavaScript a 368.

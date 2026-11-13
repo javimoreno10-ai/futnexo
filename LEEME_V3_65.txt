@@ -1,0 +1,11 @@
+FutNexo V3.65 — Simplificación de navegación
+
+- Retiradas las tarjetas y las páginas de Pantalones, Fórmula 1 y Tirantes.
+- Eliminados los tres productos de las tarjetas de precios y del diccionario de precios del formulario.
+- Portada reordenada: categorías > cómo comprar > precios > promociones y packs > tallas.
+- Más espacio entre bloques, tarjetas y secciones; diseño adaptable a móvil.
+- No se modifican las fotografías ni el contenido del resto de los catálogos.
+
+Comprobaciones: seis categorías en portada, nueve tarjetas de precios y ningún enlace interno a las tres páginas retiradas.
+
+Para publicar: subir todos los archivos descomprimidos y eliminar del repositorio las páginas antiguas pantalones.html, formula1.html y tirantes.html, si todavía existen.

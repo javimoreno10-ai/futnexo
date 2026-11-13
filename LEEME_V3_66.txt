@@ -1,0 +1,1 @@
+FutNexo V3.66: portada con tres precios destacados, ofertas completas en ofertas.html, compra explicada en tres pasos, mejoras de claridad en pedido.html. Se retiran pantalones.html, formula1.html y tirantes.html. Para retirarlas de GitHub, eliminarlas expresamente del repositorio. No se modifican fotografías.

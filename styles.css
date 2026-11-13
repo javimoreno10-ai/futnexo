@@ -135,3 +135,15 @@ th{color:#d4e8ff}
 .size-block{background:#0e1c30;border:1px solid #2c405d;border-radius:12px;padding:19px;margin:20px 0}
 @media(max-width:800px){.pricing-cards,.prices-grid,.price-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-art .art-card.art-back{transform:rotate(-12deg) translateX(-72px)}.hero-art .art-card.art-side{transform:rotate(12deg) translateX(72px)}}
 @media(max-width:530px){.announcement{font-size:8px;padding:5px 14px}.announcement-right{display:none}.hero-stats{gap:12px}.hero-stats>div{flex-direction:column;align-items:start;gap:0}.hero-art .art-card.art-back{transform:rotate(-10deg) translateX(-56px)}.hero-art .art-card.art-side{transform:rotate(10deg) translateX(56px)}.pricing-cards,.prices-grid,.price-cards{grid-template-columns:1fr}}
+
+/* V3.66: navegación clara, precios progresivos y página independiente de ofertas */
+.fn-offers-intro{padding-top:clamp(56px,8vw,108px);padding-bottom:40px;max-width:1100px}
+.fn-offers-intro h1{font-size:clamp(2rem,5vw,3.7rem);line-height:1.08;max-width:760px;margin:12px 0 20px}
+.fn-offers-intro p{max-width:700px;font-size:1.07rem;line-height:1.7;opacity:.85}
+.fn-offers-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.fn-home-offers-cta{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:28px;padding:26px;border:1px solid #385778;border-radius:18px;background:linear-gradient(120deg,#0d213d,#16365c);color:#fff}
+.fn-home-offers-cta strong{font-size:1.25rem}.fn-home-offers-cta p{margin:8px 0 0;line-height:1.55;color:#d7e7fa}
+.fn-home-offers-cta .btn{flex-shrink:0}
+#como-comprar .fn-order-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+#precios .pricing{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:780px){.fn-home-offers-cta{flex-direction:column;align-items:stretch}.fn-home-offers-cta .btn{text-align:center}#como-comprar .fn-order-grid,#precios .pricing{grid-template-columns:1fr}}

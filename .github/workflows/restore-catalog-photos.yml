@@ -1,0 +1,35 @@
+name: Recuperar fotos del catálogo FutNexo
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/restore-catalog-photos.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  restore-catalog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio con historial
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Verificar y recuperar imágenes desde V3.62
+        run: python3 tools/restore_catalog_images.py
+      - name: Comprobar archivos recuperados
+        run: |
+          test "$(find assets/catalogo -maxdepth 1 -type f | wc -l)" -eq 310
+          git status --short assets/catalogo | head -20
+      - name: Publicar imágenes recuperadas
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/catalogo/
+          if ! git diff --cached --quiet; then
+            git commit -m "Restore 310 verified FutNexo catalog photos"
+            git push origin HEAD:main
+          fi

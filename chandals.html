@@ -64,6 +64,23 @@
 
 /* FutNexo V3.10: fotos locales correctamente asignadas */
 .club-photo img.uploaded-kit-photo{background:#f7f8fa;border-radius:10px;padding:8px;filter:none;object-fit:contain}
+
+/* V3.69: selector de cremalleras visible en móvil y escritorio */
+.chandal-choice-intro{margin:24px 0 12px;font-size:.82rem;font-weight:800;letter-spacing:.12em;color:#9fd8ff}
+.chandal-choice-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px!important;width:100%;margin:0 0 10px}
+.chandal-choice-grid .chandal-choice-card{white-space:normal!important;display:flex!important;align-items:center;text-align:left;gap:16px;min-height:156px;padding:22px!important;border:2px solid #3d638d!important;border-radius:20px!important;background:linear-gradient(130deg,#15283e,#0a1628)!important;color:#fff!important;transition:transform .2s,border-color .2s,box-shadow .2s}
+.chandal-choice-grid .chandal-choice-card:hover{transform:translateY(-3px);border-color:#9fd8ff!important}
+.chandal-choice-grid .chandal-choice-card.active,.chandal-choice-grid .chandal-choice-card[aria-pressed="true"]{border-color:#55bbff!important;background:linear-gradient(125deg,#143c65,#10243c)!important;box-shadow:0 0 0 3px rgba(60,171,250,.17),0 12px 25px rgba(0,0,0,.25)}
+.chandal-choice-icon{flex:0 0 54px;width:54px;height:54px;display:grid;place-items:center;border-radius:14px;background:#254f77;color:#fff;font-size:30px}
+.chandal-choice-content{display:flex;flex:1;flex-direction:column;align-items:flex-start;gap:8px;min-width:0}
+.chandal-choice-content strong{font-size:1.25rem;letter-spacing:.025em;line-height:1.2}
+.chandal-choice-content small{font-size:.9rem;line-height:1.4;color:#c5d8ed}
+.chandal-choice-content em{font-size:.9rem;font-style:normal;font-weight:800;color:#a8e3ff}
+.chandal-choice-action{font-size:.75rem;font-weight:800;color:#b7e4ff;white-space:nowrap}
+.chandal-choice-help{font-size:.9rem;color:#a8bad0;margin:10px 0 24px}
+@media(max-width:900px){.chandal-choice-grid{grid-template-columns:1fr}.chandal-choice-grid .chandal-choice-card{min-height:128px}.chandal-choice-action{display:none}}
+@media(max-width:440px){.chandal-choice-grid .chandal-choice-card{padding:16px!important;gap:12px}.chandal-choice-icon{width:44px;height:44px;flex-basis:44px;font-size:24px}.chandal-choice-content strong{font-size:1.08rem}}
+
 </style>
 <style id="futnexo-fn-logo-v39">
 .site-header .brand-fn-icon{display:inline-flex;align-items:center;justify-content:center;flex:0 0 34px;width:34px;height:34px;border:1px solid #2f486c;border-radius:9px;background:#0b1425;color:white;font-family:Arial,sans-serif;font-size:17px;line-height:1;font-weight:900;letter-spacing:-1.5px;box-shadow:0 3px 12px #050b1580}
@@ -423,10 +440,12 @@ th{color:#d4e8ff}
 <section aria-label="Oferta de packs de FutNexo" class="fn-promo-strip"><span class="fn-tag">Ofertas de FutNexo</span><h2>Chándales: compra dos y ahorra</h2><div class="fn-deals"><div class="fn-deal"><b>Media cremallera</b><strong>54,99 €</strong><span>Pack 2: <b style="display:inline;color:#93edb9">89,99 €</b></span></div><div class="fn-deal"><b>Cremallera larga</b><strong>64,99 €</strong><span>Pack 2: <b style="display:inline;color:#93edb9">109,99 €</b></span></div></div><div class="fn-notes"><span>✓ 1 prenda: envío 2,99 €</span><span>✓ 2 o más prendas: envío gratis</span><span>✓ Nombre y dorsal: +1,50 € por prenda</span><span>✓ Parche: +1,50 € por prenda</span></div><p>Personalización y parches sujetos a disponibilidad. El precio final se confirma por Instagram antes de realizar el pedido. Para combinar categorías distintas: 10 % de descuento en la más barata, salvo el pack Retro + Fan de 49,99 €.</p></section>
 <section aria-labelledby="media-title" class="container club-shop media-shop" id="media-cremallera">
 <div class="club-section-head"><div><span class="kicker">EXPLORA LA COLECCIÓN</span><h2 id="media-title">ELIGE TU TIPO DE CHÁNDAL</h2><p>Elige media cremallera o cremallera larga, utiliza los filtros de clubes y selecciones y consulta el conjunto que te interese. Todas las fotografías se muestran sobre fondo blanco.</p></div><a class="club-back" href="index.html#colecciones">← Volver a productos</a></div>
-<div aria-label="Elegir tipo de chándal" class="club-filters chandal-type-filters" role="group">
-<button aria-pressed="true" class="club-filter chandal-type-button active" data-chandal-type="media" type="button">Media cremallera <span>(25)</span></button>
-<button aria-pressed="false" class="club-filter chandal-type-button" data-chandal-type="entera" type="button">Cremallera larga <span>(17)</span></button>
+<p class="chandal-choice-intro">PRIMERO, ELIGE EL TIPO DE CREMALLERA</p>
+<div aria-label="Elegir tipo de chándal" class="club-filters chandal-type-filters chandal-choice-grid" role="group">
+<button aria-pressed="true" class="club-filter chandal-type-button active chandal-choice-card" data-chandal-type="media" type="button"><span class="chandal-choice-icon" aria-hidden="true">◕</span><span class="chandal-choice-content"><strong>CREMALLERA CORTA</strong><small>Media cremallera · Apertura hasta el pecho</small><em>25 modelos · 54,99 €</em></span><span class="chandal-choice-action">VER MODELOS →</span></button>
+<button aria-pressed="false" class="club-filter chandal-type-button chandal-choice-card" data-chandal-type="entera" type="button"><span class="chandal-choice-icon" aria-hidden="true">↕</span><span class="chandal-choice-content"><strong>CREMALLERA LARGA</strong><small>Cremallera completa · Apertura de arriba abajo</small><em>17 modelos · 64,99 €</em></span><span class="chandal-choice-action">VER MODELOS →</span></button>
 </div>
+<p class="chandal-choice-help">Selecciona una de las dos opciones para ver sus conjuntos. Puedes cambiar de tipo en cualquier momento.</p>
 <div aria-label="Chándales de media cremallera" class="chandal-type-panel" id="chandal-media-panel" role="region">
 <div class="chandal-panel-heading"><h3>MEDIA CREMALLERA</h3><p>25 conjuntos de media cremallera. Cada equipo tiene su propio apartado, con las distintas variantes disponibles.</p></div>
 <div class="club-tools media-tools"><div aria-label="Filtrar media cremallera" class="club-filters" role="group"><button aria-pressed="true" class="club-filter media-filter active" data-media-filter="todos" type="button">Todos (25)</button><button aria-pressed="false" class="club-filter media-filter" data-media-filter="club" type="button">Clubes (20)</button><button aria-pressed="false" class="club-filter media-filter" data-media-filter="seleccion" type="button">Selecciones (5)</button></div>

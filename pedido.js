@@ -5,7 +5,7 @@ const prices={'Fan':[29.99,44.99],'Player':[36.99,54.99],'Retro':[36.99,54.99],'
 const $=id=>document.getElementById(id),esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const money=x=>Number(x).toFixed(2).replace('.',',')+' €';
 const cartKey='futnexo_v358_cart';let cart=[],editIndex=-1;
-const customizableCategories=new Set(['Clubes','Selecciones','Retro']);
+const customizableCategories=new Set(['Clubes','Selecciones','Retro','NBA']);
 const canCustomize=p=>!!p&&customizableCategories.has(p.category);
 function sanitizeItem(x){const p=byId.get(x.id);if(!canCustomize(p))return {...x,personalized:false,patch:false,name:'',number:''};return x;}
 try{const data=JSON.parse(localStorage.getItem(cartKey)||'[]');if(Array.isArray(data))cart=data.filter(x=>byId.has(x.id)&&prices[x.type]&&Number.isInteger(x.quantity)&&x.quantity>=1&&x.quantity<=40).slice(0,40).map(sanitizeItem)}catch(e){}

@@ -1,0 +1,8 @@
+PAQUETE DE REVISION: CLUBES, SELECCIONES Y RETRO
+
+Se incluyen 5 fotografías de selecciones y 4 de clubes aportadas por el usuario.
+Para Celta Fortuna y Real Sociedad B se usan fotos de referencia del primer equipo.
+Las 25 fotos retro únicas están normalizadas a 800x800, con margen blanco; algunas conservan fondos originales y requieren tratamiento adicional para blanco puro.
+La foto del CD Eldense conserva parte de la persona: requiere fotografía de producto sin modelo para cumplir el estándar.
+No se garantiza que todas las fotos de clubes y selecciones estén completamente aisladas sobre blanco.
+Revisar antes de subir a GitHub.

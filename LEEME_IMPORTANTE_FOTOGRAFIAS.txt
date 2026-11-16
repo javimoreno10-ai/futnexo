@@ -1,0 +1,12 @@
+FUTNEXO - REVISION 48 SELECCIONES
+
+43 fotografías se incluyen como archivos locales en assets/catalogo.
+5 fotografías (Egipto, Irak, Irán, Jordania y Uzbekistán) usan URLs de tiendas externas. NO están descargadas ni incluidas en el ZIP, y pueden dejar de funcionar o bloquearse.
+Las cinco URL son referencias visuales; antes de una publicación comercial hay que comprobar los derechos de uso y alojar copias autorizadas en el repositorio.
+No presentar esta versión como 48 fotografías locales ni como versión final.
+
+Egipto: https://images.puma.com/image/upload/f_auto%2Cq_auto%2Cb_rgb%3Afafafa%2Cw_2000%2Ch_2000/global/783552/01/fnd/EEA/fmt/png/Camiseta-Egipto-1.%C2%AA-equipaci%C3%B3n-2026-para-hombre
+Irak: https://cdn.jako.de/userdata/dcshop/images/normal/IK4226H_000.jpg
+Irán: https://aztecasoccer.com/cdn/shop/files/majid-iran-mens-home-authentic-2026-soccer-jersey.jpg?crop=center&height=1200&v=1781257206&width=1200
+Jordania: https://www.prosoccer.com/cdn/shop/files/Kelme2026JordanMen_sAuthenticHomeSoccerJersey_Front.jpg?v=1781121216
+Uzbekistán: https://gearinfinity.com/cdn/shop/files/2026-uzbekistan-home-1m79d.avif?v=1780753357&width=800

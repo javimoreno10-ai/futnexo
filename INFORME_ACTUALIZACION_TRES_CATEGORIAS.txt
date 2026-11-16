@@ -1,0 +1,25 @@
+FUTNEXO - REVISION CONJUNTA
+Clubes, selecciones y retro. CD Eldense excluido del catálogo.
+Se han sustituido las fotografías de 17 modelos retro por las imágenes enviadas por el usuario.
+Se han normalizado a 800 x 800 píxeles con fondo exterior blanco.
+Algunas fotografías originalmente colgadas sobre fondo gris pueden conservar restos de la percha o fondo.
+Las fotografías y temporadas requieren comprobación editorial antes de publicación comercial.
+No se ha publicado este paquete en GitHub.
+Modelos retro actualizados:
+Inter de Milán 2009/10: images (15).jpg
+España 2010: images (14).jpg
+Manchester United 1998/99: images (13).jpg
+Brasil 1994: images (12).jpg
+Brasil 2002: images (11).jpg
+FC Barcelona 2010/11: images (10).jpg
+FC Barcelona 2005/06: images (9).jpg
+Real Madrid 2011/12: 1307608218_extras_albumes_0.jpg
+Arsenal 2003/04: images (17).jpg
+Juventus 1997/98: images (16).jpg
+Portugal 2004: portugalfrontal_1__jpg.png
+FC Porto 2003/04: images (23).jpg
+Alemania 1990: images (22).jpg
+Borussia Dortmund 1996/97: images (21).jpg
+Italia 2006: images (20).jpg
+Países Bajos 1988: images (19).jpg
+Francia 1998: images (18).jpg

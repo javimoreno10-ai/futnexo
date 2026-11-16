@@ -155,3 +155,12 @@ th{color:#d4e8ff}
 .fn-add-cart:hover{background:#0b56c2}.fn-cart-dialog{border:1px solid #334c70;border-radius:18px;padding:0;max-width:min(460px,calc(100vw - 28px));width:100%;max-height:calc(100vh - 30px);overflow:auto;background:#0d1b30;color:white;box-shadow:0 22px 70px #0009}
 .fn-cart-dialog::backdrop{background:#000b}.fn-cart-inner{padding:24px}.fn-cart-dialog h2{margin:0 35px 8px 0;font-size:23px;color:#fff}.fn-cart-dialog p{color:#cad8ea;font-size:14px;line-height:1.5}.fn-cart-dialog label{display:block;font-size:13px;font-weight:700;margin:14px 0 6px;color:#e5edfa}.fn-cart-dialog input,.fn-cart-dialog select{width:100%;box-sizing:border-box;border:1px solid #607593;border-radius:9px;background:#fff;color:#101827;padding:12px;font:16px Arial,sans-serif}.fn-cart-dialog .fn-inline{display:grid;grid-template-columns:1fr 1fr;gap:12px}.fn-cart-dialog .fn-check{display:flex;align-items:center;gap:9px}.fn-cart-dialog .fn-check input{width:auto}.fn-cart-dialog .fn-close{float:right;background:none;color:white;border:0;font-size:26px;cursor:pointer}.fn-cart-dialog .fn-actions{display:flex;gap:10px;margin-top:20px}.fn-cart-dialog .fn-actions button{flex:1;padding:13px 8px;border-radius:10px;border:1px solid #6c819e;cursor:pointer;font-weight:700}.fn-cart-dialog .fn-primary{background:#2585fa;color:white;border-color:#2585fa!important}.fn-cart-dialog .fn-total{font-size:22px;font-weight:800;margin-top:16px}.fn-cart-dialog .fn-error{color:#ffb3a7!important;min-height:18px}
 @media(max-width:600px){.fn-cart-link{right:12px;bottom:12px;padding:12px 14px}.fn-cart-inner{padding:18px}}
+
+/* FutNexo: fichas de selecciones con presentación de producto homogénea. */
+.selection-image-frame {background:#fff!important; border-radius:14px; overflow:hidden; display:flex; align-items:center; justify-content:center; aspect-ratio:1/1;}
+.selection-image-frame img {display:block; width:100%!important; height:100%!important; object-fit:contain!important; object-position:center!important; background:#fff; padding:8px; box-sizing:border-box;}
+.selection-photo {background:#fff!important;}
+
+/* Fotografías de producto uniformes */
+.selection-image-frame,.club-photo,.retro-photo{background:white!important}
+.selection-image-frame img,.club-photo img,.retro-photo img{object-fit:contain!important;object-position:center!important}

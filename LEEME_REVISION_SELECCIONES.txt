@@ -1,0 +1,8 @@
+FUTNEXO - REVISIÓN DE SELECCIONES
+
+43 fotografías frontales aportadas por el usuario incorporadas en la versión local.
+5 selecciones (Egipto, Irak, Irán, Jordania, Uzbekistán) mantienen imágenes/referencias previas: no se han incorporado archivos nuevos para ellas.
+Todas las tarjetas de selecciones tienen fondo blanco, encuadre cuadrado y object-fit contain.
+IMPORTANTE: las fotografías originales conservan sus fondos interiores, que no han sido eliminados; no se debe presentar esto como 48 imágenes aisladas sobre blanco.
+Abrir VISTA_PREVIA_SELECCIONES.html para revisar antes de publicar.
+No se ha publicado en GitHub.

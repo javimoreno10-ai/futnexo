@@ -164,3 +164,52 @@ th{color:#d4e8ff}
 /* Fotografías de producto uniformes */
 .selection-image-frame,.club-photo,.retro-photo{background:white!important}
 .selection-image-frame img,.club-photo img,.retro-photo img{object-fit:contain!important;object-position:center!important}
+
+
+/* FutNexo 2026-11: CTA consistente y escaparate fotográfico integrado */
+section.container.club-request{
+ box-sizing:border-box!important;
+ width:min(1180px,calc(100% - 40px))!important;
+ max-width:1180px!important;
+ margin:44px auto 72px!important;
+ padding:clamp(24px,4vw,44px)!important;
+ display:grid!important;
+ grid-template-columns:minmax(0,1fr) auto!important;
+ align-items:center!important;
+ justify-content:initial!important;
+ gap:24px 38px!important;
+ border:1px solid #345d8b!important;
+ border-radius:20px!important;
+ background:linear-gradient(125deg,#17385c 0%,#0d2039 100%)!important;
+ box-shadow:0 16px 35px #0002;
+}
+section.container.club-request .club-request-text{min-width:0;max-width:660px}
+section.container.club-request h2{margin:8px 0 12px!important;line-height:1.06!important;overflow-wrap:anywhere}
+section.container.club-request p{max-width:600px!important}
+section.container.club-request>a.btn{justify-self:end;max-width:100%;white-space:normal!important;text-align:center}
+@media(max-width:760px){
+ section.container.club-request{width:calc(100% - 28px)!important;margin:32px auto 50px!important;grid-template-columns:minmax(0,1fr)!important;padding:26px 22px!important;gap:20px!important}
+ section.container.club-request>a.btn{justify-self:stretch;width:100%;box-sizing:border-box}
+ section.container.club-request h2{font-size:clamp(28px,8vw,38px)!important}
+}
+/* Un mismo fondo de estudio suave para todas las tarjetas de producto.
+   Multiply integra el blanco de las fotos sin alterar los archivos originales. */
+.club-card .club-photo,.catalog-card .catalog-photo,
+.club-card .selection-photo,.selection-image-frame,
+.retro-photo,.catalog-photo{
+ background:radial-gradient(ellipse at 50% 42%,#ffffff 0%,#f3f6fa 70%,#e9eef5 100%)!important;
+}
+.club-card .club-photo,.catalog-photo,.selection-image-frame,.retro-photo{isolation:isolate}
+.club-card .club-photo img,.catalog-photo img,
+.selection-image-frame img,.retro-photo img{
+ background:transparent!important;
+ mix-blend-mode:multiply;
+ object-fit:contain!important;
+ object-position:center!important;
+ filter:drop-shadow(0 8px 9px rgba(23,41,65,.12))!important;
+}
+.club-card .club-photo{border-bottom:1px solid #dce5f0}
+@media(prefers-reduced-motion:no-preference){
+ .club-card .club-photo img,.catalog-photo img,.selection-image-frame img{transition:transform .25s ease}
+ .club-card:hover .club-photo img,.catalog-card:hover .catalog-photo img{transform:scale(1.025)}
+}

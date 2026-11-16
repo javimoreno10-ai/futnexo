@@ -1,0 +1,33 @@
+name: Limpiar fondos de productos
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/limpiar_fondos.py'
+      - '.github/workflows/limpiar-fondos.yml'
+permissions:
+  contents: write
+jobs:
+  limpiar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Instalar herramientas de recorte
+        run: pip install 'rembg[cpu]==2.0.67' 'Pillow>=10,<12'
+      - name: Procesar fotografías existentes
+        run: python tools/limpiar_fondos.py
+      - name: Guardar imágenes revisadas automáticamente
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/catalogo/*.webp INFORME_RECORTE_FONDOS.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Integrar prendas con fondo transparente en catálogo"
+            git push
+          fi

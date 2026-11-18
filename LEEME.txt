@@ -1,10 +1,10 @@
-FutNexo V3.50 — Limpieza de catálogos
+FutNexo - fotografias de Selecciones
 
-1. chandals.html: eliminado el modelo de México del apartado Media cremallera. Quedan 25 modelos de media cremallera y 17 de cremallera larga (42 en total).
-2. entrenamiento.html: retiradas las 17 fichas que no tenían fotografía. Quedan 12 modelos con foto.
-3. entrenamiento.html: retiradas las etiquetas superpuestas “Con foto”, “Club” y “Selección”.
-4. Se conserva el precio de 44,99 € en Chándals y 34,99 € en Entrenamiento.
-5. Las imágenes de ambos catálogos siguen integradas en sus archivos HTML.
+El codigo de selecciones.html ya se ha actualizado directamente en GitHub para leer estas imagenes desde la raiz del repositorio.
 
-PUBLICACIÓN: sustituye ÚNICAMENTE chandals.html y entrenamiento.html en la raíz del repositorio GitHub.
-No es necesario subir carpetas de imágenes.
+1. Extrae este ZIP.
+2. Entra en la RAIZ del repositorio javimoreno10-ai/futnexo.
+3. Sube los 44 archivos .webp (no el ZIP ni el archivo LEEME.txt).
+4. Confirma los cambios.
+
+No sustituyas selecciones.html ni ninguna otra pagina.

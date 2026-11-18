@@ -1,0 +1,10 @@
+FUTNEXO - PUBLICACION COMPLETA
+
+Este paquete contiene la web completa y las fotografias en assets/catalogo/.
+
+IMPORTANTE: subir el CONTENIDO DESCOMPRIMIDO conservando la estructura de carpetas, NO subir los .webp a la raiz.
+
+En GitHub, verificar que exista: assets/catalogo/seleccion-alemania-frontal.webp
+Y que selecciones.html este en la raiz.
+
+La pagina de Selecciones utiliza exactamente la misma carpeta de imagenes que Clubes.

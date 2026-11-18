@@ -63,7 +63,7 @@ function calc(){
  const base=cart.reduce((n,i)=>n+Math.round(prices[i.type][0]*100)*i.quantity,0)/100;
  const extras=cart.reduce((n,i)=>n+i.quantity*(1.5*Number(i.personalized)+1.5*Number(i.patch)),0);
  const tier=eligibleUnits>=10?35:eligibleUnits>=5?30:eligibleUnits>=3?20:eligibleUnits>=2?15:0;
- const valid=privateQuote&&quotedSignature===cartSignature();
+ const valid=privateQuote&&!privateQuote.requiresReview&&quotedSignature===cartSignature();
  return {units,normal:base,extras,ship:units===1?2.99:0,total:valid?privateQuote.totalEUR:null,discount:valid?privateQuote.discountEUR:null,eligibleUnits,excludedUnits,tier,appliedPercent:valid?privateQuote.discountPct:0,message:!units?'Añade una prenda para empezar.':quotePending?'Calculando descuento…':valid?(privateQuote.requiresReview?'Precio pendiente de confirmación.':privateQuote.discountEUR?'Descuento por cantidad aplicado.':'Sin descuento disponible para esta combinación.'):'Precio pendiente de confirmación.'};
 }
 async function refreshQuote(){

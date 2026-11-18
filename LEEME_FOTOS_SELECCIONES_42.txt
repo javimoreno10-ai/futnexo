@@ -1,0 +1,9 @@
+FutNexo - integración de 42 fotos identificadas por el usuario.
+
+41 selecciones únicas y 2 fotografías de Turquía.
+Se actualizaron 41 imágenes principales del catálogo y se incorporó una alternativa de Turquía.
+Se conservan las imágenes previas de las 7 selecciones sin fotografía en este lote.
+Las rutas del catálogo y de las fichas apuntan a los archivos locales incluidos.
+Ver MAPEO_FOTOGRAFIAS_SELECCIONES.csv para correspondencias exactas.
+
+Para publicar: extraer este ZIP en la raíz del repositorio, sustituyendo archivos existentes.

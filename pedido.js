@@ -1,7 +1,7 @@
 (()=>{'use strict';
 const products=Array.isArray(window.FUTNEXO_PRODUCTOS)?window.FUTNEXO_PRODUCTOS:[];
 const byId=new Map(products.map(p=>[p.id,p]));
-const prices={'Fan':[29.99,44.99],'Player':[36.99,54.99],'Retro':[36.99,54.99],'Infantil':[27.99,41.99],'Adulto':[29.99,44.99],'NBA':[39.99,64.99],'Media cremallera':[54.99,89.99],'Cremallera larga':[64.99,109.99],'Entrenamiento':[34.99,54.99]};
+const prices={'Fan':[21.99,44.99],'Player':[25.99,54.99],'Retro':[25.99,54.99],'Infantil':[27.99,41.99],'Adulto':[29.99,44.99],'NBA':[30.99,64.99],'Media cremallera':[49.99,89.99],'Cremallera larga':[58.99,109.99],'Entrenamiento':[37.99,54.99]};
 const $=id=>document.getElementById(id),esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const money=x=>Number(x).toFixed(2).replace('.',',')+' €';
 const cartKey='futnexo_v358_cart';let cart=[],editIndex=-1;

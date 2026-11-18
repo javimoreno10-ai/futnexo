@@ -1,0 +1,124 @@
+{
+  "exchangeUsdEur": 0.9092,
+  "minGrossMargin": 0.4,
+  "fixedOrderCostEur": 4,
+  "discountTiers": [
+    {
+      "min": 10,
+      "max": 0.35
+    },
+    {
+      "min": 5,
+      "max": 0.3
+    },
+    {
+      "min": 3,
+      "max": 0.2
+    },
+    {
+      "min": 2,
+      "max": 0.15
+    }
+  ],
+  "eligibleTypes": [
+    "Fan",
+    "Player",
+    "Retro",
+    "NBA",
+    "Media cremallera",
+    "Cremallera larga"
+  ],
+  "excludedTypes": [
+    "Entrenamiento"
+  ],
+  "extraSaleEur": {
+    "personalized": 1.5,
+    "patch": 1.5
+  },
+  "chino1": {
+    "tierMixedOrdersConfirmed": false,
+    "volumeTiers": [
+      1,
+      3,
+      5,
+      10,
+      40
+    ],
+    "productsUsd": {
+      "Fan": [
+        12.5,
+        10,
+        9.5,
+        8.5,
+        8
+      ],
+      "Player": [
+        15,
+        12.5,
+        12,
+        11,
+        10.5
+      ],
+      "Retro": [
+        15,
+        12.5,
+        12,
+        11,
+        10.5
+      ],
+      "Infantil": [
+        13,
+        10.5,
+        10,
+        9,
+        8.5
+      ],
+      "Adulto": [
+        15,
+        12.5,
+        12,
+        11,
+        10.5
+      ],
+      "NBA": [
+        15.5,
+        13,
+        12.5,
+        11.5,
+        11
+      ],
+      "Media cremallera": 36,
+      "Cremallera larga": 36,
+      "Entrenamiento": 29
+    },
+    "extrasUsd": {
+      "personalized": 2,
+      "patch": 1
+    },
+    "shippingUsd": 0,
+    "feeUsd": 3.5
+  },
+  "chino2": {
+    "productsUsd": {
+      "Fan": 8,
+      "Player": 11,
+      "Retro": 11,
+      "Infantil": 9,
+      "Adulto": 10,
+      "NBA": 14,
+      "Media cremallera": 26,
+      "Cremallera larga": 33
+    },
+    "extrasUsd": {
+      "personalized": 3,
+      "patch": 1
+    },
+    "shippingUsdByUnits": {
+      "1": 4,
+      "2": 3,
+      "3": 2,
+      "4+": 0
+    },
+    "feeUsd": 0
+  }
+}

@@ -1,13 +1,13 @@
 // FutNexo shared calculation engine. All money in EUR, supplier tariffs in USD.
 export const FX = 0.9092;
 export const PRODUCTS = [
- {id:'fan',name:'Camiseta Fan',price:29.99,c1:[12.5,10,9.5,8.5,8],c2:8,eligible:true},
- {id:'retro',name:'Camiseta Retro',price:36.99,c1:[15,12.5,12,11,10.5],c2:11,eligible:true},
- {id:'player',name:'Camiseta Player',price:36.99,c1:[15,12.5,12,11,10.5],c2:11,eligible:true},
- {id:'nba',name:'Camiseta NBA',price:39.99,c1:[15.5,13,12.5,11.5,11],c2:14,eligible:true},
- {id:'half',name:'Chándal media cremallera',price:54.99,c1:[36,36,36,36,36],c2:26,eligible:true},
- {id:'full',name:'Chándal cremallera completa',price:54.99,c1:[36,36,36,36,36],c2:33,eligible:true},
- {id:'training',name:'Conjunto de entrenamiento',price:34.99,c1:[29,29,29,29,29],c2:null,eligible:false},
+ {id:'fan',name:'Camiseta Fan',price:21.99,c1:[12.5,10,9.5,8.5,8],c2:8,eligible:true},
+ {id:'retro',name:'Camiseta Retro',price:25.99,c1:[15,12.5,12,11,10.5],c2:11,eligible:true},
+ {id:'player',name:'Camiseta Player',price:25.99,c1:[15,12.5,12,11,10.5],c2:11,eligible:true},
+ {id:'nba',name:'Camiseta NBA',price:30.99,c1:[15.5,13,12.5,11.5,11],c2:14,eligible:true},
+ {id:'half',name:'Chándal media cremallera',price:49.99,c1:[36,36,36,36,36],c2:26,eligible:true},
+ {id:'full',name:'Chándal cremallera completa',price:58.99,c1:[36,36,36,36,36],c2:33,eligible:true},
+ {id:'training',name:'Conjunto de entrenamiento',price:37.99,c1:[29,29,29,29,29],c2:null,eligible:false},
 ];
 export const money = n => Math.round((n + Number.EPSILON)*100)/100;
 export function calculate(lines, {fx=FX,targetMargin=40}={}) {

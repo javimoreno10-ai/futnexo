@@ -52,44 +52,49 @@ let start=byId.get(params.get('ref'));if(start)setProduct(start);else synchroniz
 $('personalize').addEventListener('change',()=>{$('personal-fields').hidden=!$('personalize').checked});
 function persist(){try{localStorage.setItem(cartKey,JSON.stringify(cart))}catch(e){}}
 function typeFor(p){return p.fixedVersion||(['Clubes','Selecciones'].includes(p.category)?$('version').value:p.priceType);}
+const QUOTE_URL='https://futnexo-calculo-privado.vercel.app/api/cotizar';
+let privateQuote=null,quotePending=false,quoteToken=0;
+const cartSignature=()=>JSON.stringify(cart.map(x=>({type:x.type,quantity:x.quantity,personalized:x.personalized,patch:x.patch})));
+let quotedSignature='';
 function calc(){
- const units=cart.reduce((n,i)=>n+i.quantity,0),eligible=cart.filter(i=>['Fan','Retro','Player','NBA','Media cremallera','Cremallera larga'].includes(i.type));
- const eligibleUnits=eligible.reduce((n,i)=>n+i.quantity,0),excludedUnits=units-eligibleUnits;
- const baseCents=cart.reduce((n,i)=>n+Math.round(prices[i.type][0]*100)*i.quantity,0);
- const eligibleCents=eligible.reduce((n,i)=>n+Math.round(prices[i.type][0]*100)*i.quantity,0);
- const extrasCents=cart.reduce((n,i)=>n+i.quantity*(150*Number(i.personalized)+150*Number(i.patch)),0);
- const shipCents=units===1?299:0;
+ const units=cart.reduce((n,i)=>n+i.quantity,0);
+ const eligibleUnits=cart.filter(i=>['Fan','Retro','Player','NBA','Media cremallera','Cremallera larga'].includes(i.type)).reduce((n,i)=>n+i.quantity,0);
+ const excludedUnits=units-eligibleUnits;
+ const base=cart.reduce((n,i)=>n+Math.round(prices[i.type][0]*100)*i.quantity,0)/100;
+ const extras=cart.reduce((n,i)=>n+i.quantity*(1.5*Number(i.personalized)+1.5*Number(i.patch)),0);
  const tier=eligibleUnits>=10?35:eligibleUnits>=5?30:eligibleUnits>=3?20:eligibleUnits>=2?15:0;
- // Presupuesto público conservador: nunca muestra tarifas de proveedores.
- // Es orientativo: el coste real y el margen requieren validación privada antes de confirmar.
- const hasTraining=cart.some(i=>i.type==='Entrenamiento');
- // Importes de reserva de seguridad, NO tarifas de proveedores.
- // La cotización real deberá validarse en un servicio privado antes del pago.
- const reserve=hasTraining?{'Fan':1200,'Retro':1400,'Player':1400,'NBA':1500,'Media cremallera':3300,'Cremallera larga':3300,'Entrenamiento':2700,'Infantil':1300,'Adulto':1500}:{'Fan':850,'Retro':1150,'Player':1150,'NBA':1450,'Media cremallera':2650,'Cremallera larga':3350,'Entrenamiento':2700,'Infantil':1300,'Adulto':1500};
- const conservativeCost=cart.reduce((n,i)=>n+(reserve[i.type]||4000)*i.quantity,0)+(units?(hasTraining?800:units===1?900:500):0)+cart.reduce((n,i)=>n+i.quantity*(300*Number(i.personalized)+150*Number(i.patch)),0);
- const full=baseCents+extrasCents+shipCents;
- const required=Math.ceil(conservativeCost/0.6);
- const review=units>0&&full<required;
- const discountCents=review?0:Math.max(0,Math.min(Math.floor(eligibleCents*tier/100),full-required));
- const appliedPercent=eligibleCents?Math.round(discountCents/eligibleCents*10000)/100:0;
- const message=review?'Este pedido requiere confirmación de precio; no se aplica descuento.':eligibleUnits<2?'Añade otra prenda elegible para acceder a la promoción.':appliedPercent+0.01<tier?'El descuento depende de la combinación de productos.':'Descuento por cantidad aplicado.';
- return{units,normal:baseCents/100,extras:extrasCents/100,ship:shipCents/100,total:(full-discountCents)/100,discount:discountCents/100,eligibleUnits,excludedUnits,tier,appliedPercent,message};
+ const valid=privateQuote&&quotedSignature===cartSignature();
+ return {units,normal:base,extras,ship:units===1?2.99:0,total:valid?privateQuote.totalEUR:null,discount:valid?privateQuote.discountEUR:null,eligibleUnits,excludedUnits,tier,appliedPercent:valid?privateQuote.discountPct:0,message:!units?'Añade una prenda para empezar.':quotePending?'Calculando descuento…':valid?(privateQuote.requiresReview?'Precio pendiente de confirmación.':privateQuote.discountEUR?'Descuento por cantidad aplicado.':'Sin descuento disponible para esta combinación.'):'Precio pendiente de confirmación.'};
+}
+async function refreshQuote(){
+ const signature=cartSignature(),token=++quoteToken;
+ privateQuote=null;quotedSignature='';quotePending=cart.length>0;render();
+ if(!cart.length)return;
+ try{
+  const response=await fetch(QUOTE_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({lines:cart.map(({type,quantity,personalized,patch})=>({type,quantity,personalized,patch}))})});
+  if(!response.ok)throw Error('Cotización no disponible');
+  const q=await response.json();
+  if(!Number.isFinite(q.totalEUR)||!Number.isFinite(q.discountEUR)||!Number.isFinite(q.discountPct))throw Error('Respuesta inválida');
+  if(token!==quoteToken||signature!==cartSignature())return;
+  privateQuote=q;quotedSignature=signature;
+ }catch(e){if(token!==quoteToken)return;privateQuote=null;quotedSignature='';}
+ finally{if(token===quoteToken){quotePending=false;render();}}
 }
 function render(){const d=calc();$('cart-count').textContent=d.units+' '+(d.units===1?'prenda':'prendas');$('cart-items').innerHTML=cart.length?cart.map((x,i)=>{const p=byId.get(x.id);if(!p)return'';return '<div class="cart-item">'+picture(p)+'<div class="cart-info"><p class="cart-name">'+esc(p.name)+'</p><p class="cart-meta">'+esc(p.category)+' · '+esc(p.description)+'<br>Temporada: '+esc(p.season)+'<br>Versión: '+esc(x.type)+' · Talla: '+esc(x.size)+' · '+x.quantity+' ud.<br>'+(x.personalized?'Estampado: '+esc(x.name)+' #'+esc(x.number):'Sin estampado')+' · '+(x.patch?'Con parche':'Sin parche')+'</p><div class="cart-price">'+money(prices[x.type][0]*x.quantity+x.quantity*(1.5*Number(x.personalized)+1.5*Number(x.patch)))+' <span class="tiny">antes de descuentos</span></div><div class="cart-controls"><button type="button" data-edit="'+i+'" class="text-button">Editar</button><button type="button" data-remove="'+i+'" class="text-button remove">Eliminar</button></div></div></div>'}).join(''):'<div class="empty">Aún no hay prendas. Añade una para ver aquí su fotografía y características.</div>';
- $('subtotal').textContent=money(d.normal+d.extras);$('discount').textContent='−'+money(d.discount);$('shipping').textContent=d.units===0?'—':d.units===1?money(d.ship):'Gratis';$('total').textContent=money(d.total);$('offer-msg').textContent=d.message;$('eligible-count').textContent=String(d.eligibleUnits);$('discount-tier').textContent=d.tier?'Hasta '+d.tier+' %':'Sin tramo';$('applied-percent').textContent=d.appliedPercent.toFixed(2).replace('.',',')+' %';$('excluded-count').textContent=d.excludedUnits?d.excludedUnits+' prenda(s) excluida(s) del descuento (sí cuentan para el envío gratis).':'No hay prendas excluidas del descuento.';persist();}
+ $('subtotal').textContent=money(d.normal+d.extras);$('discount').textContent=d.discount===null?'Pendiente':'−'+money(d.discount);$('shipping').textContent=d.units===0?'—':d.units===1?money(d.ship):'Gratis';$('total').textContent=d.total===null?'Pendiente':money(d.total);$('offer-msg').textContent=d.message;$('eligible-count').textContent=String(d.eligibleUnits);$('discount-tier').textContent=d.tier?'Hasta '+d.tier+' %':'Sin tramo';$('applied-percent').textContent=d.discount===null?'Pendiente':d.appliedPercent.toFixed(2).replace('.',',')+' %';$('excluded-count').textContent=d.excludedUnits?d.excludedUnits+' prenda(s) excluida(s) del descuento (sí cuentan para el envío gratis).':'No hay prendas excluidas del descuento.';persist();}
 function resetEdit(){editIndex=-1;$('add').textContent='+ Añadir a mi solicitud';$('cancel-edit').hidden=true}
 function fillEdit(i){const x=cart[i],p=byId.get(x.id);if(!p)return;setProduct(p);$('version').value=['Clubes','Selecciones'].includes(p.category)?x.type:'Fan';$('size').value=x.size;$('quantity').value=x.quantity;$('personalize').checked=x.personalized;$('personal-fields').hidden=!x.personalized;$('patch').checked=x.patch;$('personal-name').value=x.name;$('number').value=x.number;editIndex=i;$('add').textContent='Guardar cambios';$('cancel-edit').hidden=false;$('add-status').textContent='Editando '+p.name+'. Guarda los cambios cuando termines.';document.getElementById('configurar').scrollIntoView({behavior:'smooth',block:'start'});}
 $('cart-items').addEventListener('click',e=>{const remove=e.target.closest('[data-remove]'),edit=e.target.closest('[data-edit]');if(remove){cart.splice(Number(remove.dataset.remove),1);resetEdit();render()}else if(edit)fillEdit(Number(edit.dataset.edit));});
 $('cancel-edit').addEventListener('click',()=>{resetEdit();$('add-status').textContent='Edición cancelada.'});
 function makeItem(){const p=selected();if(!p)return{error:'Selecciona una prenda válida.'};const type=typeFor(p),quantity=Number($('quantity').value),personalized=$('personalize').checked,patch=$('patch').checked,name=$('personal-name').value.trim(),number=$('number').value.trim();
  if(!prices[type])return{error:'Versión no válida.'};if(!Number.isInteger(quantity)||quantity<1||quantity>40)return{error:'Introduce una cantidad de 1 a 40.'};if(personalized&&(!name||!/^[0-9]{1,3}$/.test(number)))return{error:'Indica el nombre y un dorsal numérico de 1 a 3 cifras.'};if(!$('size').value)return{error:'Selecciona una talla.'};return{id:p.id,type,size:$('size').value,quantity,personalized,patch,name:personalized?name:'',number:personalized?number:''};}
-$('add').addEventListener('click',()=>{let it=makeItem();if(it.error){$('add-status').textContent=it.error;$('add-status').classList.add('error');return};let units=cart.reduce((s,x)=>s+x.quantity,0)-(editIndex>=0?cart[editIndex].quantity:0);if(units+it.quantity>80){$('add-status').textContent='Máximo 80 prendas por solicitud.';return}if(editIndex>=0)cart[editIndex]=it;else cart.push(it);resetEdit();$('add-status').classList.remove('error');$('add-status').textContent='Prenda guardada. Comprueba su fotografía en «Tu solicitud».';render();$('solicitud').scrollIntoView({behavior:'smooth',block:'start'});});
-$('clear').addEventListener('click',()=>{if(cart.length&&!window.confirm('¿Quieres vaciar la solicitud?'))return;cart=[];resetEdit();render();});
-function message(){const d=calc();return 'SOLICITUD FUTNEXO — PENDIENTE DE CONFIRMACIÓN\n\n'+cart.map((x,i)=>{const p=byId.get(x.id);const base=location.href.startsWith('http')?location.href:'https://futnexo.futnexo.workers.dev/pedido.html';const url=new URL('pedido.html?ref='+encodeURIComponent(p.id),base).href;return (i+1)+'. '+p.name+' ('+p.category+')\nReferencia: '+p.id+'\nDescripción: '+p.description+'\nTemporada: '+p.season+' | Modelo: '+p.model+'\nVersión: '+x.type+' | Talla: '+x.size+' | Unidades: '+x.quantity+'\nPersonalización: '+(x.personalized?x.name+' #'+x.number:'No')+' | Parche: '+(x.patch?'Sí':'No')+'\nFicha: '+url;}).join('\n\n')+'\n\nIMPORTE ORIENTATIVO: '+money(d.total)+'\n'+d.message+'\n\nNOMBRE/ALIAS: '+$('customer').value.trim()+'\nINSTAGRAM PARA CONTACTO: '+$('contact').value.trim()+'\nEMAIL: '+$('customer-email').value.trim()+'\nOBSERVACIONES: '+$('notes').value.trim()+'\n\nEl cliente acepta continuar por Instagram. Disponibilidad, precio final y pago pendientes de confirmación.';}
-function validate(){if(!cart.length){$('copy-status').textContent='Añade al menos una prenda antes de enviar.';$('copy-status').classList.add('error');$('add').focus();return false;}const ig=$('contact');ig.value=ig.value.trim();if(!/^@?[A-Za-z0-9._]{1,30}$/.test(ig.value)){ig.setCustomValidity('Introduce un usuario de Instagram válido, sin espacios.');}else ig.setCustomValidity('');const form=$('order-form');if(!form.checkValidity()){form.reportValidity();return false;}return true;}
+$('add').addEventListener('click',()=>{let it=makeItem();if(it.error){$('add-status').textContent=it.error;$('add-status').classList.add('error');return};let units=cart.reduce((s,x)=>s+x.quantity,0)-(editIndex>=0?cart[editIndex].quantity:0);if(units+it.quantity>80){$('add-status').textContent='Máximo 80 prendas por solicitud.';return}if(editIndex>=0)cart[editIndex]=it;else cart.push(it);resetEdit();$('add-status').classList.remove('error');$('add-status').textContent='Prenda guardada. Comprueba su fotografía en «Tu solicitud».';refreshQuote();$('solicitud').scrollIntoView({behavior:'smooth',block:'start'});});
+$('clear').addEventListener('click',()=>{if(cart.length&&!window.confirm('¿Quieres vaciar la solicitud?'))return;cart=[];resetEdit();refreshQuote();});
+function message(){const d=calc();if(d.total===null)throw Error('Cotización pendiente');return 'SOLICITUD FUTNEXO — PENDIENTE DE CONFIRMACIÓN\n\n'+cart.map((x,i)=>{const p=byId.get(x.id);const base=location.href.startsWith('http')?location.href:'https://futnexo.futnexo.workers.dev/pedido.html';const url=new URL('pedido.html?ref='+encodeURIComponent(p.id),base).href;return (i+1)+'. '+p.name+' ('+p.category+')\nReferencia: '+p.id+'\nDescripción: '+p.description+'\nTemporada: '+p.season+' | Modelo: '+p.model+'\nVersión: '+x.type+' | Talla: '+x.size+' | Unidades: '+x.quantity+'\nPersonalización: '+(x.personalized?x.name+' #'+x.number:'No')+' | Parche: '+(x.patch?'Sí':'No')+'\nFicha: '+url;}).join('\n\n')+'\n\nIMPORTE ORIENTATIVO: '+money(d.total)+'\n'+d.message+'\n\nNOMBRE/ALIAS: '+$('customer').value.trim()+'\nINSTAGRAM PARA CONTACTO: '+$('contact').value.trim()+'\nEMAIL: '+$('customer-email').value.trim()+'\nOBSERVACIONES: '+$('notes').value.trim()+'\n\nEl cliente acepta continuar por Instagram. Disponibilidad, precio final y pago pendientes de confirmación.';}
+function validate(){if(calc().total===null){$('copy-status').textContent='Espera a que el servidor confirme el precio antes de enviar.';return false;}if(!cart.length){$('copy-status').textContent='Añade al menos una prenda antes de enviar.';$('copy-status').classList.add('error');$('add').focus();return false;}const ig=$('contact');ig.value=ig.value.trim();if(!/^@?[A-Za-z0-9._]{1,30}$/.test(ig.value)){ig.setCustomValidity('Introduce un usuario de Instagram válido, sin espacios.');}else ig.setCustomValidity('');const form=$('order-form');if(!form.checkValidity()){form.reportValidity();return false;}return true;}
 $('contact').addEventListener('input',()=>{$('contact').setCustomValidity('')});
 $('order-form').addEventListener('submit',e=>{if(!validate()){e.preventDefault();return}if($('website-check').value){e.preventDefault();return}$('summary-input').value=message();$('copy-status').classList.remove('error');$('copy-status').textContent='Enviando al servicio de formularios. Puede aparecer una verificación antispam.';});
-$('copy').addEventListener('click',async()=>{if(!cart.length){$('copy-status').textContent='Añade al menos una prenda para copiar el resumen.';return;}const text=message();try{await navigator.clipboard.writeText(text);$('copy-status').textContent='Resumen copiado.'}catch(e){const t=document.createElement('textarea');t.value=text;document.body.append(t);t.select();let ok=document.execCommand('copy');t.remove();$('copy-status').textContent=ok?'Resumen copiado.':'No se pudo copiar. Revisa los permisos del navegador.'}});
+$('copy').addEventListener('click',async()=>{if(calc().total===null){$('copy-status').textContent='Espera a que el servidor confirme el precio.';return;}const text=message();try{await navigator.clipboard.writeText(text);$('copy-status').textContent='Resumen copiado.'}catch(e){const t=document.createElement('textarea');t.value=text;document.body.append(t);t.select();let ok=document.execCommand('copy');t.remove();$('copy-status').textContent=ok?'Resumen copiado.':'No se pudo copiar. Revisa los permisos del navegador.'}});
 
 function updateUnknownTeam(){const q=$('team-search').value.trim(), noMatch=q&&!Array.from($('team').options).length;
  const help=$('fn-unknown-team');if(!help)return;help.hidden=!noMatch;
@@ -113,5 +118,5 @@ function prepareAvailability(){
  $('availability-instagram').addEventListener('input',function(){$('availability-instagram').setCustomValidity('')});
 }
 prepareAvailability();updateUnknownTeam();
-render();
+refreshQuote();
 })();

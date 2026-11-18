@@ -1,7 +1,7 @@
 (()=>{'use strict';
 const products=Array.isArray(window.FUTNEXO_PRODUCTOS)?window.FUTNEXO_PRODUCTOS:[];
 const byId=new Map(products.map(p=>[p.id,p]));
-const prices={'Fan':[29.99,44.99],'Player':[36.99,54.99],'Retro':[36.99,54.99],'Infantil':[27.99,41.99],'Adulto':[29.99,44.99],'NBA':[39.99,64.99],'Media cremallera':[54.99,89.99],'Cremallera larga':[64.99,109.99],'Entrenamiento':[34.99,54.99]};
+const prices={'Fan':[21.99,44.99],'Player':[25.99,54.99],'Retro':[25.99,54.99],'Infantil':[27.99,41.99],'Adulto':[29.99,44.99],'NBA':[30.99,64.99],'Media cremallera':[49.99,89.99],'Cremallera larga':[58.99,109.99],'Entrenamiento':[37.99,54.99]};
 const $=id=>document.getElementById(id),esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const money=x=>Number(x).toFixed(2).replace('.',',')+' €';
 const cartKey='futnexo_v358_cart';let cart=[],editIndex=-1;
@@ -38,7 +38,7 @@ function picture(p){if(!p||!p.photo)return '<div class="no-photo" aria-label="Fo
  return '<img class="photo" src="'+esc(p.photo)+'" alt="Foto de '+esc(p.name)+'" loading="lazy">';}
 function preview(){const p=selected(),el=$('product-preview');if(!p){el.innerHTML='<div class="no-photo">👕<span>Sin referencia</span></div><div><p class="preview-title">No hay prendas disponibles para esta elección</p></div>';return}
  const typeField=$('version-field');typeField.hidden=!!p.fixedVersion||!['Clubes','Selecciones'].includes(p.category);
- let note=p.pending?'Referencia pendiente de confirmar con el proveedor.':'Referencia del catálogo. Comprueba la fotografía y elige tu talla.';if(p.fixedVersion)note+=' Fotografía correspondiente a versión '+p.fixedVersion+'.';if(!p.photo)note+=' Fotografía pendiente: no se muestra una imagen de otra equipación.';
+ let note=p.pending?'Referencia pendiente de confirmar con el proveedor.':'Referencia del catálogo. Comprueba la fotografía y elige tu talla.';if(p.fixedVersion)note+=' Fotografía correspondiente a versión '+p.fixedVersion+'.';if(p.category==='Selecciones'&&p.photo)note+=' Imagen frontal de la selección elegida.';if(!p.photo)note+=' Fotografía pendiente: no se muestra una imagen de otra equipación.';
  $('selection-notice').textContent=note;
  el.innerHTML=picture(p)+'<div><p class="preview-title">'+esc(p.name)+'</p><p class="preview-desc">'+esc(p.description)+'</p><p class="preview-desc" style="margin-top:7px">Temporada: '+esc(p.season)+'</p>'+(p.pending?'<span class="pill" style="margin-top:7px">Disponibilidad pendiente</span>':'')+'</div>';
 }
@@ -52,16 +52,31 @@ let start=byId.get(params.get('ref'));if(start)setProduct(start);else synchroniz
 $('personalize').addEventListener('change',()=>{$('personal-fields').hidden=!$('personalize').checked});
 function persist(){try{localStorage.setItem(cartKey,JSON.stringify(cart))}catch(e){}}
 function typeFor(p){return p.fixedVersion||(['Clubes','Selecciones'].includes(p.category)?$('version').value:p.priceType);}
-function calc(){const units=cart.reduce((s,x)=>s+x.quantity,0),normal=cart.reduce((s,x)=>s+prices[x.type][0]*x.quantity,0),extras=cart.reduce((s,x)=>s+x.quantity*(1.5*Number(x.personalized)+1.5*Number(x.patch)),0),ship=units===1?2.99:0;
- let base=normal,message='Añade al menos una prenda para calcular el importe.';
- if(units===1)message='Una prenda: 2,99 € de envío.';
- else if(units===2){const a=cart.flatMap(x=>Array(x.quantity).fill(x.type));if(a[0]===a[1]){base=prices[a[0]][1];message='Pack de dos prendas de la misma categoría aplicado.'}
- else if(a.includes('Fan')&&a.includes('Retro')){base=49.99;message='Pack combinado Retro + Fan aplicado.'}
- else{base=normal-0.1*Math.min(prices[a[0]][0],prices[a[1]][0]);message='Pack mixto: 10 % en la prenda más barata.'}}
- else if(units>2){const per=cart.reduce((s,x)=>s+x.quantity*(prices[x.type][1]/2),0);const factor=units>=10?0.9:units>=5?0.95:1;base=per*factor;message=units>=10?'10 o más prendas: 10 % adicional sobre tarifa de pack.':units>=5?'5 o más prendas: 5 % adicional sobre tarifa de pack.':'Precio proporcional al pack de dos.'}
- base=Math.round(base*100)/100;let total=Math.round((base+extras+ship)*100)/100;return{units,normal,extras,ship,base,total,discount:normal-base,message};}
-function render(){const d=calc();$('cart-count').textContent=d.units+' '+(d.units===1?'prenda':'prendas');$('cart-items').innerHTML=cart.length?cart.map((x,i)=>{const p=byId.get(x.id);if(!p)return'';return '<div class="cart-item">'+picture(p)+'<div class="cart-info"><p class="cart-name">'+esc(p.name)+'</p><p class="cart-meta">'+esc(p.category)+' · '+esc(p.description)+'<br>Temporada: '+esc(p.season)+'<br>Versión: '+esc(x.type)+' · Talla: '+esc(x.size)+' · '+x.quantity+' ud.<br>'+(x.personalized?'Estampado: '+esc(x.name)+' #'+esc(x.number):'Sin estampado')+' · '+(x.patch?'Con parche':'Sin parche')+'</p><div class="cart-price">'+money(prices[x.type][0]*x.quantity+x.quantity*(1.5*Number(x.personalized)+1.5*Number(x.patch)))+' <span class="tiny">antes de descuentos de pack</span></div><div class="cart-controls"><button type="button" data-edit="'+i+'" class="text-button">Editar</button><button type="button" data-remove="'+i+'" class="text-button remove">Eliminar</button></div></div></div>'}).join(''):'<div class="empty">Aún no hay prendas. Añade una para ver aquí su fotografía y características.</div>';
- $('subtotal').textContent=money(d.normal+d.extras);$('discount').textContent='−'+money(d.discount);$('shipping').textContent=d.units===0?'—':d.units===1?money(d.ship):'Gratis';$('total').textContent=money(d.total);$('offer-msg').textContent=d.message;persist();}
+function calc(){
+ const units=cart.reduce((n,i)=>n+i.quantity,0),eligible=cart.filter(i=>['Fan','Retro','Player','NBA','Media cremallera','Cremallera larga'].includes(i.type));
+ const eligibleUnits=eligible.reduce((n,i)=>n+i.quantity,0),excludedUnits=units-eligibleUnits;
+ const baseCents=cart.reduce((n,i)=>n+Math.round(prices[i.type][0]*100)*i.quantity,0);
+ const eligibleCents=eligible.reduce((n,i)=>n+Math.round(prices[i.type][0]*100)*i.quantity,0);
+ const extrasCents=cart.reduce((n,i)=>n+i.quantity*(150*Number(i.personalized)+150*Number(i.patch)),0);
+ const shipCents=units===1?299:0;
+ const tier=eligibleUnits>=10?35:eligibleUnits>=5?30:eligibleUnits>=3?20:eligibleUnits>=2?15:0;
+ // Presupuesto público conservador: nunca muestra tarifas de proveedores.
+ // Es orientativo: el coste real y el margen requieren validación privada antes de confirmar.
+ const hasTraining=cart.some(i=>i.type==='Entrenamiento');
+ // Importes de reserva de seguridad, NO tarifas de proveedores.
+ // La cotización real deberá validarse en un servicio privado antes del pago.
+ const reserve=hasTraining?{'Fan':1200,'Retro':1400,'Player':1400,'NBA':1500,'Media cremallera':3300,'Cremallera larga':3300,'Entrenamiento':2700,'Infantil':1300,'Adulto':1500}:{'Fan':850,'Retro':1150,'Player':1150,'NBA':1450,'Media cremallera':2650,'Cremallera larga':3350,'Entrenamiento':2700,'Infantil':1300,'Adulto':1500};
+ const conservativeCost=cart.reduce((n,i)=>n+(reserve[i.type]||4000)*i.quantity,0)+(units?(hasTraining?800:units===1?900:500):0)+cart.reduce((n,i)=>n+i.quantity*(300*Number(i.personalized)+150*Number(i.patch)),0);
+ const full=baseCents+extrasCents+shipCents;
+ const required=Math.ceil(conservativeCost/0.6);
+ const review=units>0&&full<required;
+ const discountCents=review?0:Math.max(0,Math.min(Math.floor(eligibleCents*tier/100),full-required));
+ const appliedPercent=eligibleCents?Math.round(discountCents/eligibleCents*10000)/100:0;
+ const message=review?'Este pedido requiere confirmación de precio; no se aplica descuento.':eligibleUnits<2?'Añade otra prenda elegible para acceder a la promoción.':appliedPercent+0.01<tier?'El descuento depende de la combinación de productos.':'Descuento por cantidad aplicado.';
+ return{units,normal:baseCents/100,extras:extrasCents/100,ship:shipCents/100,total:(full-discountCents)/100,discount:discountCents/100,eligibleUnits,excludedUnits,tier,appliedPercent,message};
+}
+function render(){const d=calc();$('cart-count').textContent=d.units+' '+(d.units===1?'prenda':'prendas');$('cart-items').innerHTML=cart.length?cart.map((x,i)=>{const p=byId.get(x.id);if(!p)return'';return '<div class="cart-item">'+picture(p)+'<div class="cart-info"><p class="cart-name">'+esc(p.name)+'</p><p class="cart-meta">'+esc(p.category)+' · '+esc(p.description)+'<br>Temporada: '+esc(p.season)+'<br>Versión: '+esc(x.type)+' · Talla: '+esc(x.size)+' · '+x.quantity+' ud.<br>'+(x.personalized?'Estampado: '+esc(x.name)+' #'+esc(x.number):'Sin estampado')+' · '+(x.patch?'Con parche':'Sin parche')+'</p><div class="cart-price">'+money(prices[x.type][0]*x.quantity+x.quantity*(1.5*Number(x.personalized)+1.5*Number(x.patch)))+' <span class="tiny">antes de descuentos</span></div><div class="cart-controls"><button type="button" data-edit="'+i+'" class="text-button">Editar</button><button type="button" data-remove="'+i+'" class="text-button remove">Eliminar</button></div></div></div>'}).join(''):'<div class="empty">Aún no hay prendas. Añade una para ver aquí su fotografía y características.</div>';
+ $('subtotal').textContent=money(d.normal+d.extras);$('discount').textContent='−'+money(d.discount);$('shipping').textContent=d.units===0?'—':d.units===1?money(d.ship):'Gratis';$('total').textContent=money(d.total);$('offer-msg').textContent=d.message;$('eligible-count').textContent=String(d.eligibleUnits);$('discount-tier').textContent=d.tier?'Hasta '+d.tier+' %':'Sin tramo';$('applied-percent').textContent=d.appliedPercent.toFixed(2).replace('.',',')+' %';$('excluded-count').textContent=d.excludedUnits?d.excludedUnits+' prenda(s) excluida(s) del descuento (sí cuentan para el envío gratis).':'No hay prendas excluidas del descuento.';persist();}
 function resetEdit(){editIndex=-1;$('add').textContent='+ Añadir a mi solicitud';$('cancel-edit').hidden=true}
 function fillEdit(i){const x=cart[i],p=byId.get(x.id);if(!p)return;setProduct(p);$('version').value=['Clubes','Selecciones'].includes(p.category)?x.type:'Fan';$('size').value=x.size;$('quantity').value=x.quantity;$('personalize').checked=x.personalized;$('personal-fields').hidden=!x.personalized;$('patch').checked=x.patch;$('personal-name').value=x.name;$('number').value=x.number;editIndex=i;$('add').textContent='Guardar cambios';$('cancel-edit').hidden=false;$('add-status').textContent='Editando '+p.name+'. Guarda los cambios cuando termines.';document.getElementById('configurar').scrollIntoView({behavior:'smooth',block:'start'});}
 $('cart-items').addEventListener('click',e=>{const remove=e.target.closest('[data-remove]'),edit=e.target.closest('[data-edit]');if(remove){cart.splice(Number(remove.dataset.remove),1);resetEdit();render()}else if(edit)fillEdit(Number(edit.dataset.edit));});

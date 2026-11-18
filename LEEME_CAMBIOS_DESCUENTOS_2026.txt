@@ -1,0 +1,18 @@
+FUTNEXO — ENTREGA DE ACTUALIZACIÓN (18/11/2026)
+
+Se parte de FutNexo_Selecciones_Mismo_Sistema_Clubes_CORREGIDO.zip, se conservan los archivos originales y se superponen las 44 fotografías de selecciones y la fotografía actualizada de Alemania 2026.
+
+Cambios:
+- Precios Fan 21,99; Retro y Player 25,99; NBA 30,99; chándal media 49,99; cremallera completa 58,99; entrenamiento 37,99 euros.
+- Descuentos por cantidad: 2 hasta 15%, 3-4 hasta 20%, 5-9 hasta 30%, 10+ hasta 35%; entrenamiento excluido de tramos y descuentos.
+- Envío al cliente: 2,99 € para 1 prenda, gratuito desde 2 (entrenamiento sí cuenta).
+- Inicio, ofertas y pedido muestran la promoción; antiguos packs ocultos para evitar mensajes contradictorios.
+- Carrito muestra prendas elegibles, tramo, descuento real, ahorro y total. Los extras no se descuentan.
+- Selecciones: fotos locales incluidas en assets/catalogo, el selector de pedido ya utiliza el campo photo de cada referencia; se mejora el texto de selección.
+- NBA, chándales y entrenamiento: fondo de las tarjetas uniformado con el estilo oscuro de las otras secciones mediante CSS sin borrar ni sustituir fotos.
+
+LIMITACIÓN IMPORTANTE:
+El sitio es estático. No se puede garantizar un margen bruto del 40% ni validar el precio en un servidor sin instalar un backend. El cálculo del navegador usa reservas conservadoras, no tarifas de proveedor, y el importe es ORIENTATIVO, sujeto a confirmación. No hay costes reales de proveedores en el código nuevo.
+No se incluye panel de administración ni validación de cobro seguro. No se deben cobrar pedidos basándose exclusivamente en el cálculo del navegador.
+
+Comprobaciones: sintaxis JS con node --check; 8 casos de prueba de carritos homogéneos y mixtos; integridad de fotos locales y HTML.

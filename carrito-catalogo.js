@@ -2,7 +2,7 @@
 const KEY='futnexo_v358_cart';
 const PRODUCTS=Array.isArray(window.FUTNEXO_PRODUCTOS)?window.FUTNEXO_PRODUCTOS:[];
 const map=new Map(PRODUCTS.map(p=>[p.id,p]));
-const prices={Fan:29.99,Player:36.99,Retro:36.99,Infantil:27.99,Adulto:29.99,NBA:39.99,'Media cremallera':54.99,'Cremallera larga':64.99,Entrenamiento:34.99};
+const prices={Fan:21.99,Player:25.99,Retro:25.99,Infantil:27.99,Adulto:29.99,NBA:30.99,'Media cremallera':49.99,'Cremallera larga':58.99,Entrenamiento:37.99};
 function get(){try{const v=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(v)?v.filter(x=>x&&map.has(x.id)&&prices[x.type]&&Number.isInteger(x.quantity)&&x.quantity>=1&&x.quantity<=40).slice(0,80):[]}catch(e){return []}}
 function money(n){return n.toFixed(2).replace('.',',')+' €'}
 const link=document.createElement('a');link.className='fn-cart-link';link.href='pedido.html#solicitud';link.setAttribute('aria-label','Abrir carrito de compra');link.innerHTML='🛒 Mi carrito <span class="fn-cart-count">0</span>';document.body.append(link);

@@ -52,7 +52,7 @@ function quote(lines,cfg){
  let costCents=Math.ceil(Math.min(...candidates)*100-1e-9),full=base+extras+ship;
  let minRevenue=Math.ceil(costCents/(1-margin)),maxDiscount=Math.max(0,full-minRevenue);
  let discount=Math.max(0,Math.min(round(discountable*rate/100),maxDiscount));
- return {eligibleUnits:eligible,tierPct:rate,discountPct:discountable?Math.round(discount/discountable*10000)/100:0,discountEUR:discount/100,shippingEUR:ship/100,subtotalEUR:(base+extras)/100,totalEUR:(full-discount)/100,requiresReview:full<minRevenue};
+ return {eligibleUnits:eligible,tierPct:rate,discountPct:discountable?Math.min(rate,Math.round(discount/discountable*10000)/100):0,discountEUR:discount/100,shippingEUR:ship/100,subtotalEUR:(base+extras)/100,totalEUR:(full-discount)/100,requiresReview:full<minRevenue};
 }
 export default {async fetch(request,env){
  const origin=request.headers.get('Origin')||'',allowed=String(env.ALLOWED_ORIGIN||'').replace(/\/$/,'');

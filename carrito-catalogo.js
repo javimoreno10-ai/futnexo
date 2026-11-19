@@ -40,7 +40,7 @@ style.textContent=`
 .fn-cancel{background:#233954;border:1px solid #47658a;color:#e8f2ff}
 .fn-primary{background:#2679e4;border:1px solid #4a9bff;color:white}
 .fn-primary:hover{background:#4093fa}
-.fn-close{position:absolute;top:15px;right:17px;width:36px;height:36px;border:1px solid #4d6b92;border-radius:10px;background:#182e4b;color:#fff;font-size:24px;cursor:pointer}
+.fn-cart-dialog .fn-close{position:absolute;z-index:5;top:15px;right:17px;display:flex;align-items:center;justify-content:center;width:38px;height:38px;min-width:38px;min-height:38px;margin:0;padding:0;line-height:1;font-family:Arial,sans-serif;font-size:25px;font-weight:400;text-align:center;border:1px solid #4d6b92;border-radius:10px;background:#182e4b;color:#fff;cursor:pointer;appearance:none;box-sizing:border-box}.fn-cart-dialog .fn-close:hover{background:#285181;border-color:#70a7e8}.fn-cart-dialog .fn-close:focus-visible{outline:2px solid #89bdff;outline-offset:3px}
 @media(max-width:480px){.fn-inline{grid-template-columns:1fr}.fn-actions{flex-direction:column}.fn-cart-dialog{max-height:94dvh}}
 `;
 document.head.append(style);

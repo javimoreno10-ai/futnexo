@@ -26,7 +26,49 @@
 #add-status:not(:empty){padding:10px 14px;border:1px solid #316d76;background:#102f3c;border-radius:10px;color:#b6f1db}
 #add-status.error:not(:empty){border-color:#925b65;background:#3a1e2c;color:#ffd0d5}
 @media(max-width:480px){#add{width:100%}#solicitud{padding:17px}#cart-items .cart-item{gap:10px}}
-</style><style id="fn-pedido-nav-unified">header .fn-pedido-topnav{display:flex;align-items:center;gap:clamp(10px,2vw,19px);flex-wrap:wrap}header .fn-pedido-topnav a{color:#d7e5fa;font-size:.88rem;font-weight:750;text-decoration:none}header .fn-pedido-topnav a:hover{color:#66adff}header .fn-pedido-topnav a:last-child{background:#2679e4;color:white;padding:11px 15px;border-radius:11px}</style></head><body>
+</style><style id="fn-pedido-nav-unified">header .fn-pedido-topnav{display:flex;align-items:center;gap:clamp(10px,2vw,19px);flex-wrap:wrap}header .fn-pedido-topnav a{color:#d7e5fa;font-size:.88rem;font-weight:750;text-decoration:none}header .fn-pedido-topnav a:hover{color:#66adff}header .fn-pedido-topnav a:last-child{background:#2679e4;color:white;padding:11px 15px;border-radius:11px}</style><style id="fn-checkout-immersive-2026">
+/* Rediseño de pedido a pantalla completa; conserva IDs, formularios y lógica. */
+body{background:radial-gradient(ellipse at 12% 5%,#1c3762 0%,transparent 37%),radial-gradient(ellipse at 95% 30%,#0d2d54 0%,transparent 42%),#070e1c;background-attachment:fixed}
+main.wrap{width:calc(100% - clamp(24px,4vw,96px))!important;max-width:1920px!important;margin:0 auto!important;padding:clamp(24px,3vw,52px) 0 90px!important;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(350px,.95fr);column-gap:clamp(18px,2vw,34px);row-gap:19px;align-items:start}
+main.wrap>*{min-width:0}
+main.wrap>.fn-volume-promo,main.wrap>.eyebrow,main.wrap>h1,main.wrap>.lead,main.wrap>.steps,main.wrap>#envio,main.wrap>#consulta-disponibilidad,main.wrap>.footer{grid-column:1/-1}
+main.wrap>.fn-volume-promo{width:100%!important;max-width:none!important;margin:0 0 18px!important}
+main.wrap>.eyebrow{margin-top:3px;color:#79b8ff;font-size:12px;letter-spacing:.2em}
+main.wrap>h1{font-size:clamp(36px,4.5vw,72px);line-height:1.02;margin:0;letter-spacing:-.055em;background:linear-gradient(90deg,#fff 25%,#93c4ff 95%);color:transparent;background-clip:text}
+main.wrap>.lead{max-width:1000px;font-size:clamp(15px,1.3vw,19px);margin:0 0 8px;line-height:1.6}
+main.wrap>.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:8px 0 14px}
+main.wrap>.steps span{display:flex;align-items:center;justify-content:center;gap:12px;min-height:70px;background:linear-gradient(145deg,#142a4b,#0d1c34);border:1px solid #365781;border-radius:16px;color:#dce9fc;font-size:clamp(12px,1vw,16px);box-shadow:0 10px 25px #0002}
+main.wrap>.steps b{margin:0;width:32px;height:32px;background:linear-gradient(135deg,#3289ee,#6276fa);box-shadow:0 0 18px #2e81e75c;font-size:15px}
+main.wrap>.panel{min-width:0;border-radius:24px;border:1px solid #36557d;background:linear-gradient(160deg,#152b4a 0%,#0c1b32 65%,#0b182d 100%);box-shadow:0 22px 55px #0005;padding:clamp(21px,2.4vw,38px);margin:0}
+main.wrap>.panel .heading{padding-bottom:18px;margin-bottom:18px;border-bottom:1px solid #2b4669}
+main.wrap>.panel h2{font-size:clamp(21px,1.8vw,29px);letter-spacing:-.03em}
+main.wrap>.panel .pill{background:#19395e;color:#cfe7ff;border:1px solid #4275ae;border-radius:999px;padding:7px 13px}
+main.wrap>#configurar{grid-column:1;grid-row:span 2}
+main.wrap>#solicitud{grid-column:2;position:sticky;top:18px;max-height:calc(100dvh - 36px);overflow-y:auto;scrollbar-color:#416a9b #0c1b32}
+main.wrap>#configurar .group{gap:4px 18px}
+main.wrap .field{margin-top:17px}
+main.wrap .field>label{font-size:13px;color:#cde1fb;letter-spacing:.015em}
+main.wrap input:not([type=checkbox]),main.wrap select,main.wrap textarea{background:#08172c;border:1px solid #42648f;border-radius:13px;min-height:54px;padding:14px 16px;transition:border-color .18s,box-shadow .18s}
+main.wrap input:not([type=checkbox]):focus,main.wrap select:focus,main.wrap textarea:focus{border-color:#6aaeff;box-shadow:0 0 0 4px #2679e423;outline:none}
+main.wrap .notice{background:#112e51;border:1px solid #315f93;border-radius:14px;padding:17px 19px}
+main.wrap .fn-pedido-tip{background:#e7f1ff;color:#173659;border-radius:15px;padding:18px 20px;line-height:1.55}
+main.wrap .fn-pedido-tip a{color:#0a5db2;font-weight:850}
+main.wrap .preview{border:1px solid #37618f;background:linear-gradient(130deg,#0c203a,#132f50);border-radius:18px;padding:19px;min-height:170px;gap:24px}
+main.wrap .photo,main.wrap .no-photo{width:clamp(110px,12vw,185px);height:clamp(135px,15vw,210px);border-radius:15px;background:#f4f6fa;object-fit:contain}
+main.wrap .preview-title{font-size:clamp(18px,1.6vw,25px);font-weight:850;color:white}
+main.wrap .options label{background:#152e4e;border:1px solid #3c638f;border-radius:13px;min-height:56px}
+main.wrap .button{min-height:51px;border-radius:13px;background:linear-gradient(135deg,#2789f2,#126acb);box-shadow:0 8px 22px #0865c34d}
+main.wrap .button:hover{background:linear-gradient(135deg,#4a9fff,#2583e7)}
+main.wrap .button.secondary,main.wrap .button.light{background:#213d5d;box-shadow:none;border:1px solid #51739d}
+main.wrap #cart-items .cart-item{border-radius:15px}
+main.wrap #solicitud .totals{background:#0c213b;border:1px solid #2e5685;border-radius:15px;padding:15px}
+main.wrap #envio,main.wrap #consulta-disponibilidad{width:100%}
+main.wrap .footer{padding:20px 0;text-align:center}
+@media(min-width:1600px){main.wrap{grid-template-columns:minmax(0,1.5fr) minmax(410px,.85fr)}}
+@media(max-width:1050px){main.wrap{grid-template-columns:minmax(0,1fr)}main.wrap>#configurar,main.wrap>#solicitud{grid-column:1;grid-row:auto}main.wrap>#solicitud{position:static;max-height:none;overflow:visible}}
+@media(max-width:640px){main.wrap{width:calc(100% - 24px)!important;padding-top:20px!important;gap:14px}main.wrap>.steps{gap:7px}main.wrap>.steps span{min-height:60px;gap:5px;padding:9px 4px;flex-direction:column;font-size:11px}main.wrap>.steps b{width:26px;height:26px;font-size:13px}main.wrap>.panel{padding:18px;border-radius:18px}main.wrap>#configurar .group{grid-template-columns:1fr}main.wrap .preview{gap:12px;padding:12px}main.wrap .photo,main.wrap .no-photo{width:98px;height:122px}main.wrap .fn-pedido-tip{padding:14px}main.wrap .options{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){main.wrap input,main.wrap select,main.wrap .button{transition:none}}
+</style></head><body>
 <header><a class="logo" href="index.html#inicio">FUTNEXO</a><nav aria-label="Navegación" class="fn-pedido-topnav"><a href="index.html">Inicio</a><a href="clubes.html">Clubes</a><a href="selecciones.html">Selecciones</a><a href="retro.html">Retro</a><a href="guia-tallas.html">Guía de tallas</a><a href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">Hablar por Instagram ↗</a></nav></header>
 <main class="wrap"><section class="fn-volume-promo container" aria-label="Descuentos por cantidad"><div class="fn-volume-intro"><span>OFERTA FUTNEXO</span><h2>¡Cuantas más prendas, más ahorras!</h2><p>Combina camisetas Fan, Retro, Player, NBA y chándales.</p></div><div class="fn-volume-grid"><div><small>2 prendas</small><strong>Hasta 15 %</strong></div><div><small>3–4 prendas</small><strong>Hasta 20 %</strong></div><div><small>5–9 prendas</small><strong>Hasta 30 %</strong></div><div><small>10 o más</small><strong>Hasta 35 %</strong></div></div><p class="fn-volume-shipping"><strong>Envío GRATIS desde 2 prendas.</strong> Solo 1 prenda: 2,99 € de envío.</p><p class="fn-volume-terms">Los conjuntos de entrenamiento no participan ni cuentan para los tramos, pero sí para el envío gratis. El descuento depende de los productos del pedido y no es acumulable con otras promociones. <a href="pedido.html">Calcula tu pedido</a>.</p></section><div class="eyebrow">FUTNEXO · SOLICITUD SIN COMPROMISO</div><h1>Prepara tu solicitud</h1><p class="lead">Elige tu prenda, revisa el precio orientativo y envía la solicitud sin pagar. Te confirmaremos disponibilidad, importe final y próximos pasos por Instagram.</p>
 <div aria-label="Pasos" class="steps"><span><b>1</b><span class="step-label"> Elegir prenda</span></span><span><b>2</b><span class="step-label"> Revisar solicitud</span></span><span><b>3</b><span class="step-label"> Enviar datos</span></span></div>

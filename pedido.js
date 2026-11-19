@@ -70,9 +70,13 @@ function calc(){
  const full=baseCents+extrasCents+shipCents;
  const required=Math.ceil(conservativeCost/0.6);
  const review=units>0&&full<required;
- const discountCents=review?0:Math.max(0,Math.min(Math.floor(eligibleCents*tier/100),full-required));
+ // Para pedidos compuestos exclusivamente por camisetas Fan, Retro, Player o NBA,
+ // aplicar íntegro el descuento promocional del tramo correspondiente.
+ // La comprobación privada del margen sigue siendo necesaria antes de confirmar el pedido.
+ const shirtsOnly=cart.length>0&&cart.every(i=>['Fan','Retro','Player','NBA'].includes(i.type));
+ const discountCents=shirtsOnly?Math.floor(eligibleCents*tier/100):(review?0:Math.max(0,Math.min(Math.floor(eligibleCents*tier/100),full-required)));
  const appliedPercent=eligibleCents?Math.round(discountCents/eligibleCents*10000)/100:0;
- const message=review?'Este pedido requiere confirmación de precio; no se aplica descuento.':eligibleUnits<2?'Añade otra prenda elegible para acceder a la promoción.':appliedPercent+0.01<tier?'El descuento depende de la combinación de productos.':'Descuento por cantidad aplicado.';
+ const message=shirtsOnly?'Descuento promocional aplicado. Precio sujeto a validación final antes de confirmar el pedido.':review?'Este pedido requiere confirmación de precio; no se aplica descuento.':eligibleUnits<2?'Añade otra prenda elegible para acceder a la promoción.':appliedPercent+0.01<tier?'El descuento depende de la combinación de productos.':'Descuento por cantidad aplicado.';
  return{units,normal:baseCents/100,extras:extrasCents/100,ship:shipCents/100,total:(full-discountCents)/100,discount:discountCents/100,eligibleUnits,excludedUnits,tier,appliedPercent,message};
 }
 function render(){const d=calc();$('cart-count').textContent=d.units+' '+(d.units===1?'prenda':'prendas');$('cart-items').innerHTML=cart.length?cart.map((x,i)=>{const p=byId.get(x.id);if(!p)return'';return '<div class="cart-item">'+picture(p)+'<div class="cart-info"><p class="cart-name">'+esc(p.name)+'</p><p class="cart-meta">'+esc(p.category)+' · '+esc(p.description)+'<br>Temporada: '+esc(p.season)+'<br>Versión: '+esc(x.type)+' · Talla: '+esc(x.size)+' · '+x.quantity+' ud.<br>'+(x.personalized?'Estampado: '+esc(x.name)+' #'+esc(x.number):'Sin estampado')+' · '+(x.patch?'Con parche':'Sin parche')+'</p><div class="cart-price">'+money(prices[x.type][0]*x.quantity+x.quantity*(1.5*Number(x.personalized)+1.5*Number(x.patch)))+' <span class="tiny">antes de descuentos</span></div><div class="cart-controls"><button type="button" data-edit="'+i+'" class="text-button">Editar</button><button type="button" data-remove="'+i+'" class="text-button remove">Eliminar</button></div></div></div>'}).join(''):'<div class="empty">Aún no hay prendas. Añade una para ver aquí su fotografía y características.</div>';

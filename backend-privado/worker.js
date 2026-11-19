@@ -13,12 +13,40 @@ function quote(lines,cfg){
  let fx=Number(cfg.fx),overhead=Number(cfg.overheadEUR),margin=Number(cfg.targetMargin);
  if(!(fx>0&&overhead>=0&&margin>=0&&margin<1))throw Error('Configuración inválida');
  let candidates=[];
+ function supplierCost(supplier,group){
+  if(!group.length)return 0;
+  let groupN=group.reduce((n,x)=>n+x.quantity,0);
+  let tier=groupN>=40?4:groupN>=10?3:groupN>=5?2:groupN>=3?1:0;
+  let usd=Number(supplier.feeUSD||0)+Number(supplier.shippingUSD?.[String(groupN)]??supplier.shippingDefaultUSD??0);
+  for(const x of group){
+   const p=supplier.products[x.type];
+   if(p==null)return Infinity;
+   const unit=Array.isArray(p)?p[tier]:p;
+   if(!Number.isFinite(Number(unit)))return Infinity;
+   usd+=Number(unit)*x.quantity+x.quantity*(Number(supplier.personalizationUSD||0)*Number(x.personalized)+Number(supplier.patchUSD||0)*Number(x.patch));
+  }
+  return usd*fx+overhead;
+ }
  for(const supplier of cfg.suppliers){
-  if(items.some(x=>supplier.products[x.type]==null))continue;
-  let tier=n>=40?4:n>=10?3:n>=5?2:n>=3?1:0;
-  let usd=Number(supplier.feeUSD||0)+Number(supplier.shippingUSD?.[String(n)]??supplier.shippingDefaultUSD??0);
-  for(const x of items){let p=supplier.products[x.type],unit=Array.isArray(p)?p[tier]:p;if(!Number.isFinite(Number(unit)))throw Error('Tarifa inválida');usd+=Number(unit)*x.quantity;usd+=x.quantity*(Number(supplier.personalizationUSD||0)*Number(x.personalized)+Number(supplier.patchUSD||0)*Number(x.patch))}
-  candidates.push(usd*fx+overhead);
+  const cost=supplierCost(supplier,items);
+  if(Number.isFinite(cost))candidates.push(cost);
+ }
+ // Permitir pedidos mixtos: asignar cada referencia a un proveedor compatible.
+ // Se prueban dos estrategias conservadoras, sin omitir los gastos fijos de cada proveedor.
+ if(cfg.suppliers.length===2){
+  for(const preferred of [0,1]){
+   const groups=[[],[]];
+   let valid=true;
+   for(const item of items){
+    const idx=cfg.suppliers[preferred].products[item.type]!=null?preferred:1-preferred;
+    if(cfg.suppliers[idx].products[item.type]==null){valid=false;break}
+    groups[idx].push(item);
+   }
+   if(valid){
+    const cost=groups.reduce((sum,g,i)=>sum+supplierCost(cfg.suppliers[i],g),0);
+    if(Number.isFinite(cost))candidates.push(cost);
+   }
+  }
  }
  if(!candidates.length)throw Error('Sin proveedor disponible');
  let costCents=Math.ceil(Math.min(...candidates)*100-1e-9),full=base+extras+ship;

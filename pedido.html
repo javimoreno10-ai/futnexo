@@ -9,7 +9,24 @@
   .fn-pedido-tip a{color:#1252a0;font-weight:700;text-decoration:underline}
   .fn-pedido-steps-note p{margin:6px 0 0}
   @media(max-width:650px){#envio .actions{display:grid;grid-template-columns:1fr;gap:10px}#envio .actions button{width:100%;min-height:48px}}
-  </style></head><body>
+  </style><style id="fn-cart-ui-2026">
+/* Carrito coherente con la identidad azul marino y azul eléctrico de FutNexo. */
+#add{min-height:52px;padding:15px 24px;border-radius:13px;background:linear-gradient(135deg,#2389ed,#1268c6);border:1px solid #56a9ff;box-shadow:0 9px 24px #0965b53b;color:#fff;font-weight:850;letter-spacing:.01em;transition:transform .18s ease,box-shadow .18s ease,filter .18s ease}
+#add:hover{background:linear-gradient(135deg,#319aff,#1979df);box-shadow:0 12px 28px #0965b55c;transform:translateY(-2px)}
+#add:active{transform:translateY(0);filter:brightness(.93)}
+#solicitud{scroll-margin-top:25px;border-color:#365f92;background:linear-gradient(155deg,#162b49,#0e1b31);box-shadow:0 14px 38px #030b1c55}
+#solicitud .heading h2{font-size:clamp(1.25rem,3vw,1.55rem);color:#f4f8ff}
+#cart-count{background:#123e71;border-color:#408ce2;color:#e5f2ff;font-weight:800}
+#cart-items .cart-item{border:1px solid #315781;background:linear-gradient(145deg,#172b47,#0e1d34);border-radius:16px;padding:15px}
+#cart-items .cart-name{color:#fff;font-weight:850}
+#cart-items .cart-price{color:#8fc4ff}
+#solicitud .totals{border-top-color:#375a80}
+#solicitud .line.total{border-top-color:#456a94;font-size:1.3rem}
+#solicitud .line.total strong{color:#8fc4ff}
+#add-status:not(:empty){padding:10px 14px;border:1px solid #316d76;background:#102f3c;border-radius:10px;color:#b6f1db}
+#add-status.error:not(:empty){border-color:#925b65;background:#3a1e2c;color:#ffd0d5}
+@media(max-width:480px){#add{width:100%}#solicitud{padding:17px}#cart-items .cart-item{gap:10px}}
+</style></head><body>
 <header><a class="logo" href="index.html#inicio">FUTNEXO</a><nav aria-label="Navegación"><a href="index.html#inicio">Inicio</a><a href="clubes.html">Clubes</a><a href="nba.html">NBA</a><a href="retro.html">Retro</a><a href="ofertas.html">Ofertas</a></nav></header>
 <main class="wrap"><section class="fn-volume-promo container" aria-label="Descuentos por cantidad"><div class="fn-volume-intro"><span>OFERTA FUTNEXO</span><h2>¡Cuantas más prendas, más ahorras!</h2><p>Combina camisetas Fan, Retro, Player, NBA y chándales.</p></div><div class="fn-volume-grid"><div><small>2 prendas</small><strong>Hasta 15 %</strong></div><div><small>3–4 prendas</small><strong>Hasta 20 %</strong></div><div><small>5–9 prendas</small><strong>Hasta 30 %</strong></div><div><small>10 o más</small><strong>Hasta 35 %</strong></div></div><p class="fn-volume-shipping"><strong>Envío GRATIS desde 2 prendas.</strong> Solo 1 prenda: 2,99 € de envío.</p><p class="fn-volume-terms">Los conjuntos de entrenamiento no participan ni cuentan para los tramos, pero sí para el envío gratis. El descuento depende de los productos del pedido y no es acumulable con otras promociones. <a href="pedido.html">Calcula tu pedido</a>.</p></section><div class="eyebrow">FUTNEXO · SOLICITUD SIN COMPROMISO</div><h1>Prepara tu solicitud</h1><p class="lead">Elige tu prenda, revisa el precio orientativo y envía la solicitud sin pagar. Te confirmaremos disponibilidad, importe final y próximos pasos por Instagram.</p>
 <div aria-label="Pasos" class="steps"><span><b>1</b><span class="step-label"> Elegir prenda</span></span><span><b>2</b><span class="step-label"> Revisar solicitud</span></span><span><b>3</b><span class="step-label"> Enviar datos</span></span></div>
@@ -20,13 +37,13 @@
 <div class="options"><label><input id="personalize" type="checkbox"/> Nombre y dorsal (+1,50 € / unidad)</label><label><input id="patch" type="checkbox"/> Parche (+1,50 € / unidad)</label></div>
 <div class="group" hidden="" id="personal-fields"><div class="field"><label for="personal-name">Nombre a estampar</label><input id="personal-name" maxlength="28" placeholder="Nombre"/></div><div class="field"><label for="number">Dorsal</label><input id="number" inputmode="numeric" maxlength="3" pattern="[0-9]{1,3}" placeholder="Ej. 10"/></div></div>
 <p class="tiny">Si necesitas tallas o dorsales distintos, añade cada variante por separado. Las prendas sin imagen verificada están señaladas como pendientes. Confirmaremos disponibilidad y precio por Instagram.</p>
-<div class="actions"><button class="button" id="add" type="button">+ Añadir a mi solicitud</button><button class="button secondary" hidden="" id="cancel-edit" type="button">Cancelar edición</button></div><p aria-live="polite" class="status" id="add-status" role="status"></p>
+<div class="actions"><button class="button" id="add" type="button">🛒 Añadir al carrito</button><button class="button secondary" hidden="" id="cancel-edit" type="button">Cancelar edición</button></div><p aria-live="polite" class="status" id="add-status" role="status"></p>
 </section>
-<section class="panel" id="solicitud"><div class="heading"><h2>2. Tu solicitud</h2><span class="pill" id="cart-count">0 prendas</span></div><div id="cart-items"><div class="empty">Aquí aparecerán las imágenes de las prendas que añadas.</div></div>
+<section class="panel" id="solicitud"><div class="heading"><h2>2. Tu carrito</h2><span class="pill" id="cart-count">0 prendas</span></div><div id="cart-items"><div class="empty">Aquí aparecerán las imágenes de las prendas que añadas.</div></div>
 <div class="totals"><div class="line"><span>Prendas y personalización</span><strong id="subtotal">0,00 €</strong></div><div class="line"><span>Prendas elegibles</span><strong id="eligible-count">0</strong></div><div class="line"><span>Tramo promocional</span><strong id="discount-tier">Sin tramo</strong></div><div class="line"><span>Descuento aplicado</span><strong id="applied-percent">0 %</strong></div><div class="line"><span>Descuentos</span><strong class="green" id="discount">0,00 €</strong></div><div class="line"><span>Envío estimado</span><strong id="shipping">—</strong></div><div class="line total"><span>Total orientativo</span><strong id="total">0,00 €</strong></div></div>
 <p class="notice" id="excluded-count">Los conjuntos de entrenamiento están excluidos.</p><p class="notice" id="offer-msg">Desde dos prendas, el envío es gratuito.</p>
 <details class="details"><summary>¿Cómo funcionan los descuentos por cantidad?</summary><p class="price-explanation">Combina Fan, Retro, Player, NBA y chándales. 2 prendas: hasta 15 %; 3–4: hasta 20 %; 5–9: hasta 30 %; 10 o más: hasta 35 %. Los conjuntos de entrenamiento no participan ni cuentan para el tramo. Los extras no reciben descuentos. Envío: 2,99 € para una prenda y gratis desde dos prendas. Promociones no acumulables; el porcentaje final depende del pedido y se confirma antes de tramitarlo.</p></details>
-<div class="actions"><button class="button light" id="clear" type="button">Vaciar solicitud</button></div></section>
+<div class="actions"><button class="button light" id="clear" type="button">Vaciar carrito</button></div></section>
 <section class="panel" id="envio"><div class="heading"><h2>3. Envía tu solicitud</h2><span class="pill">Contacto por Instagram</span></div><div class="fn-pedido-steps-note"><strong>Antes de enviar</strong><p>Comprueba la talla, los extras y tu usuario de Instagram. No debes realizar ningún pago en este formulario. La solicitud no garantiza disponibilidad.</p></div>
 <div class="contact-note"><strong>¿Qué sucede después?</strong> Recibiremos tu solicitud y <strong>te escribiremos por Instagram desde @fut_nexo_</strong> para confirmar las prendas, comprobar disponibilidad, solicitar la información necesaria y acordar los siguientes pasos. <strong>Esta solicitud no es todavía una compra confirmada.</strong></div>
 <form accept-charset="UTF-8" action="https://formsubmit.co/javiermr810@gmail.com" id="order-form" method="POST">

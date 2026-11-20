@@ -377,7 +377,18 @@ th{color:#d4e8ff}
 .club-card .selection-image-frame>img[hidden]{display:none!important}
 .club-card .club-card-body{display:flex;flex-direction:column;flex:1}
 .club-card .club-bottom{margin-top:auto}
-</style></head><body>
+</style>
+<style id="fn-request-layout-fix">
+/* Bloque de consulta: alineación uniforme en escritorio y móvil. */
+.container.club-request{box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:28px;row-gap:20px;padding:32px clamp(20px,3vw,40px)!important;min-height:0}
+.club-request .club-request-text{min-width:0;max-width:720px}
+.club-request .club-request-text h2{font-size:clamp(28px,3vw,43px);line-height:1.08;margin:12px 0;overflow-wrap:break-word}
+.club-request .club-request-text p{max-width:650px;line-height:1.65;margin:0}
+.club-request>.btn{justify-self:end;max-width:100%;white-space:normal;text-align:center}
+@media(max-width:760px){.container.club-request{grid-template-columns:minmax(0,1fr);padding:26px 22px!important}.club-request>.btn{justify-self:start}}
+@media(max-width:420px){.club-request>.btn{width:100%;box-sizing:border-box}}
+</style>
+</head><body>
 <div class="announcement"><span class="dot"></span> FUTNEXO · CAMISETAS DE FÚTBOL <span class="announcement-right">Tu fútbol, tu camiseta</span></div>
 <header class="site-header">
 <a aria-label="FutNexo, volver al inicio" class="brand" href="index.html#inicio"><span aria-hidden="true" class="brand-fn-icon">F<span>N</span></span><span aria-hidden="true" class="brand-wordmark">FUT<span class="brand-wordmark-blue">NEXO</span></span></a>
@@ -841,7 +852,6 @@ th{color:#d4e8ff}
 </div>
 </article></div>
 <p class="selection-disclaimer">Las fotografías son referencias de las equipaciones 2026, no una confirmación de existencias, autorización de distribución ni de autenticidad de artículos ofrecidos. Se consulta talla, modelo, precio final y disponibilidad antes de confirmar un pedido. Fotografías de terceros enlazadas desde <a href="https://www.flashscore.com/news/soccer-world-championship-which-teams-have-already-released-their-kits-for-the-2026-world-cup/fakLHRrB/" rel="noopener noreferrer" target="_blank">Flashscore</a>; su reutilización comercial está sujeta a los derechos correspondientes.</p>
-<div class="selection-info">Si alguna foto no aparece, pulsa «Abrir fuente» en la tarjeta. La mayoría de imágenes se cargan desde servidores externos y pueden dejar de estar disponibles.</div>
 </section>
 <section class="container club-request"><div class="club-request-text"><span class="kicker">¿BUSCAS OTRA CAMISETA?</span><h2>LO CONSULTAMOS CONTIGO.</h2><p>Escríbenos el país, la temporada y la talla que necesitas. Te ayudaremos a consultar las opciones.</p></div>
 <a class="btn btn-primary" href="https://www.instagram.com/fut_nexo_/" rel="noopener noreferrer" target="_blank">PREGUNTAR POR INSTAGRAM ↗</a></section>

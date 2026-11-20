@@ -32,6 +32,7 @@ style.textContent=`
 .fn-cart-inner select,.fn-cart-inner input:not([type=checkbox]){box-sizing:border-box;width:100%;min-height:46px;padding:11px 13px;background:#0a1629;color:#fff;border:1px solid #47678e;border-radius:11px;font:inherit}
 .fn-cart-inner select:focus,.fn-cart-inner input:focus{outline:2px solid #6eb2ff;outline-offset:2px}
 .fn-inline{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.fn-cart-dialog #fn-custom-fields[hidden]{display:none!important}
 .fn-inline>div{min-width:0;display:flex;flex-direction:column;gap:7px}
 .fn-check{display:flex;align-items:center;gap:11px;padding:12px 13px;border:1px solid #34547a;background:#142842;border-radius:11px;cursor:pointer}
 .fn-check input{accent-color:#2786ed;width:17px;height:17px;flex:none}

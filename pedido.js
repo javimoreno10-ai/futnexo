@@ -12,23 +12,23 @@ const modelLabel=m=>{const v=normalizeSearch(m);if(/^(primera equipacion|local|p
 const params=new URLSearchParams(location.search);
 const fields=['category','team','season','model','reference'];
 function filtered(level){const selected={};for(const field of fields.slice(0,level)){selected[field]=$ (field).value;}
- if(level>=2&&$('team-search').value.trim()&&!$('team').value)return [];return products.filter(p=>(!selected.category||p.category===selected.category)&&(!selected.team||p.team===selected.team)&&(!selected.season||p.season===selected.season)&&(!selected.model||modelLabel(p.model)===selected.model));}
+ if(level>=2&&$('team-search').value.trim()&&!$('team').value)return [];return products.filter(p=>(!selected.category||p.category===selected.category)&&(!selected.team||p.team===selected.team)&&(!selected.season||selected.category==='Retro'||p.season===selected.season)&&(!selected.model||(selected.category==='Retro'?p.season===selected.model:modelLabel(p.model)===selected.model)));}
 function choices(selectId,items,prefer){const s=$(selectId);if(!s)return;let old=prefer??s.value;s.replaceChildren();for(const name of items){const o=new Option(name,name);s.add(o);}if(items.includes(old))s.value=old;else if(items.length)s.selectedIndex=0;}
 function synchronize(from=0,preferred=null){const cfg=[['category','category'],['team','team'],['season','season'],['model','model']];
  for(let i=from;i<cfg.length;i++){let [id,key]=cfg[i],items=unique(filtered(i).map(p=>p[key]));if(id==='category'){const order=['Clubes','Selecciones','Retro','NBA','Chándals','Entrenamiento'];items.sort((a,b)=>order.indexOf(a)-order.indexOf(b));}
   if(id==='team'){const q=normalizeSearch($('team-search').value);const matching=items.filter(v=>normalizeSearch(v).includes(q));if(q&&matching.length===0){$('team-search').setCustomValidity('No encontramos ese equipo en el catálogo.');}else $('team-search').setCustomValidity('');items=matching;}
+  if(id==='season'&&$('category').value==='Retro')items=[''];
   if(id==='model'){
     const category=$('category').value;
     const kit=/^(Clubes|Selecciones)$/.test(category);
-    items=kit?items.map(modelLabel).filter(Boolean):[];
-    items=unique(items);
-    const modelOrder=['Primera equipación','Segunda equipación','Tercera equipación','Cuarta equipación'];
-    items.sort((a,b)=>modelOrder.indexOf(a)-modelOrder.indexOf(b));
-    const show=kit&&items.length>0;
-    $('model-field').hidden=!show;
-    if(!show)items=[''];
+    const retro=category==='Retro';
+    items=retro?unique(filtered(i).map(p=>p.season)):kit?unique(items.map(modelLabel).filter(Boolean)):[];
+    if(kit){const modelOrder=['Primera equipación','Segunda equipación','Tercera equipación','Cuarta equipación'];items.sort((a,b)=>modelOrder.indexOf(a)-modelOrder.indexOf(b));}
+    $('model-field').hidden=!(retro||kit)||items.length===0;
+    $('model-field').querySelector('label').textContent=retro?'Selecciona modelo':'Equipación';
+    if(!items.length)items=[''];
   }
-  const prefer=preferred?(id==='model'?modelLabel(preferred[key]):preferred[key]):null;
+  const prefer=preferred?(id==='model'?(preferred.category==='Retro'?preferred.season:modelLabel(preferred[key])):preferred[key]):null;
   choices(id,items,prefer);}
  const list=filtered(4),reflist=$('reference');reflist.replaceChildren();for(const p of list){const opt=new Option(p.description+' · '+p.id,p.id);reflist.add(opt)}
  $('reference-field').style.display=list.length>1?'block':'none';if(preferred&&list.some(p=>p.id===preferred.id))reflist.value=preferred.id;

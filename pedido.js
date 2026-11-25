@@ -147,7 +147,22 @@ $('clear').addEventListener('click',()=>{if(cart.length&&!window.confirm('¿Quie
 function message(){const d=verifiedKey===quoteKey()&&verifiedQuote?{total:verifiedQuote.total,message:verifiedQuote.notice}:{total:0,message:'Precio pendiente de cotización privada.'};return 'SOLICITUD FUTNEXO — PENDIENTE DE CONFIRMACIÓN\n\n'+cart.map((x,i)=>{const p=byId.get(x.id);const base=location.href.startsWith('http')?location.href:'https://futnexo.futnexo.workers.dev/pedido.html';const url=new URL('pedido.html?ref='+encodeURIComponent(p.id),base).href;return (i+1)+'. '+p.name+' ('+p.category+')\nReferencia: '+p.id+'\nDescripción: '+p.description+'\nTemporada: '+p.season+' | Modelo: '+p.model+'\nVersión: '+x.type+' | Talla: '+x.size+' | Unidades: '+x.quantity+'\nPersonalización: '+(x.personalized?x.name+' #'+x.number:'No')+' | Parche: '+(x.patch?(x.patchDescription||'Por confirmar'):'No')+'\nPantalón: '+(x.shortsAdded?'Añadido (+10 €/ud.)':x.shortsChild?'Infantil':'No')+' | Dorsal pantalón: '+(x.shortsPersonalized?x.shortsNumber+(x.shortsChild?' (gratis)':' (+1,50 €/ud.)'):'No')+'\nFicha: '+url;}).join('\n\n')+'\n\nIMPORTE ORIENTATIVO: '+(verifiedKey===quoteKey()&&verifiedQuote?money(d.total):'Pendiente de confirmar')+'\n'+d.message+'\n\nNOMBRE/ALIAS: '+$('customer').value.trim()+'\nINSTAGRAM PARA CONTACTO: '+$('contact').value.trim()+'\nEMAIL: '+$('customer-email').value.trim()+'\nOBSERVACIONES: '+$('notes').value.trim()+'\n\nEl cliente acepta continuar por Instagram. Disponibilidad, precio final y pago pendientes de confirmación.';}
 function validate(){if(cart.length&&cart.every(x=>['Fan','Retro','Player','NBA','Media cremallera','Cremallera larga','Entrenamiento'].includes(x.type))&&!(verifiedQuote&&verifiedKey===quoteKey())){$('copy-status').textContent='Espera a que se calcule el total antes de enviar el pedido.';$('copy-status').classList.add('error');return false;}if(!cart.length){$('copy-status').textContent='Añade al menos una prenda antes de enviar.';$('copy-status').classList.add('error');$('add').focus();return false;}const ig=$('contact');ig.value=ig.value.trim();if(!/^@?[A-Za-z0-9._]{1,30}$/.test(ig.value)){ig.setCustomValidity('Introduce un usuario de Instagram válido, sin espacios.');}else ig.setCustomValidity('');const form=$('order-form');if(!form.checkValidity()){form.reportValidity();return false;}return true;}
 $('contact').addEventListener('input',()=>{$('contact').setCustomValidity('')});
-$('order-form').addEventListener('submit',e=>{if(!validate()){e.preventDefault();return}if($('website-check').value){e.preventDefault();return}$('summary-input').value=message();$('copy-status').classList.remove('error');$('copy-status').textContent='Enviando al servicio de formularios. Puede aparecer una verificación antispam.';});
+const ORDER_URL='https://futnexo-pedidos.vercel.app/api/pedido';
+const sending=new WeakSet(), sent=new WeakMap();
+async function sendRequest(form,status,kind,body,honey){
+ if(sending.has(form))return;
+ if(sent.get(form)===body){status.classList.remove('error');status.textContent='Esta solicitud ya se ha enviado correctamente.';return;}
+ const button=form.querySelector('button[type="submit"]');
+ sending.add(form);button.disabled=true;status.classList.remove('error');status.textContent='Enviando solicitud…';
+ try{
+  const response=await fetch(ORDER_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:body,kind,honey})});
+  const data=await response.json();
+  if(!response.ok||data.ok!==true||!data.id)throw Error('Envío no confirmado');
+  sent.set(form,body);status.textContent='¡Solicitud enviada correctamente! Te contactaremos por Instagram para confirmar los detalles.';
+ }catch(e){status.classList.add('error');status.textContent='No hemos podido confirmar el envío. Tus datos se conservan. Puedes volver a intentarlo o contactar por Instagram.';}
+ finally{sending.delete(form);button.disabled=false;}
+}
+$('order-form').addEventListener('submit',e=>{e.preventDefault();if(!validate()||$('website-check').value)return;const body=message();if($('summary-input'))$('summary-input').value=body;sendRequest(e.currentTarget,$('copy-status'),'pedido',body,$('website-check').value);});
 $('copy').addEventListener('click',async()=>{if(!cart.length){$('copy-status').textContent='Añade al menos una prenda para copiar el resumen.';return;}const text=message();try{await navigator.clipboard.writeText(text);$('copy-status').textContent='Resumen copiado.'}catch(e){const t=document.createElement('textarea');t.value=text;document.body.append(t);t.select();let ok=document.execCommand('copy');t.remove();$('copy-status').textContent=ok?'Resumen copiado.':'No se pudo copiar. Revisa los permisos del navegador.'}});
 
 function updateUnknownTeam(){const q=$('team-search').value.trim(), noMatch=q&&!Array.from($('team').options).length;
@@ -165,9 +180,12 @@ function prepareAvailability(){
  } else if(searchText){
   $('availability-description').value='Busco: '+searchText+'. Quiero saber si podéis conseguir esta prenda.';
  }
- form.addEventListener('submit',function(e){const ig=$('availability-instagram');ig.value=ig.value.trim();
+ let status=$('availability-status');if(!status){status=document.createElement('p');status.id='availability-status';status.className='status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');form.append(status);}
+ form.addEventListener('submit',function(e){e.preventDefault();const ig=$('availability-instagram');ig.value=ig.value.trim();
   const invalid=!/^@?[A-Za-z0-9._]{1,30}$/.test(ig.value);ig.setCustomValidity(invalid?'Introduce un usuario de Instagram válido.':'');
-  if($('availability-website').value||!form.checkValidity()){e.preventDefault();form.reportValidity();}
+  if($('availability-website').value||!form.checkValidity()){form.reportValidity();return;}
+  const body=['CONSULTA DE DISPONIBILIDAD FUTNEXO — SIN PEDIDO','NOMBRE/ALIAS: '+$('availability-name').value.trim(),'INSTAGRAM: '+ig.value,'EMAIL: '+$('availability-email').value.trim(),'TIPO DE PRENDA: '+$('availability-category').value,'PRENDA SOLICITADA: '+$('availability-description').value.trim(),'DETALLES: '+$('availability-details').value.trim(),'El cliente acepta el contacto por Instagram.'].join('\n\n');
+  sendRequest(form,status,'consulta',body,$('availability-website').value);
  });
  $('availability-instagram').addEventListener('input',function(){$('availability-instagram').setCustomValidity('')});
 }

@@ -62,4 +62,16 @@ favToggle.onclick=()=>setFav(favPanel.hidden);favClose.onclick=()=>{setFav(false
 for(const card of document.querySelectorAll('article[data-fn-product-id]')){const id=card.dataset.fnProductId;if(!favProducts.has(id))continue;card.classList.add('fn-fav-card');const b=document.createElement('button');b.type='button';b.className='fn-fav-heart';b.dataset.favId=id;b.innerHTML=heartSvg;b.onclick=e=>{e.preventDefault();e.stopPropagation();changeFav(id);};card.append(b);}
 favRender();
 
+
+/* Accesos sociales en el lugar del antiguo botón de Instagram. */
+const social=document.createElement('div');social.className='fn-social-links';
+const socialData=[
+['Instagram','https://www.instagram.com/fut_nexo_/','<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>'],
+['TikTok','https://www.tiktok.com/@fut_nexo_?_r=1&_t=ZN-9BjEOHBcCQw','<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 2c.3 2.5 1.7 4 4.4 4.2v3.4a8.2 8.2 0 0 1-4.4-1.3v7.1a6.4 6.4 0 1 1-6.4-6.4c.4 0 .8 0 1.2.1v3.5a3.1 3.1 0 1 0 1.8 2.8V2z"/></svg>']
+];
+for(const [name,url,svg] of socialData){const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('aria-label',name+' de FutNexo');a.title=name;a.innerHTML=svg;social.append(a);}
+const oldSocial=header.querySelector('.nav-cta[href*="instagram.com"],a.nav-cta[href*="instagram.com"]');
+if(oldSocial){oldSocial.replaceWith(social);}else{const oldIg=[...header.querySelectorAll('a[href*="instagram.com"]')].find(a=>/instagram/i.test(a.textContent));if(oldIg)oldIg.replaceWith(social);else actions.after(social);}
+const socialStyle=document.createElement('style');socialStyle.textContent='.fn-social-links{display:inline-flex!important;align-items:center;gap:6px;flex-shrink:0}.fn-social-links a{display:inline-flex!important;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9px;color:#f1f6ff!important;background:transparent;text-decoration:none}.fn-social-links a:hover{background:#ffffff12}.fn-social-links a:focus-visible{outline:2px solid #82baff;outline-offset:2px}.fn-social-links svg{width:23px;height:23px}@media(max-width:760px){.fn-social-links{gap:2px}.fn-social-links a{width:32px;height:36px}.fn-social-links svg{width:20px;height:20px}}';document.head.append(socialStyle);
+
 })();

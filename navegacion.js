@@ -12,6 +12,15 @@ const css=document.createElement('style');css.textContent=`
 .fn-nav-actions{display:inline-flex;align-items:center;gap:8px;flex-shrink:0}.fn-nav-actions a{color:white;text-decoration:none;font-size:13px;font-weight:700}
 header .fn-nav-toggle{display:inline-flex!important}.fn-nav-actions .fn-mobile-cart{display:none}
 @media(max-width:760px){header.site-header,header.fn-search-header{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:8px!important;flex-wrap:wrap!important}header .nav,header .nav-cta,header .menu-toggle,header .fn-pedido-topnav{display:none!important}header .fn-nav-actions .fn-mobile-cart{display:inline-flex;align-items:center;min-height:40px}header .fn-nav-actions{margin-left:auto}.fn-global-menu{grid-template-columns:repeat(2,minmax(0,1fr))}.fn-search-panel{padding:12px 16px}}
+
+/* Integrar los desplegables y sus iconos en el fondo original de FutNexo. */
+header .fn-search-toggle,header .fn-nav-toggle{background:transparent!important;border-color:transparent!important;box-shadow:none!important}
+header .fn-search-toggle:hover,header .fn-nav-toggle:hover{background:#ffffff0d!important}
+.fn-search-panel,.fn-global-menu{background:#080d17!important;border-bottom:1px solid #26374f}
+.fn-search-panel input{background:transparent!important;color:#f4f7ff!important;border-color:#34465e!important}
+.fn-search-panel input::placeholder{color:#aabbd1;opacity:1}
+.fn-search-results,.fn-search-results a,.fn-global-menu a{background:transparent!important;color:#e8effa!important}
+.fn-search-results a:hover,.fn-global-menu a:hover{background:#ffffff0b!important}
 `;document.head.append(css);
 header.classList.add('fn-search-header');
 const makeButton=(label,cls,svg)=>{const b=document.createElement('button');b.type='button';b.className=cls;b.setAttribute('aria-label',label);b.setAttribute('aria-expanded','false');b.innerHTML=svg;return b;};

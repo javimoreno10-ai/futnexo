@@ -149,19 +149,8 @@ function validate(){if(cart.length&&cart.every(x=>['Fan','Retro','Player','NBA',
 $('contact').addEventListener('input',()=>{$('contact').setCustomValidity('')});
 const ORDER_URL='https://futnexo-pedidos.vercel.app/api/pedido';
 const sending=new WeakSet(), sent=new WeakMap();
-async function sendRequest(form,status,kind,body,honey){
- if(sending.has(form))return;
- if(sent.get(form)===body){status.classList.remove('error');status.textContent='Esta solicitud ya se ha enviado correctamente.';return;}
- const button=form.querySelector('button[type="submit"]');
- sending.add(form);button.disabled=true;status.classList.remove('error');status.textContent='Enviando solicitud…';
- try{
-  const response=await fetch(ORDER_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:body,kind,honey})});
-  const data=await response.json();
-  if(!response.ok||data.ok!==true||!data.id)throw Error('Envío no confirmado');
-  sent.set(form,body);status.textContent='¡Solicitud enviada correctamente! Te contactaremos por Instagram para confirmar los detalles.';
- }catch(e){status.classList.add('error');status.textContent='No hemos podido confirmar el envío. Tus datos se conservan. Puedes volver a intentarlo o contactar por Instagram.';}
- finally{sending.delete(form);button.disabled=false;}
-}
+async function sendRequest(form,status,kind,body,honey){status.classList.remove('error');status.textContent='Simulación completada. No se ha enviado ningún pedido real.';}
+
 $('order-form').addEventListener('submit',e=>{e.preventDefault();if(!validate()||$('website-check').value)return;const body=message();if($('summary-input'))$('summary-input').value=body;sendRequest(e.currentTarget,$('copy-status'),'pedido',body,$('website-check').value);});
 $('copy').addEventListener('click',async()=>{if(!cart.length){$('copy-status').textContent='Añade al menos una prenda para copiar el resumen.';return;}const text=message();try{await navigator.clipboard.writeText(text);$('copy-status').textContent='Resumen copiado.'}catch(e){const t=document.createElement('textarea');t.value=text;document.body.append(t);t.select();let ok=document.execCommand('copy');t.remove();$('copy-status').textContent=ok?'Resumen copiado.':'No se pudo copiar. Revisa los permisos del navegador.'}});
 

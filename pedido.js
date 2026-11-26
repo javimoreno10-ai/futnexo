@@ -1,5 +1,5 @@
 (()=>{'use strict';
-const products=Array.isArray(window.FUTNEXO_PRODUCTOS)?window.FUTNEXO_PRODUCTOS:[];
+const products=(Array.isArray(window.FUTNEXO_PRODUCTOS)?window.FUTNEXO_PRODUCTOS:[]).filter(p=>p.category!=='Entrenamiento');
 const byId=new Map(products.map(p=>[p.id,p]));
 const prices={'Fan':[21.99,44.99],'Player':[25.99,54.99],'Retro':[25.99,54.99],'Infantil':[27.99,41.99],'Adulto':[29.99,44.99],'NBA':[30.99,64.99],'Media cremallera':[49.99,89.99],'Cremallera larga':[58.99,109.99],'Entrenamiento':[37.99,54.99]};
 const $=id=>document.getElementById(id),esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));

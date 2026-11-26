@@ -60,6 +60,15 @@ style.textContent=`
 @media(max-width:480px){.fn-inline{grid-template-columns:1fr}.fn-actions{flex-direction:column}.fn-cart-dialog{max-height:94dvh}}
 `;
 document.head.append(style);
+/* La foto y el nombre abren el mismo configurador que Añadir al carrito. */
+document.addEventListener('click',e=>{
+ const a=e.target.closest('a[href*="pedido.html?ref="]');
+ if(!a||e.defaultPrevented||e.button!==0||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;
+ const card=a.closest('[data-fn-product-id]');if(!card)return;
+ const p=map.get(card.getAttribute('data-fn-product-id'));if(!p)return;
+ e.preventDefault();if(!dialog.open)open(p);
+});
+
 for(const card of document.querySelectorAll('[data-fn-product-id]')){
  const p=map.get(card.getAttribute('data-fn-product-id'));if(!p)continue;
  const bottom=card.querySelector('.club-bottom,.bottom,.catalog-card-bottom,.product-bottom');

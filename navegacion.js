@@ -149,27 +149,16 @@ const snow=document.createElement('div');snow.className='fn-holiday-snow';snow.s
 const pageName=location.pathname.split('/').pop().replace('.html','')||'index';const details={index:'✦ Una Navidad llena de fútbol ✦',clubes:'⚽ Regala los colores de tu equipo',selecciones:'❄ La pasión no tiene fronteras',retro:'✦ Una Navidad de leyendas',nba:'🏀 Navidad sobre la cancha',chandals:'❄ Abrígate con tus colores', 'guia-tallas':'🎁 Encuentra la talla perfecta para tu regalo',pedido:'🎁 Prepara tu pedido de Navidad',carrito:'🎁 Tus regalos de Navidad'};const detail=document.createElement('span');detail.className='fn-holiday-detail';detail.textContent=details[pageName]||'✦ Especial Navidad FutNexo ✦';sale.prepend(detail);
 const footer=document.querySelector('footer');if(footer){const note=document.createElement('div');note.className='fn-holiday-foot';note.textContent='❄  FUTNEXO · FELICES FIESTAS  ❄';footer.prepend(note);}
 
-/* Recursos fotográficos alojados en el sitio público, utilizados solo en pruebas. */
-const holidayAssets={garland:'https://futnexo.pages.dev/navidad-guirnalda.png',snow:'https://futnexo.pages.dev/navidad-nieve.png',gifts:'https://futnexo.pages.dev/navidad-regalos.png',stadium:'https://futnexo.pages.dev/navidad-estadio.png',hat:'https://futnexo.pages.dev/navidad-gorro.png'};
-const photoCSS=document.createElement('style');photoCSS.textContent=`
-.fn-holiday-garland.fn-photo-ready{height:clamp(32px,5.5vw,76px);padding:0;background:none}
-.fn-holiday-garland.fn-photo-ready:before,.fn-holiday-garland.fn-photo-ready i{display:none}
-.fn-holiday-garland img{width:100%;height:100%;object-fit:fill;display:block}
-.fn-holiday-hat.fn-photo-ready{width:38px;height:28px;top:-15px;left:-12px}
-.fn-holiday-hat img{width:100%;height:100%;object-fit:contain}
-.fn-holiday-theme .hero.fn-photo-stadium{position:relative;isolation:isolate}
-.fn-holiday-theme .hero.fn-photo-stadium:before{content:"";position:absolute;z-index:-1;inset:0;border-radius:20px;pointer-events:none;background:linear-gradient(90deg,#080f1bf2 0%,#080f1bc2 38%,#080f1b44 100%),linear-gradient(0deg,#080f1b 0%,transparent 25%),url('https://futnexo.pages.dev/navidad-estadio.png') center/cover no-repeat}
-.fn-holiday-theme .fn-preview-sale.fn-photo-snow{position:relative;isolation:isolate;padding-top:25px}
-.fn-holiday-theme .fn-preview-sale.fn-photo-snow:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:url('https://futnexo.pages.dev/navidad-nieve.png') center/100% 100% no-repeat;border-radius:inherit;opacity:.78}
-.fn-holiday-theme .hero-art{position:relative}
-.fn-holiday-gifts{position:absolute;bottom:0;right:0;width:clamp(70px,18%,160px);height:auto;pointer-events:none;z-index:2;mask-image:radial-gradient(ellipse at center,#000 45%,transparent 76%)}
-.fn-holiday-theme .fn-preview-sale .fn-holiday-gifts{width:clamp(48px,10%,115px);right:3%;bottom:3px;z-index:-1}
-@media(max-width:760px){.fn-holiday-garland.fn-photo-ready{height:30px}.fn-holiday-hat.fn-photo-ready{width:27px;height:22px;left:-6px;top:-11px}.fn-holiday-theme .hero.fn-photo-stadium:before{background:linear-gradient(180deg,#080f1be8 0%,#080f1b80 55%,#080f1b 100%),url('https://futnexo.pages.dev/navidad-estadio.png') center/cover no-repeat}.fn-holiday-theme .fn-preview-sale.fn-photo-snow{padding-top:20px}}
-`;document.head.append(photoCSS);
-function holidayImage(url,apply){const im=new Image();im.alt='';im.setAttribute('aria-hidden','true');im.onload=()=>apply(im);im.src=url;}
-holidayImage(holidayAssets.garland,im=>{garland.replaceChildren(im);garland.classList.add('fn-photo-ready');});
-const photoHat=header.querySelector('.fn-holiday-hat');if(photoHat)holidayImage(holidayAssets.hat,im=>{photoHat.replaceChildren(im);photoHat.classList.add('fn-photo-ready');});
-const hero=document.querySelector('.hero');if(hero)holidayImage(holidayAssets.stadium,()=>hero.classList.add('fn-photo-stadium'));
-holidayImage(holidayAssets.snow,()=>sale.classList.add('fn-photo-snow'));
-holidayImage(holidayAssets.gifts,im=>{im.className='fn-holiday-gifts';sale.append(im);const art=document.querySelector('.hero-art');if(art)art.append(im.cloneNode(true));});
+
+/* Únicamente el estadio fotográfico; conservar decoración original. */
+const stadiumHero=document.querySelector('.hero');
+if(stadiumHero){
+ const stadiumStyle=document.createElement('style');
+ stadiumStyle.textContent=`
+ .fn-holiday-theme .hero.fn-photo-stadium{position:relative;isolation:isolate}
+ .fn-holiday-theme .hero.fn-photo-stadium:before{content:"";position:absolute;z-index:-1;inset:0;border-radius:20px;pointer-events:none;background:linear-gradient(90deg,#080f1bf2 0%,#080f1bc2 38%,#080f1b44 100%),linear-gradient(0deg,#080f1b 0%,transparent 22%),url('https://futnexo.pages.dev/navidad-estadio.png') center center/cover no-repeat}
+ @media(max-width:760px){.fn-holiday-theme .hero.fn-photo-stadium:before{background:linear-gradient(180deg,#080f1be8 0%,#080f1b80 55%,#080f1b 100%),url('https://futnexo.pages.dev/navidad-estadio.png') center center/cover no-repeat}}
+ `;document.head.append(stadiumStyle);
+ const stadiumImage=new Image();stadiumImage.onload=()=>stadiumHero.classList.add('fn-photo-stadium');stadiumImage.src='https://futnexo.pages.dev/navidad-estadio.png';
+}
 })();

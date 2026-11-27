@@ -135,4 +135,11 @@ html.fn-v2-photo .fn-retro-team-section>summary .fn-team-count{font:700 11px sys
 html.fn-v2-photo .fn-retro-team-grid{padding-inline:0}
 @media(max-width:760px){html.fn-v2-photo .fn-retro-team-section>summary{font-size:28px}}
 `;document.head.append(v2Clear);
+
+/* Ocultar indicador triangular de los equipos Retro, conservando el desplegable. */
+if(location.pathname.split('/').pop()==='retro.html'){
+ const retroArrowStyle=document.createElement('style');
+ retroArrowStyle.textContent='.fn-retro-team-section>summary::before{display:none!important;content:none!important}.fn-retro-team-section>summary::marker{content:""}.fn-retro-team-section>summary::-webkit-details-marker{display:none!important}';
+ document.head.append(retroArrowStyle);
+}
 })();

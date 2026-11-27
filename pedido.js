@@ -74,34 +74,8 @@ for(const id of ['shorts-add','shorts-child-personalize','shorts-custom'])$(id).
 syncShorts();
 function persist(){try{localStorage.setItem(cartKey,JSON.stringify(cart))}catch(e){}}
 function typeFor(p){return p.fixedVersion||(['Clubes','Selecciones'].includes(p.category)?$('version').value:p.priceType);}
-function calc(){
- const units=cart.reduce((n,i)=>n+i.quantity,0),eligible=cart.filter(i=>['Fan','Retro','Player','NBA','Media cremallera','Cremallera larga'].includes(i.type));
- const eligibleUnits=eligible.reduce((n,i)=>n+i.quantity,0),excludedUnits=units-eligibleUnits;
- const baseCents=cart.reduce((n,i)=>n+Math.round(prices[i.type][0]*100)*i.quantity,0);
- const eligibleCents=eligible.reduce((n,i)=>n+Math.round(prices[i.type][0]*100)*i.quantity,0);
- const extrasCents=cart.reduce((n,i)=>n+i.quantity*(150*Number(i.personalized)+150*Number(i.patch)+1000*Number(i.shortsAdded)+150*Number(i.shortsPersonalized&&!i.shortsChild)),0);
- const shipCents=units===1?299:0;
- const tier=eligibleUnits>=10?35:eligibleUnits>=5?30:eligibleUnits>=3?20:eligibleUnits>=2?15:0;
- // Presupuesto público conservador: nunca muestra tarifas de proveedores.
- // Es orientativo: el coste real y el margen requieren validación privada antes de confirmar.
- const hasTraining=cart.some(i=>i.type==='Entrenamiento');
- // Importes de reserva de seguridad, NO tarifas de proveedores.
- // La cotización real deberá validarse en un servicio privado antes del pago.
- const reserve=hasTraining?{'Fan':1200,'Retro':1400,'Player':1400,'NBA':1500,'Media cremallera':3300,'Cremallera larga':3300,'Entrenamiento':2700,'Infantil':1300,'Adulto':1500}:{'Fan':850,'Retro':1150,'Player':1150,'NBA':1450,'Media cremallera':2650,'Cremallera larga':3350,'Entrenamiento':2700,'Infantil':1300,'Adulto':1500};
- const conservativeCost=cart.reduce((n,i)=>n+(reserve[i.type]||4000)*i.quantity,0)+(units?(hasTraining?800:units===1?900:500):0)+cart.reduce((n,i)=>n+i.quantity*(300*Number(i.personalized)+150*Number(i.patch)),0);
- const full=baseCents+extrasCents+shipCents;
- const required=Math.ceil(conservativeCost/0.6);
- const review=units>0&&full<required;
- // Para pedidos compuestos exclusivamente por camisetas Fan, Retro, Player o NBA,
- // aplicar íntegro el descuento promocional del tramo correspondiente.
- // La comprobación privada del margen sigue siendo necesaria antes de confirmar el pedido.
- const shirtsOnly=cart.length>0&&cart.every(i=>['Fan','Retro','Player','NBA'].includes(i.type));
- const discountCents=shirtsOnly?Math.floor(eligibleCents*tier/100):(review?0:Math.max(0,Math.min(Math.floor(eligibleCents*tier/100),full-required)));
- const appliedPercent=eligibleCents?Math.round(discountCents/eligibleCents*10000)/100:0;
- const message=shirtsOnly?'Descuento promocional aplicado. Precio sujeto a validación final antes de confirmar el pedido.':review?'Este pedido requiere confirmación de precio; no se aplica descuento.':eligibleUnits<2?'Añade otra prenda elegible para acceder a la promoción.':appliedPercent+0.01<tier?'El descuento depende de la combinación de productos.':'Descuento por cantidad aplicado.';
- return{units,normal:baseCents/100,extras:extrasCents/100,ship:shipCents/100,total:(full-discountCents)/100,discount:discountCents/100,eligibleUnits,excludedUnits,tier,appliedPercent,message};
-}
-const PRIVATE_QUOTE_URL='https://futnexo-calculo-privado.vercel.app/api/cotizar';
+function calc(){const units=cart.reduce((n,x)=>n+x.quantity,0),eligible=cart.filter(x=>x.type!=='Entrenamiento'),eligibleUnits=eligible.reduce((n,x)=>n+x.quantity,0),normal=cart.reduce((n,x)=>n+prices[x.type][0]*x.quantity,0),extras=cart.reduce((n,x)=>n+x.quantity*(1.5*Number(x.personalized)+1.5*Number(x.patch)+10*Number(x.shortsAdded)+1.5*Number(x.shortsPersonalized&&!x.shortsChild)),0),ship=units===1?2.99:0,tier=eligibleUnits>=10?45:eligibleUnits>=5?40:eligibleUnits>=3?30:eligibleUnits>=2?25:eligibleUnits?10:0;return {units,eligibleUnits,excludedUnits:units-eligibleUnits,normal,extras,ship,tier,discount:0,appliedPercent:0,total:normal+extras+ship,message:'Calculando promoción de Navidad…'};}
+const PRIVATE_QUOTE_URL='https://futnexo-navidad-pruebas-javiermr810-3056.vercel.app/api/cotizar';
 let verifiedQuote=null,verifiedKey='',quoteRequest=0;
 function quoteKey(){return JSON.stringify(cart.map(x=>({type:x.type,quantity:x.quantity,personalized:!!x.personalized,patch:!!x.patch,shortsAdded:!!x.shortsAdded,shortsPersonalized:!!x.shortsPersonalized,shortsChild:!!x.shortsChild,shortsNumber:x.shortsNumber||''})))}
 function updateVerifiedQuote(){
@@ -109,7 +83,7 @@ function updateVerifiedQuote(){
  verifiedQuote=null;verifiedKey='';
  if(!cart.length)return;
  if(cart.some(x=>x.shortsAdded||x.shortsPersonalized)){$('offer-msg').textContent='Pantalón incluido en el presupuesto orientativo. Importe final pendiente de confirmación por Instagram.';$('total').textContent='Por confirmar';$('discount').textContent='—';$('applied-percent').textContent='—';return;}
- if(cart.some(x=>!['Fan','Retro','Player','NBA','Media cremallera','Cremallera larga','Entrenamiento'].includes(x.type))){
+ if(cart.some(x=>!['Fan','Retro','Player','Infantil','Adulto','NBA','Media cremallera','Cremallera larga','Entrenamiento'].includes(x.type))){
   $('offer-msg').textContent='Precio sujeto a confirmación para esta categoría.';
   return;
  }
@@ -132,7 +106,7 @@ function updateVerifiedQuote(){
   $('applied-percent').textContent=data.appliedPercent.toFixed(2).replace('.',',')+' %';
   $('excluded-count').textContent=data.excludedUnits?data.excludedUnits+' prenda(s) excluida(s) del descuento (sí cuentan para el envío gratis).':'No hay prendas excluidas del descuento.';
  })
- .catch(()=>{if(request!==quoteRequest||key!==quoteKey())return;$('offer-msg').textContent='No se ha podido calcular el importe. Confirma el precio antes de realizar el pedido.';$('total').textContent='Por confirmar';$('discount').textContent='—';$('applied-percent').textContent='—'});
+ .catch(()=>{if(request!==quoteRequest||key!==quoteKey())return;$('offer-msg').textContent='No se ha podido conectar con el calculador de pruebas. Recarga para reintentar.';$('total').textContent='Por confirmar';$('discount').textContent='—';$('applied-percent').textContent='—'});
 }
 function render(){const d=calc();$('cart-count').textContent=d.units+' '+(d.units===1?'prenda':'prendas');$('cart-items').innerHTML=cart.length?cart.map((x,i)=>{const p=byId.get(x.id);if(!p)return'';return '<div class="cart-item">'+picture(p)+'<div class="cart-info"><p class="cart-name">'+esc(p.name)+'</p><p class="cart-meta">'+esc(p.category)+' · '+esc(p.description)+(p.category==='Chándals'?'':'<br>Temporada: '+esc(p.season))+'<br>Versión: '+esc(x.type)+' · Talla: '+esc(x.size)+' · '+x.quantity+' ud.<br>'+(x.personalized?'Estampado: '+esc(x.name)+' #'+esc(x.number):'Sin estampado')+' · '+(x.patch?'Parche: '+esc(x.patchDescription||'Por confirmar'):'Sin parche')+(x.shortsAdded?' · Pantalón corto (+10,00 €/ud.)':'')+(x.shortsPersonalized?' · Dorsal pantalón: '+esc(x.shortsNumber)+(x.shortsChild?' (gratis)':' (+1,50 €/ud.)'):'')+'</p><div class="cart-price">'+money(prices[x.type][0]*x.quantity+x.quantity*(1.5*Number(x.personalized)+1.5*Number(x.patch)+10*Number(x.shortsAdded)+1.5*Number(x.shortsPersonalized&&!x.shortsChild)))+' <span class="tiny">antes de descuentos</span></div><div class="cart-controls"><button type="button" data-edit="'+i+'" class="text-button">Editar</button><button type="button" data-remove="'+i+'" class="text-button remove">Eliminar</button></div></div></div>'}).join(''):'<div class="empty">Aún no hay prendas. Añade una para ver aquí su fotografía y características.</div>';
  $('subtotal').textContent=money(d.normal+d.extras);$('discount').textContent='−'+money(d.discount);$('shipping').textContent=d.units===0?'—':d.units===1?money(d.ship):'Gratis';$('total').textContent=money(d.total);$('offer-msg').textContent=d.message;$('eligible-count').textContent=String(d.eligibleUnits);$('discount-tier').textContent=d.tier?'Hasta '+d.tier+' %':'Sin tramo';$('applied-percent').textContent=d.appliedPercent.toFixed(2).replace('.',',')+' %';$('excluded-count').textContent=d.excludedUnits?d.excludedUnits+' prenda(s) excluida(s) del descuento (sí cuentan para el envío gratis).':'No hay prendas excluidas del descuento.';persist();updateVerifiedQuote();}
@@ -145,7 +119,7 @@ function makeItem(){const p=selected();if(!p)return{error:'Selecciona una prenda
 $('add').addEventListener('click',()=>{let it=makeItem();if(it.error){$('add-status').textContent=it.error;$('add-status').classList.add('error');return};let units=cart.reduce((s,x)=>s+x.quantity,0)-(editIndex>=0?cart[editIndex].quantity:0);if(units+it.quantity>80){$('add-status').textContent='Máximo 80 prendas por solicitud.';return}if(editIndex>=0)cart[editIndex]=it;else cart.push(it);resetEdit();$('add-status').classList.remove('error');$('add-status').textContent='Producto añadido al carrito. Revisa la imagen, los detalles y el total.';render();const status=$('add-status');status.replaceChildren(document.createTextNode('Producto añadido. '));const go=document.createElement('a');go.href='pedido.html?vista=carrito#solicitud';go.textContent='Ir al carrito →';status.append(go);});
 $('clear').addEventListener('click',()=>{if(cart.length&&!window.confirm('¿Quieres vaciar el carrito?'))return;cart=[];resetEdit();render();});
 function message(){const d=verifiedKey===quoteKey()&&verifiedQuote?{total:verifiedQuote.total,message:verifiedQuote.notice}:{total:0,message:'Precio pendiente de cotización privada.'};return 'SOLICITUD FUTNEXO — PENDIENTE DE CONFIRMACIÓN\n\n'+cart.map((x,i)=>{const p=byId.get(x.id);const base=location.href.startsWith('http')?location.href:'https://futnexo.futnexo.workers.dev/pedido.html';const url=new URL('pedido.html?ref='+encodeURIComponent(p.id),base).href;return (i+1)+'. '+p.name+' ('+p.category+')\nReferencia: '+p.id+'\nDescripción: '+p.description+'\nTemporada: '+p.season+' | Modelo: '+p.model+'\nVersión: '+x.type+' | Talla: '+x.size+' | Unidades: '+x.quantity+'\nPersonalización: '+(x.personalized?x.name+' #'+x.number:'No')+' | Parche: '+(x.patch?(x.patchDescription||'Por confirmar'):'No')+'\nPantalón: '+(x.shortsAdded?'Añadido (+10 €/ud.)':x.shortsChild?'Infantil':'No')+' | Dorsal pantalón: '+(x.shortsPersonalized?x.shortsNumber+(x.shortsChild?' (gratis)':' (+1,50 €/ud.)'):'No')+'\nFicha: '+url;}).join('\n\n')+'\n\nIMPORTE ORIENTATIVO: '+(verifiedKey===quoteKey()&&verifiedQuote?money(d.total):'Pendiente de confirmar')+'\n'+d.message+'\n\nNOMBRE/ALIAS: '+$('customer').value.trim()+'\nINSTAGRAM PARA CONTACTO: '+$('contact').value.trim()+'\nEMAIL: '+$('customer-email').value.trim()+'\nOBSERVACIONES: '+$('notes').value.trim()+'\n\nEl cliente acepta continuar por Instagram. Disponibilidad, precio final y pago pendientes de confirmación.';}
-function validate(){if(cart.length&&cart.every(x=>['Fan','Retro','Player','NBA','Media cremallera','Cremallera larga','Entrenamiento'].includes(x.type))&&!(verifiedQuote&&verifiedKey===quoteKey())){$('copy-status').textContent='Espera a que se calcule el total antes de enviar el pedido.';$('copy-status').classList.add('error');return false;}if(!cart.length){$('copy-status').textContent='Añade al menos una prenda antes de enviar.';$('copy-status').classList.add('error');$('add').focus();return false;}const ig=$('contact');ig.value=ig.value.trim();if(!/^@?[A-Za-z0-9._]{1,30}$/.test(ig.value)){ig.setCustomValidity('Introduce un usuario de Instagram válido, sin espacios.');}else ig.setCustomValidity('');const form=$('order-form');if(!form.checkValidity()){form.reportValidity();return false;}return true;}
+function validate(){if(cart.length&&cart.every(x=>['Fan','Retro','Player','Infantil','Adulto','NBA','Media cremallera','Cremallera larga','Entrenamiento'].includes(x.type))&&!(verifiedQuote&&verifiedKey===quoteKey())){$('copy-status').textContent='Espera a que se calcule el total antes de enviar el pedido.';$('copy-status').classList.add('error');return false;}if(!cart.length){$('copy-status').textContent='Añade al menos una prenda antes de enviar.';$('copy-status').classList.add('error');$('add').focus();return false;}const ig=$('contact');ig.value=ig.value.trim();if(!/^@?[A-Za-z0-9._]{1,30}$/.test(ig.value)){ig.setCustomValidity('Introduce un usuario de Instagram válido, sin espacios.');}else ig.setCustomValidity('');const form=$('order-form');if(!form.checkValidity()){form.reportValidity();return false;}return true;}
 $('contact').addEventListener('input',()=>{$('contact').setCustomValidity('')});
 const ORDER_URL='https://futnexo-pedidos.vercel.app/api/pedido';
 const sending=new WeakSet(), sent=new WeakMap();

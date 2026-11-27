@@ -164,4 +164,12 @@ if(/^\/(?:index\.html)?$/.test(location.pathname)){
  `;document.head.append(stadiumStyle);
  const stadiumImage=new Image();stadiumImage.onload=()=>{const backdrop=document.createElement('div');backdrop.className='fn-stadium-backdrop';backdrop.setAttribute('aria-hidden','true');document.body.prepend(backdrop);document.documentElement.classList.add('fn-holiday-stadium');};stadiumImage.src='https://futnexo.pages.dev/navidad-estadio.png';
 }
+
+/* Fondo móvil estable: evitar redimensionado al ocultar la barra del navegador. */
+const fixedMobileBackground=document.createElement('style');
+fixedMobileBackground.textContent=`
+@media(max-width: 900px), (pointer: coarse){
+ .fn-stadium-backdrop{position:fixed!important;top:0!important;left:0!important;right:auto!important;bottom:auto!important;width:100vw!important;height:100vh!important;height:100lvh!important;max-height:none!important;background-attachment:scroll!important;background-position:center center!important;background-size:cover!important;transform:translateZ(0);backface-visibility:hidden;will-change:transform;pointer-events:none!important}
+}
+`;document.head.append(fixedMobileBackground);
 })();

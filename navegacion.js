@@ -137,4 +137,40 @@ html.fn-v2{background:#060b15!important}
 @media(prefers-reduced-motion:reduce){.fn-v2 .legacy-collection,.fn-v2 [data-fn-product-id]{transition:none}}
 `;document.head.append(v2style);
 const v2bg=document.createElement('div');v2bg.className='fn-v2-backdrop';v2bg.setAttribute('aria-hidden','true');v2bg.innerHTML='<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="v2beam" x2="0" y2="1"><stop stop-color="#79c3ff" stop-opacity=".23"/><stop offset="1" stop-color="#79c3ff" stop-opacity="0"/></linearGradient><radialGradient id="v2glow"><stop stop-color="#d9f1ff" stop-opacity=".85"/><stop offset=".2" stop-color="#6baaff" stop-opacity=".4"/><stop offset="1" stop-color="#3c83ff" stop-opacity="0"/></radialGradient></defs><g fill="none" stroke="#639bd5" opacity=".22"><path d="M-100 300Q800 -120 1700 300M-100 345Q800 -40 1700 345M-100 405Q800 60 1700 405M-100 465Q800 160 1700 465"/><path d="M0 635L1600 635M0 790L1600 790M800 560V900M460 900L710 560M1140 900L890 560"/><ellipse cx="800" cy="720" rx="205" ry="69"/></g><g fill="url(#v2beam)"><path d="M170 200L0 780L650 780Z"/><path d="M1430 200L950 780L1600 780Z"/></g><g fill="url(#v2glow)"><ellipse cx="170" cy="200" rx="240" ry="190"/><ellipse cx="1430" cy="200" rx="240" ry="190"/></g><g fill="#d8efff" opacity=".75">'+[100,130,160,190,220,1380,1410,1440,1470,1500].map(x=>'<circle cx="'+x+'" cy="200" r="4"/>').join('')+'</g></svg>';document.body.prepend(v2bg);
+
+/* Matchday experience — diseño editorial, sin alterar catálogo ni pedidos. */
+const matchStyle=document.createElement('style');matchStyle.textContent=`
+.fn-v2 .fn-v2-backdrop{background:radial-gradient(ellipse at 50% 35%,#1e528b55,transparent 58%),linear-gradient(155deg,#08182c,#03070e 75%)}
+.fn-v2 .fn-v2-backdrop svg{opacity:.95}
+.fn-v2 .hero{position:relative;isolation:isolate;max-width:1440px;overflow:hidden;min-height:min(760px,85vh);padding:clamp(30px,6vw,90px) clamp(18px,5vw,80px);border-bottom:1px solid #6199e449}
+.fn-v2 .hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#030912b8,transparent 80%),repeating-linear-gradient(115deg,transparent 0 90px,#81b9ff09 91px 92px);pointer-events:none}
+.fn-v2 .hero-copy{position:relative;z-index:5;max-width:660px}
+.fn-v2 .hero .eyebrow{color:#a5d7ff!important;font-weight:900;letter-spacing:.19em}
+.fn-v2 .hero h1{font-family:Impact,'Arial Narrow',sans-serif!important;font-weight:900!important;font-size:clamp(50px,7.3vw,108px)!important;line-height:.94;letter-spacing:-.025em!important;text-transform:uppercase}
+.fn-v2 .hero h1 span{color:#65b4ff!important;display:inline-block;text-shadow:0 0 34px #368cff55}
+.fn-v2 .hero-art{filter:drop-shadow(0 20px 35px #0008)}
+.fn-v2 .hero-art .art-card{border-radius:12px!important;box-shadow:0 12px 35px #0009,0 0 30px #4b99ff55}
+.fn-v2 .hero-stats{padding-top:20px;border-top:1px solid #ffffff33;max-width:420px}
+.fn-v2 .fn-match-index{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:900;letter-spacing:.16em;color:#9fcfff;margin-bottom:18px}
+.fn-v2 .fn-match-index:before{content:"";width:30px;height:3px;background:#5ba8ff;box-shadow:0 0 10px #5ba8ff}
+.fn-v2 .fn-match-ticker{overflow:hidden;border-block:1px solid #7db7ff66;background:#0d2744e8;color:#e2efff;padding:12px 0;white-space:nowrap;font-size:12px;font-weight:900;letter-spacing:.14em;display:flex}
+.fn-v2 .fn-match-ticker span{flex-shrink:0;min-width:100%;text-align:center;padding-inline:20px}
+.fn-v2 .fn-match-ticker b{color:#6bb6ff;margin:0 18px}
+.fn-v2 .legacy-collection-grid{gap:20px!important}
+.fn-v2 .legacy-collection{position:relative;border-radius:12px!important;background:linear-gradient(145deg,#112d4b,#06111f)!important}
+.fn-v2 .legacy-collection-image{border-bottom:2px solid var(--v2-accent);min-height:190px}
+.fn-v2 .legacy-collection-body{padding:20px!important}
+.fn-v2 .legacy-collection-body h3{font-size:clamp(22px,2.4vw,32px)!important;font-weight:900;color:#fff!important;letter-spacing:-.03em}
+.fn-v2 .legacy-collection-bottom{border-top:1px solid #85b4f22b;padding-top:14px}
+.fn-v2 .fn-match-number{position:absolute;top:12px;left:12px;z-index:4;color:#fff;background:#06172cdd;border:1px solid #a6d0ff77;padding:6px 10px;font-weight:900;font-size:12px;letter-spacing:.12em;border-radius:4px;pointer-events:none}
+.fn-v2 .fn-volume-promo{border-radius:12px!important;border-left:4px solid #4a9eff!important}
+.fn-v2 .fn-volume-intro h2{font-size:clamp(24px,3.2vw,42px)!important;letter-spacing:-.025em}
+.fn-v2 .fn-volume-grid strong{font-size:clamp(20px,3vw,32px)!important}
+.fn-v2 #como-comprar .fn-order-shell{background:linear-gradient(125deg,#0c2849ed,#06111fed)!important;border-color:#679cdd66}
+.fn-v2 .fn-match-end{padding:30px 18px;text-align:center;font-weight:900;color:#b9d8ff;letter-spacing:.13em;border-top:1px solid #6199e449;background:#06111f}
+@media(max-width:760px){.fn-v2 .hero{min-height:0;padding:35px 18px}.fn-v2 .hero h1{font-size:clamp(42px,10vw,64px)!important}.fn-v2 .legacy-collection-body{padding:15px!important}.fn-v2 .fn-match-ticker{font-size:10px;letter-spacing:.04em}.fn-v2 .fn-match-ticker b{margin:0 7px}}
+`;document.head.append(matchStyle);
+const matchHero=document.querySelector('.hero');if(matchHero){const mark=document.createElement('div');mark.className='fn-match-index';mark.textContent='FUTNEXO / MATCHDAY COLLECTION';matchHero.querySelector('.hero-copy')?.prepend(mark);const ticker=document.createElement('div');ticker.className='fn-match-ticker';ticker.innerHTML='<span>FÚTBOL SIN FRONTERAS <b>✦</b> TU EQUIPO. TU HISTORIA. <b>✦</b> ENVÍO GRATIS DESDE 2 PRENDAS</span>';matchHero.after(ticker);}
+document.querySelectorAll('.legacy-collection').forEach((el,n)=>{const no=document.createElement('span');no.className='fn-match-number';no.textContent=String(n+1).padStart(2,'0');el.querySelector('.legacy-collection-image')?.prepend(no);});
+const matchFooter=document.querySelector('footer');if(matchFooter){const end=document.createElement('div');end.className='fn-match-end';end.textContent='FUTNEXO — EL FÚTBOL SE LLEVA PUESTO.';matchFooter.prepend(end);}
 })();

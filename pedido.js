@@ -101,7 +101,7 @@ function calc(){
  const message=shirtsOnly?'Descuento promocional aplicado. Precio sujeto a validación final antes de confirmar el pedido.':review?'Este pedido requiere confirmación de precio; no se aplica descuento.':eligibleUnits<2?'Añade otra prenda elegible para acceder a la promoción.':appliedPercent+0.01<tier?'El descuento depende de la combinación de productos.':'Descuento por cantidad aplicado.';
  return{units,normal:baseCents/100,extras:extrasCents/100,ship:shipCents/100,total:(full-discountCents)/100,discount:discountCents/100,eligibleUnits,excludedUnits,tier,appliedPercent,message};
 }
-const PRIVATE_QUOTE_URL='https://futnexo-calculo-privado.vercel.app/api/cotizar';
+const PRIVATE_QUOTE_URL='/api/cotizar';
 let verifiedQuote=null,verifiedKey='',quoteRequest=0;
 function quoteKey(){return JSON.stringify(cart.map(x=>({type:x.type,quantity:x.quantity,personalized:!!x.personalized,patch:!!x.patch,shortsAdded:!!x.shortsAdded,shortsPersonalized:!!x.shortsPersonalized,shortsChild:!!x.shortsChild,shortsNumber:x.shortsNumber||''})))}
 function updateVerifiedQuote(){

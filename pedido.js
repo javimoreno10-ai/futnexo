@@ -75,7 +75,7 @@ syncShorts();
 function persist(){try{localStorage.setItem(cartKey,JSON.stringify(cart))}catch(e){}}
 function typeFor(p){return p.fixedVersion||(['Clubes','Selecciones'].includes(p.category)?$('version').value:p.priceType);}
 function calc(){const units=cart.reduce((n,x)=>n+x.quantity,0),eligible=cart.filter(x=>x.type!=='Entrenamiento'),eligibleUnits=eligible.reduce((n,x)=>n+x.quantity,0),normal=cart.reduce((n,x)=>n+prices[x.type][0]*x.quantity,0),extras=cart.reduce((n,x)=>n+x.quantity*(1.5*Number(x.personalized)+1.5*Number(x.patch)+10*Number(x.shortsAdded)+1.5*Number(x.shortsPersonalized&&!x.shortsChild)),0),ship=units===1?2.99:0,tier=eligibleUnits>=10?45:eligibleUnits>=5?40:eligibleUnits>=3?30:eligibleUnits>=2?25:eligibleUnits?10:0;return {units,eligibleUnits,excludedUnits:units-eligibleUnits,normal,extras,ship,tier,discount:0,appliedPercent:0,total:normal+extras+ship,message:'Calculando promoción de Navidad…'};}
-const PRIVATE_QUOTE_URL='https://futnexo-navidad-pruebas-javiermr810-3056.vercel.app/api/cotizar';
+const PRIVATE_QUOTE_URL='https://futnexo-navidad-pruebas.vercel.app/api/cotizar';
 let verifiedQuote=null,verifiedKey='',quoteRequest=0;
 function quoteKey(){return JSON.stringify(cart.map(x=>({type:x.type,quantity:x.quantity,personalized:!!x.personalized,patch:!!x.patch,shortsAdded:!!x.shortsAdded,shortsPersonalized:!!x.shortsPersonalized,shortsChild:!!x.shortsChild,shortsNumber:x.shortsNumber||''})))}
 function updateVerifiedQuote(){

@@ -82,7 +82,7 @@ function updateVerifiedQuote(){
  const key=quoteKey(),request=++quoteRequest;
  verifiedQuote=null;verifiedKey='';
  if(!cart.length)return;
- if(cart.some(x=>x.shortsAdded||x.shortsPersonalized)){$('offer-msg').textContent='Pantalón incluido en el presupuesto orientativo. Importe final pendiente de confirmación por Instagram.';$('total').textContent='Por confirmar';$('discount').textContent='—';$('applied-percent').textContent='—';return;}
+
  if(cart.some(x=>!['Fan','Retro','Player','Infantil','Adulto','NBA','Media cremallera','Cremallera larga','Entrenamiento'].includes(x.type))){
   $('offer-msg').textContent='Precio sujeto a confirmación para esta categoría.';
   return;
@@ -91,7 +91,7 @@ function updateVerifiedQuote(){
  $('total').textContent='Calculando…';
  $('discount').textContent='—';
  $('applied-percent').textContent='—';
- fetch(PRIVATE_QUOTE_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({items:cart.map(x=>({type:x.type,quantity:x.quantity,personalized:!!x.personalized,patch:!!x.patch}))})})
+ fetch(PRIVATE_QUOTE_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({items:cart.map(x=>({type:x.type,quantity:x.quantity,personalized:!!x.personalized,patch:!!x.patch,shortsAdded:!!x.shortsAdded,shortsPersonalized:!!x.shortsPersonalized,shortsChild:!!x.shortsChild}))})})
  .then(async response=>{const data=await response.json();if(!response.ok)throw Error(data.error||'Cotización no disponible');return data})
  .then(data=>{
   if(request!==quoteRequest||key!==quoteKey())return;

@@ -173,4 +173,26 @@ const matchStyle=document.createElement('style');matchStyle.textContent=`
 const matchHero=document.querySelector('.hero');if(matchHero){const mark=document.createElement('div');mark.className='fn-match-index';mark.textContent='FUTNEXO / MATCHDAY COLLECTION';matchHero.querySelector('.hero-copy')?.prepend(mark);const ticker=document.createElement('div');ticker.className='fn-match-ticker';ticker.innerHTML='<span>FÚTBOL SIN FRONTERAS <b>✦</b> TU EQUIPO. TU HISTORIA. <b>✦</b> ENVÍO GRATIS DESDE 2 PRENDAS</span>';matchHero.after(ticker);}
 document.querySelectorAll('.legacy-collection').forEach((el,n)=>{const no=document.createElement('span');no.className='fn-match-number';no.textContent=String(n+1).padStart(2,'0');el.querySelector('.legacy-collection-image')?.prepend(no);});
 const matchFooter=document.querySelector('footer');if(matchFooter){const end=document.createElement('div');end.className='fn-match-end';end.textContent='FUTNEXO — EL FÚTBOL SE LLEVA PUESTO.';matchFooter.prepend(end);}
+
+/* FutNexo 2.0: ambientación fotográfica por colección. */
+const photoPages={index:'inicio',clubes:'clubes',selecciones:'selecciones',retro:'retro',nba:'nba',chandals:'clubes','guia-tallas':'inicio',pedido:'inicio',carrito:'inicio'};
+const v2photo=photoPages[v2page]||'inicio';
+const v2photoURL='https://futnexo.pages.dev/v2-'+v2photo+'.png';
+const v2photoStyle=document.createElement('style');v2photoStyle.textContent=`
+html.fn-v2.fn-v2-photo .fn-v2-backdrop{background-image:linear-gradient(180deg,rgba(3,9,19,.24),rgba(3,9,19,.43)),var(--v2-photo);background-position:center;background-size:cover;background-repeat:no-repeat}
+html.fn-v2.fn-v2-photo .fn-v2-backdrop svg{display:none}
+html.fn-v2.fn-v2-photo body,html.fn-v2.fn-v2-photo main,html.fn-v2.fn-v2-photo main>section:not(.fn-volume-promo):not(.trust-strip){background:transparent!important}
+.fn-v2.fn-v2-photo .hero{min-height:min(650px,76vh);overflow:visible}
+.fn-v2.fn-v2-photo .hero:before{background:linear-gradient(90deg,#030912a8,transparent 86%);border-radius:20px}
+.fn-v2.fn-v2-photo .hero h1{font-family:'Barlow Condensed','Arial Narrow',Impact,sans-serif!important;font-size:clamp(42px,6.2vw,86px)!important;line-height:1.02;text-shadow:0 3px 18px #000c}
+.fn-v2.fn-v2-photo .hero-copy p,.fn-v2.fn-v2-photo .section-heading,.fn-v2.fn-v2-photo main>h1,.fn-v2.fn-v2-photo main>p{text-shadow:0 2px 9px #000,0 0 15px #000}
+.fn-v2.fn-v2-photo .legacy-collection{background:linear-gradient(145deg,#112d4beb,#06111ff2)!important}
+.fn-v2.fn-v2-photo .fn-volume-promo{background:linear-gradient(120deg,#102e51e8,#081525ed)!important;backdrop-filter:blur(6px)}
+.fn-v2.fn-v2-photo .fn-match-ticker{background:#0b2445d9}
+.fn-v2.fn-v2-photo .trust-strip{background:#071427bb!important}
+.fn-v2.fn-v2-photo .fn-match-end{background:#06111fbd}
+.fn-v2.fn-v2-photo .section-heading .kicker{color:#b9deff!important}
+@media(max-width:760px){.fn-v2.fn-v2-photo .hero{min-height:0;overflow:hidden}.fn-v2.fn-v2-photo .hero h1{font-size:clamp(36px,9vw,58px)!important}.fn-v2.fn-v2-photo .hero:before{background:linear-gradient(180deg,#03091299,transparent)}.fn-v2.fn-v2-photo .fn-v2-backdrop{background-position:50% center}}
+`;document.head.append(v2photoStyle);
+const v2preload=new Image();v2preload.onload=()=>{document.documentElement.style.setProperty('--v2-photo','url("'+v2photoURL+'")');document.documentElement.classList.add('fn-v2-photo');};v2preload.src=v2photoURL;
 })();

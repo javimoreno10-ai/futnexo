@@ -122,4 +122,17 @@ const v2url='https://futnexo.pages.dev/v2-'+(v2photos[v2page]||'inicio')+'.png';
 const v2img=new Image();
 v2img.onload=()=>{const bg=document.createElement('div');bg.className='fn-v2-photo-bg';bg.setAttribute('aria-hidden','true');v2root.style.setProperty('--v2-photo','url("'+v2url+'")');document.body.prepend(bg);v2root.classList.add('fn-v2-photo');};
 v2img.src=v2url;
+
+/* Fondos de sección abiertos al estadio; Retro con cabeceras como Chándals. */
+const v2Clear=document.createElement('style');v2Clear.textContent=`
+html.fn-v2-photo .club-hero-wrap,html.fn-v2-photo .club-hero,html.fn-v2-photo .club-shop,html.fn-v2-photo .club-section-head,html.fn-v2-photo .club-benefits,html.fn-v2-photo .trust-strip,html.fn-v2-photo .media-team-section,html.fn-v2-photo .entera-team-section,html.fn-v2-photo .fn-retro-team-section,html.fn-v2-photo .fn-retro-team-section>summary,html.fn-v2-photo .fn-retro-team-grid,html.fn-v2-photo .nba-catalog-switch{background:transparent!important}
+html.fn-v2-photo .club-hero-copy,html.fn-v2-photo .club-section-head,html.fn-v2-photo .club-benefits-inner,html.fn-v2-photo .media-team-heading,html.fn-v2-photo .entera-team-heading,html.fn-v2-photo .fn-retro-team-section>summary{text-shadow:0 2px 8px #000b}
+html.fn-v2-photo .fn-promo-strip,html.fn-v2-photo .fn-volume-promo{background:rgba(8,20,39,.52)!important}
+html.fn-v2-photo .fn-retro-team-section{border:0!important;border-radius:0!important;overflow:visible}
+html.fn-v2-photo .fn-retro-team-section>summary{font-family:'Barlow Condensed',sans-serif;font-size:clamp(29px,4vw,40px);font-weight:900;color:#f2f7ff;line-height:1.2;margin:0 0 15px;padding:0 0 9px;border-bottom:1px solid #2c4666;display:flex;justify-content:flex-start;gap:12px;align-items:center}
+html.fn-v2-photo .fn-retro-team-section>summary>span:first-child{flex:0 1 auto}
+html.fn-v2-photo .fn-retro-team-section>summary .fn-team-count{font:700 11px system-ui,sans-serif;color:#94b4d6;background:#14253a;border:1px solid #2a4769;border-radius:40px;padding:6px 10px;white-space:nowrap}
+html.fn-v2-photo .fn-retro-team-grid{padding-inline:0}
+@media(max-width:760px){html.fn-v2-photo .fn-retro-team-section>summary{font-size:28px}}
+`;document.head.append(v2Clear);
 })();

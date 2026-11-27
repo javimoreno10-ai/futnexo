@@ -105,4 +105,47 @@ const fmtPreview=n=>(n/100).toFixed(2).replace('.',',')+' €';
 for(const card of document.querySelectorAll('[data-fn-product-id]')){const p=favProducts.get(card.dataset.fnProductId);if(!p)continue;const t=p.priceType||p.fixedVersion||'Fan',v=previewPrices[t];const bottom=card.querySelector('.club-bottom,.bottom,.catalog-card-bottom,.product-bottom');const price=bottom?.querySelector('strong');if(!v||!price)continue;const display=document.createElement('div');display.className='fn-preview-price';display.innerHTML='<span class="fn-preview-label">🎄 NAVIDAD · HASTA 10 %</span><del>'+fmtPreview(v[0])+'</del><strong>'+fmtPreview(v[1])+'</strong><small>Precio individual orientativo</small>';price.replaceWith(display);}
 
 for(const node of document.querySelectorAll('.legacy-collection-bottom>strong,.chandal-choice-card em')){const m=node.textContent.match(/(21,99|25,99|49,99|58,99|30,99)\s*€/);if(!m)continue;const cents=Number(m[1].replace(',',''));const t=Object.values(previewPrices).find(v=>v[0]===cents);if(!t)continue;const prefix=node.textContent.slice(0,m.index);node.replaceChildren(document.createTextNode(prefix));const del=document.createElement('del');del.textContent=fmtPreview(cents);const strong=document.createElement('span');strong.style.cssText='color:#75e6a0;font-weight:850;display:block';strong.textContent=fmtPreview(t[1])+' · Navidad';node.append(del,strong);}
+
+/* Decoración de temporada, solo en la rama de pruebas. */
+document.documentElement.classList.add('fn-holiday-theme');
+const holidayCSS=document.createElement('style');holidayCSS.textContent=`
+.fn-holiday-theme body{background-image:radial-gradient(ellipse at 8% 12%,#12402a55,transparent 38%),radial-gradient(ellipse at 94% 35%,#75122338,transparent 37%)!important;background-color:#080f1b!important}
+.fn-holiday-theme header.fn-search-header{border-bottom:1px solid #b7a067!important}
+.fn-holiday-theme .brand-fn-icon{position:relative;isolation:isolate}
+.fn-holiday-hat{position:absolute;width:29px;height:25px;left:-9px;top:-12px;pointer-events:none;z-index:2;transform:rotate(-22deg)}
+.fn-holiday-garland{height:18px;overflow:hidden;background:linear-gradient(180deg,#0a251b,#194e32 60%,transparent);position:relative;pointer-events:none;display:flex;justify-content:space-around;align-items:flex-start;padding:0 8px;box-sizing:border-box}
+.fn-holiday-garland:before{content:"";position:absolute;inset:0 0 8px;background:repeating-linear-gradient(145deg,transparent 0 8px,#327447 9px 11px,transparent 12px 16px),repeating-linear-gradient(35deg,transparent 0 10px,#22623a 11px 14px,transparent 15px 20px);opacity:.75}
+.fn-holiday-garland i{position:relative;display:block;width:6px;height:6px;border-radius:50%;margin-top:6px;background:#ffcf75;box-shadow:0 0 8px 2px #ffce6577}
+.fn-holiday-garland i:nth-child(3n){background:#ff465d;box-shadow:0 0 8px 2px #ff465d88}
+.fn-holiday-garland i:nth-child(3n+1){background:#68eea0;box-shadow:0 0 8px 2px #68eea077}
+.fn-holiday-garland i:nth-child(even){margin-top:11px}
+.fn-holiday-theme .hero h1>span{color:#6cdb91!important}
+.fn-holiday-theme .hero .btn-primary{background:linear-gradient(135deg,#c82739,#8f1426)!important;border-color:#df6871!important}
+.fn-holiday-theme .hero-art-label{background:#145333!important;border-color:#75a981!important}
+.fn-holiday-theme .hero-art .art-front{box-shadow:0 -5px 0 #eef7ff,0 0 22px #a3e6c528}
+.fn-holiday-theme .legacy-collection,.fn-holiday-theme [data-fn-product-id]{border-color:#4d775e!important}
+.fn-holiday-theme .legacy-collection:nth-child(odd),.fn-holiday-theme [data-fn-product-id]:nth-child(odd){border-color:#8b4551!important}
+.fn-holiday-theme .legacy-collection:hover,.fn-holiday-theme [data-fn-product-id]:hover{border-color:#d9b768!important}
+.fn-holiday-theme .legacy-collection{box-shadow:inset 0 3px 0 #e5f3ff25}
+.fn-holiday-theme .fn-preview-sale{background:radial-gradient(ellipse at 15% 10%,#d02b3d55,transparent 45%),linear-gradient(105deg,#8b1020,#102a25 52%,#8b1020)!important;box-shadow:0 0 20px #b4913c22,inset 0 3px 0 #f1f8ffaf}
+.fn-holiday-theme .fn-preview-sale b{letter-spacing:.025em}
+.fn-holiday-theme .fn-preview-price small{color:#a9c8b5}
+.fn-holiday-theme .fn-cart-dialog{border-color:#568a69!important}
+.fn-holiday-theme .fn-cart-inner{background:radial-gradient(ellipse at 100% 0%,#234b35,transparent 58%),#0d1b30!important}
+.fn-holiday-theme .fn-cart-inner .fn-total{border-color:#63c38d!important}
+.fn-holiday-theme #discount,.fn-holiday-theme #applied-percent,.fn-holiday-theme #total{color:#75e6a0!important}
+.fn-holiday-theme .footer{border-top:1px solid #bca16c!important}
+.fn-holiday-foot{font-weight:700;text-align:center;color:#e9ca85;padding:12px 8px;background:linear-gradient(90deg,#64122255,#15432b88,#64122255);border-top:1px solid #bca16c44;font-size:13px}
+.fn-holiday-snow{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:20}
+.fn-holiday-snow i{position:absolute;top:-22px;color:#e5f4ff;opacity:var(--o);font:normal var(--s) Arial,sans-serif;animation:fn-holiday-fall var(--d) linear infinite;animation-delay:var(--delay);text-shadow:0 0 5px #cae6ff77}
+@keyframes fn-holiday-fall{0%{transform:translate3d(0,-25px,0) rotate(0deg)}100%{transform:translate3d(var(--drift),calc(100vh + 45px),0) rotate(130deg)}}
+.fn-holiday-detail{display:block;color:#ffe0a0;font-size:12px;font-weight:750;letter-spacing:.08em;margin:0 auto 6px;text-transform:uppercase}
+@media(max-width:760px){.fn-holiday-garland{height:13px}.fn-holiday-garland i:nth-child(n+23){display:none}.fn-holiday-hat{width:22px;height:19px;left:-5px;top:-9px}.fn-holiday-snow i:nth-child(n+15){display:none}.fn-holiday-detail{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.fn-holiday-snow{display:none}}
+`;document.head.append(holidayCSS);
+const hatAnchor=header.querySelector('.brand-fn-icon');if(hatAnchor){const hat=document.createElement('span');hat.className='fn-holiday-hat';hat.setAttribute('aria-hidden','true');hat.innerHTML='<svg viewBox="0 0 36 30" width="100%" height="100%"><path d="M5 22Q8 1 23 3Q30 5 29 15L24 12L28 23Z" fill="#c91f34" stroke="#ff6c76"/><path d="M5 21Q16 18 29 21L30 26Q15 24 4 27Z" fill="#f5f8ff"/><circle cx="29" cy="14" r="4.5" fill="#fff"/></svg>';hatAnchor.append(hat);}
+const garland=document.createElement('div');garland.className='fn-holiday-garland';garland.setAttribute('aria-hidden','true');for(let n=0;n<38;n++)garland.append(document.createElement('i'));header.after(garland);
+const snow=document.createElement('div');snow.className='fn-holiday-snow';snow.setAttribute('aria-hidden','true');for(let n=0;n<30;n++){const flake=document.createElement('i');flake.textContent=n%4===0?'❄':'•';flake.style.left=((n*37+11)%100)+'%';flake.style.setProperty('--s',(n%4===0?11:5+n%4)+'px');flake.style.setProperty('--o',String(.18+(n%5)*.07));flake.style.setProperty('--d',(12+n%9*2)+'s');flake.style.setProperty('--delay',(-n*1.7)+'s');flake.style.setProperty('--drift',(n%2?35:-35)+'px');snow.append(flake);}document.body.append(snow);
+const pageName=location.pathname.split('/').pop().replace('.html','')||'index';const details={index:'✦ Una Navidad llena de fútbol ✦',clubes:'⚽ Regala los colores de tu equipo',selecciones:'❄ La pasión no tiene fronteras',retro:'✦ Una Navidad de leyendas',nba:'🏀 Navidad sobre la cancha',chandals:'❄ Abrígate con tus colores', 'guia-tallas':'🎁 Encuentra la talla perfecta para tu regalo',pedido:'🎁 Prepara tu pedido de Navidad',carrito:'🎁 Tus regalos de Navidad'};const detail=document.createElement('span');detail.className='fn-holiday-detail';detail.textContent=details[pageName]||'✦ Especial Navidad FutNexo ✦';sale.prepend(detail);
+const footer=document.querySelector('footer');if(footer){const note=document.createElement('div');note.className='fn-holiday-foot';note.textContent='❄  FUTNEXO · FELICES FIESTAS  ❄';footer.prepend(note);}
 })();

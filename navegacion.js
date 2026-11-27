@@ -142,4 +142,12 @@ if(location.pathname.split('/').pop()==='retro.html'){
  retroArrowStyle.textContent='.fn-retro-team-section>summary::before{display:none!important;content:none!important}.fn-retro-team-section>summary::marker{content:""}.fn-retro-team-section>summary::-webkit-details-marker{display:none!important}';
  document.head.append(retroArrowStyle);
 }
+
+/* Fondo móvil estable: evitar redimensionado al ocultar la barra del navegador. */
+const fixedMobileBackground=document.createElement('style');
+fixedMobileBackground.textContent=`
+@media(max-width: 900px), (pointer: coarse){
+ .fn-v2-photo-bg{position:fixed!important;top:0!important;left:0!important;right:auto!important;bottom:auto!important;width:100vw!important;height:100vh!important;height:100lvh!important;max-height:none!important;background-attachment:scroll!important;background-position:center center!important;background-size:cover!important;transform:translateZ(0);backface-visibility:hidden;will-change:transform;pointer-events:none!important}
+}
+`;document.head.append(fixedMobileBackground);
 })();
